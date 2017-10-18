@@ -206,7 +206,7 @@
     
     MBProgressHUD * hud1 = [MBProgressHUD showHUDAddedTo: [UIApplication sharedApplication].keyWindow animated:YES];
 //    [[[UIApplication sharedApplication].windows lastObject] addSubview:hud1];
-    hud1.labelText = NSLocalizedString(@"请稍候...", @"HUD loading title");
+    
 
     if (_isdiffAmo) {
         [_myBttton setTitle:@"涨跌幅" forState:UIControlStateNormal];

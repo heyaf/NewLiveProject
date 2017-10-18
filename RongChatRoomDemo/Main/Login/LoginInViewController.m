@@ -158,7 +158,7 @@
         make.height.offset(30);
     }];
     
-    [self otherLogSubviews];
+//    [self otherLogSubviews];
     
     
     UITapGestureRecognizer *tapGr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];

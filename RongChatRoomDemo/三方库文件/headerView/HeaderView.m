@@ -80,7 +80,7 @@
         leaderLB.text = [NSString stringWithFormat:@"主讲人：%@",_mymodel.videoName];
         view.text = [NSString stringWithFormat:@"%@人观看",_mymodel.count];
         
-        dataLB.text = _mymodel.createDate;
+        dataLB.text = _mymodel.date;
     }
     
     UIButton *selcetBtn = [UIButton buttonWithType:UIButtonTypeCustom];

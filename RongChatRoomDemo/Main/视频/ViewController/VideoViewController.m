@@ -139,7 +139,9 @@
         [MBProgressHUD hideHUD];
         
         NSDictionary *dict = responseObject;
-        
+        NSLog(@"视频界面----------%@",dict);
+
+
         if ([dict[@"state"] isEqualToString:@"0"]) {
             [MBProgressHUD showError:dict[@"msg"]];
         }else{
@@ -157,6 +159,7 @@
     } failure:^(NSError *error) {
         
         [MBProgressHUD showError:@"加载错误..."];
+        NSLog(@"视频界面----------%@,%@,%@",error.description,VideoListUrl,dic);
         
         
         
@@ -296,7 +299,7 @@
 
 {
     
-    NSLog(@"点击了tapView");
+    
     [self enterChatRoom];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *token = [userDefaults stringForKey:@"Token"];
@@ -445,9 +448,10 @@
     VideoModel *videomodel = _dataArr[indexPath.row];
     
     cell.titleLB.text = videomodel.videoName;
-    cell.dataLB.text = videomodel.createDate;
+    
+    cell.dataLB.text = videomodel.date;
     NSString *imgstr =  [videomodel.picture stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];;
-    [cell.titleImv sd_setImageWithURL:[NSURL URLWithString:imgstr]];
+    [cell.titleImv sd_setImageWithURL:[NSURL URLWithString:imgstr] placeholderImage:IMAGE_NAMED(@"image_zhanwei")];
 
     return cell;
 }

@@ -95,7 +95,7 @@
         
         
         NSDictionary *dict = responseObject;
-        NSLog(@"......121212121%@",dict);
+        
         if ([dict[@"state"] isEqualToString:@"0"]) {
             [MBProgressHUD showError:dict[@"msg"]];
         }else{
@@ -103,7 +103,7 @@
             
         }
     } failure:^(NSError *error) {
-        NSLog(@"......121212121%@",error.description);
+        
         [MBProgressHUD hideHUD];
         
         
@@ -229,10 +229,10 @@
     
     cell.titleLB.text = videomodel.videoName;
     cell.numberLB.text = videomodel.count;
-    cell.dateLB.text = videomodel.createDate;
-    NSString *imgstr = [NSString stringWithFormat:@"image_0%li",(long)indexPath.row+1];
     
-    cell.titleImv.image =[UIImage imageNamed:imgstr];
+    cell.dateLB.text = videomodel.date;
+    
+    [cell.titleImv sd_setImageWithURL:[NSURL URLWithString:videomodel.picture] placeholderImage:IMAGE_NAMED(@"image_zhanwei")];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;

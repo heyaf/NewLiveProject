@@ -10,6 +10,7 @@
 #import "CompareViewController.h"
 #import "News2ViewController.h"
 #import "CalendarViewController.h"
+#import "IBConfigration.h"
 
 @implementation buttonView
 
@@ -43,10 +44,20 @@
 }
 
 -(void)btnClicked{
-
+    IBConfigration *configration = [[IBConfigration alloc] init];
+    configration.title = @"提示";
+    configration.message = @"敬请期待...";
+    //        configration.cancelTitle = @"确定";
+    configration.confirmTitle=@"确定";
+    
+    configration.messageAlignment = NSTextAlignmentCenter;
+    
+    IBAlertView *alerView = [IBAlertView alertWithConfigration:configration block:^(NSUInteger index) {
+        
+    }];
     
     UIViewController *vc = [self currentVc];
-    CompareViewController *compareVC = [[CompareViewController alloc] init];
+//    CompareViewController *compareVC = [[CompareViewController alloc] init];
     BaseCellViewController *basevc = [[BaseCellViewController alloc] init];
    
     basevc.sizeH = KScreenH;
@@ -62,8 +73,10 @@
             [vc.navigationController pushViewController:basevc animated:YES];
             break;
         case BTN_TAG+1:
-            compareVC.title = @"竞赛";
-            [vc.navigationController pushViewController:compareVC animated:YES];
+//            compareVC.title = @"竞赛";
+//            [vc.navigationController pushViewController:compareVC animated:YES];
+
+            [alerView show];
             break;
         case BTN_TAG+2:
             basevc.title = @"要闻";

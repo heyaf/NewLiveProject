@@ -61,7 +61,7 @@
 -(void)AddViewloginOrOut{
     
      userModel *user = [kApp getusermodel];
-    CGRect accountF = CGRectMake(20, 40, KScreenW-40, 40);
+    CGRect accountF = CGRectMake(20, 80, KScreenW-40, 40);
     UITextField *TELText = [[UITextField alloc] initWithFrame:accountF];
     TELText.placeholder = user.name;
     TELText.frame = accountF;

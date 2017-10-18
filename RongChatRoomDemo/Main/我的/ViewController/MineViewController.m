@@ -332,7 +332,7 @@
         
     }else if(indexPath.section ==2&&indexPath.row==1){
      RootWebViewController *webVC = [[RootWebViewController alloc] init];
-        webVC.url = @"http://192.168.0.192:8083/aboutuscontroller/getAboutus";
+        webVC.url = @"http://192.168.0.250:6661/aboutuscontroller/getAboutus";
       //  webVC.url = @"http://192.168.0.192:8083/news/getfastnews";
         [self.navigationController pushViewController:webVC animated:YES];
 

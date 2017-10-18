@@ -201,7 +201,7 @@
     VideoModel *videomodel = self.MydataArr[indexPath.row];
     cell.titleLB.text = videomodel.title;
     cell.numberLB.text = videomodel.count;
-    cell.dateLB.text = videomodel.createDate;
+    cell.dateLB.text = videomodel.date;
     NSString *imgstr =  [videomodel.picture stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];;
 //    //    NSLog(@",,,,%@",basemodel);
     [cell.titleImv sd_setImageWithURL:[NSURL URLWithString:imgstr]];

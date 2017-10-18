@@ -20,7 +20,7 @@
 @property (nonatomic, strong) NSString <Optional>*state;
 @property (nonatomic, strong) NSString <Optional>*videoName;
 @property (nonatomic, strong) NSString <Optional>*videourl;
-@property (nonatomic, strong) NSString <Optional>*createDate;
+@property (nonatomic, strong) NSString <Optional>*date;
 @property (nonatomic, strong) NSString <Optional>*content;
 @property (nonatomic, strong) NSString <Optional>*title;
 @property (nonatomic, strong) NSString <Optional>*count;

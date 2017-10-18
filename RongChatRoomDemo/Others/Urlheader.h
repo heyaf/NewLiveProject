@@ -86,7 +86,7 @@
 #define SuggestUrl @"http://192.168.0.250:6660/feedbackController/addFeedback"
 
 //视频列表。
-#define VideoListUrl @"http://192.168.0.250.6661/pastVideoController/queryPastVideo"
+#define VideoListUrl @"http://1.192.218.167:6661/pastVideoController/queryPastVideo"
 
 //直播列表。
 #define LiveListUrl @"http://192.168.0.250:6660/liveStream/getLiveUrlAll"
