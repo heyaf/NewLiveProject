@@ -1,0 +1,145 @@
+//
+//  PrefixHeader.pch
+//  RongChatRoomDemo
+//
+//  Created by 杜立召 on 16/4/6.
+//  Copyright © 2016年 rongcloud. All rights reserved.
+//
+
+
+#define kBounds [UIScreen mainScreen].bounds.size
+#define KScreenW ([UIScreen mainScreen].bounds.size.width)
+#define KScreenH ([UIScreen mainScreen].bounds.size.height)
+
+
+#define RONGCLOUD_IM_APPKEY @"lmxuhwaglz8fd"
+#define RONGCLOUD_IM_APPSECRET @"JgLoZtVAL5X"
+#define userModelKEY @"saveusermodel"
+
+//#define RONGCLOUD_IM_APPKEY @"k51hidwqkeksb"
+//#define RONGCLOUD_IM_APPSECRET @"r2isaTHLVOk67"
+
+//-----------UI-Macro Definination---------//
+#define RCDLive_RGBCOLOR(r, g, b) [UIColor colorWithRed:(r) / 255.0f green:(g) / 255.0f blue:(b) / 255.0f alpha:1]
+#define RCDLive_HEXCOLOR(rgbValue)                                                                                             \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16)) / 255.0                                               \
+green:((float)((rgbValue & 0xFF00) >> 8)) / 255.0                                                  \
+blue:((float)(rgbValue & 0xFF)) / 255.0                                                           \
+alpha:1.0]
+
+#define RGB(r, g, b)             [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:1.0]
+#define RGBAlpha(r, g, b, a)     [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:(a)]
+
+#define kRootViewController [UIApplication sharedApplication].delegate.window.rootViewController
+
+#define kAppDelegate        [AppDelegate shareAppDelegate]
+#define KHistorySearchPath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"PYSearchhistories.plist"]
+#define kUserDefaults       [NSUserDefaults standardUserDefaults]
+
+#define kApp ((AppDelegate *)[UIApplication sharedApplication].delegate)
+
+
+#import "AppComment.h"
+#import "MyMain.h"
+#import <Masonry.h>
+#import <YYKit.h>
+#import "AppDelegate+AppService.h"
+#import "RootViewController.h"
+#import "MBProgressHUD+MJ.h"
+#import "AFNetworking.h"
+#import <JSONModel.h>
+//#import "MJRefresh.h"
+#import "UIImageView+WebCache.h"
+
+#import "OpenUDID.h"
+#import "UIImage+Cache.h"
+#import "AdPageView.h"
+#import "Urlheader.h"
+#import "IBAlertView.h"
+#import "HttpRequest.h"
+#import "userModel.h"
+#import "RootWebViewController.h"
+
+//#import <SDCycleScrollView.h>
+
+
+
+#import "DetailViewController.h"
+#import "BaseCellViewController.h"
+
+
+
+
+
+
+//当前版本
+#define RCDLive_IOS_FSystenVersion ([[[UIDevice currentDevice] systemVersion] floatValue])
+
+#if USE_BUNDLE_RESOUCE
+#define RCDLive_IMAGE_BY_NAMED(value) [RCDLiveKitUtility imageNamed:(value)ofBundle:@"RongCloud.bundle"]
+#else
+#define RCDLive_IMAGE_BY_NAMED(value) [UIImage imageNamed:NSLocalizedString((value), nil)]
+#endif // USE_BUNDLE_RESOUCE
+
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
+#define RCDLive_RC_MULTILINE_TEXTSIZE(text, font, maxSize, mode) [text length] > 0 ? [text \
+boundingRectWithSize:maxSize options:(NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) \
+attributes:@{NSFontAttributeName:font} context:nil].size : CGSizeZero;
+#else
+#define RCDLive_RC_MULTILINE_TEXTSIZE(text, font, maxSize, mode) [text length] > 0 ? [text \
+sizeWithFont:font constrainedToSize:maxSize lineBreakMode:mode] : CGSizeZero;
+#endif
+
+// 大于等于IOS7
+#define RCDLive_RC_MULTILINE_TEXTSIZE_GEIOS7(text, font, maxSize) [text length] > 0 ? [text \
+boundingRectWithSize:maxSize options:(NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) \
+attributes:@{NSFontAttributeName:font} context:nil].size : CGSizeZero;
+
+// 小于IOS7
+#define RCDLive_RC_MULTILINE_TEXTSIZE_LIOS7(text, font, maxSize, mode) [text length] > 0 ? [text \
+sizeWithFont:font constrainedToSize:maxSize lineBreakMode:mode] : CGSizeZero;
+
+#ifdef DEBUG
+#define RCDLive_DebugLog( s, ... ) NSLog( @"[%@:(%d)] %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#else
+#define RCDLive_DebugLog( s, ... )
+#endif
+
+
+#ifndef weakify
+#if DEBUG
+#if __has_feature(objc_arc)
+#define weakify(object) autoreleasepool{} __weak __typeof__(object) weak##_##object = object;
+#else
+#define weakify(object) autoreleasepool{} __block __typeof__(object) block##_##object = object;
+#endif
+#else
+#if __has_feature(objc_arc)
+#define weakify(object) try{} @finally{} {} __weak __typeof__(object) weak##_##object = object;
+#else
+#define weakify(object) try{} @finally{} {} __block __typeof__(object) block##_##object = object;
+#endif
+#endif
+#endif
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+#endif
+
+#if TARGET_IPHONE_SIMULATOR
+#define RC_VOIP_ENABLE 0
+#else
+#define RC_VOIP_ENABLE 1
+#endif
+
+#ifdef DEBUG
+#define RCDLive_DebugLog( s, ... ) NSLog( @"[%@:(%d)] %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#else
+#define RCDLive_DebugLog( s, ... )
+#endif
+
+#endif
+/* PrefixHeader_pch */

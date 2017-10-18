@@ -1,0 +1,31 @@
+PODS:
+  - JSONModel (1.7.0)
+  - Masonry (1.0.2)
+  - MOBFoundation (3.0.1)
+  - SDWebImage (4.1.0):
+    - SDWebImage/Core (= 4.1.0)
+  - SDWebImage/Core (4.1.0)
+  - SMSSDK (3.0.1):
+    - MOBFoundation
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - JSONModel
+  - Masonry
+  - SDWebImage (~> 4.0)
+  - SMSSDK
+  - YYKit
+
+SPEC CHECKSUMS:
+  JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MOBFoundation: '08328ccde124b687ac5e4367c2ccfc5b4d0235b7'
+  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
+  SMSSDK: a811c8ea6e89393097037b7cf6493248a40e50f0
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: bfc2f6656e46b137b542e0c1a70c4403e5c516c5
+
+COCOAPODS: 1.2.1
