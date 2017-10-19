@@ -38,6 +38,13 @@ alpha:1.0]
 
 #define kApp ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
+#ifdef DEBUG
+#define ASLog(...) NSLog(__VA_ARGS__)
+#define debugMethod() NSLog(@"%s", __func__)
+#else
+#define ASLog(...)
+#define debugMethod()
+#endif
 
 #import "AppComment.h"
 #import "MyMain.h"

@@ -74,13 +74,15 @@
     [MBProgressHUD showMessage:@"正在加载..."];
     NSDictionary *dic = @{@"datetime":dataStr};
     [[HttpRequest sharedInstance] postWithURLString:CancleDate parameters:dic success:^(id responseObject) {
-        [MBProgressHUD hideHUD];
+        [MBProgressHUD hideHUDForView:[UIApplication sharedApplication].keyWindow animated:YES];
         
         NSDictionary *dict = responseObject;
-        NSLog(@"11111%@",dict);
         
         if ([dict[@"state"] isEqualToString:@"0"]) {
             [MBProgressHUD showError:dict[@"msg"]];
+            _dataArr=(NSMutableArray *)[[_dataArr reverseObjectEnumerator] allObjects];
+            [_tableView reloadData];
+
         }else{
             _dataArr = [CalendarModel arrayOfModelsFromDictionaries:dict[@"events"] error:nil];
             _dataArr=(NSMutableArray *)[[_dataArr reverseObjectEnumerator] allObjects];
@@ -157,7 +159,7 @@
     formatter.dateFormat = @"YYYYMMdd";
     NSString *dateStr = [formatter stringFromDate:self.calendarView.selectedDate];
     _bgView.hidden = YES;
-    
+    NSLog(@"....%@",dateStr);
     [self creatDataWithData:dateStr];
 }
 

@@ -240,7 +240,7 @@
                           @"code":self.codeText.text};
     [MBProgressHUD showMessage:@"正在加载..."];
     NSString *utf = [self.urlstr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSLog(@"HEYAFEI___%@",_urlstr);
+    
     [[HttpRequest sharedInstance] postWithURLString:utf parameters:dic success:^(id responseObject) {
         [MBProgressHUD hideHUD];
         NSDictionary *dict = responseObject;

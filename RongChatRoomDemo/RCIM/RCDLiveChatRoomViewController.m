@@ -20,7 +20,7 @@
 #import <RongIMLib/RongIMLib.h>
 #import <objc/runtime.h>
 #import "RCDLiveTipMessageCell.h"
-#import "MBProgressHUD.h"
+#import "MBProgressHUD+MJ.h"
 #import "AppDelegate.h"
 #import "RCDLivePortraitViewCell.h"
 #import "KSYLivePlaying.h"
@@ -418,7 +418,7 @@ static NSString *const RCDLiveGiftMessageCellIndentifier = @"RCDLiveGiftMessageC
 #pragma mark ----- 初始化页面控件----
 - (void)initializedSubViews {
     
-    _headerView = [[HeaderView alloc] initWithFrame:CGRectMake(0, KScreenW/16*9, KScreenW, 80) andVideomodel:nil isselected:NO];
+    _headerView = [[HeaderView alloc] initWithFrame:CGRectMake(0, KScreenW/16*9, KScreenW, 80) andVideomodel:self.videomodel isselected:NO];
     [self.view addSubview:_headerView];
     
     //聊天区

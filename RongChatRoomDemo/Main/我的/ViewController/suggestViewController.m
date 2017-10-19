@@ -37,7 +37,9 @@
 }
 - (IBAction)submitbtn:(id)sender {
     userModel *user = [kApp getusermodel];
-    NSLog(@"%@",self.SuggetsTF.text);
+    if (user.Id.length < 1) {
+        [kApp showMessage:@"提示" contentStr:@"请先登录"];
+    }else{
     if (self.suggestTF.text.length>0) {
         NSDictionary *dict =@{@"content":self.SuggetsTF.text,
                               @"userid":user.Id,
@@ -72,6 +74,7 @@
     }else{
         
         [kApp showMessage:@"提醒" contentStr:@"请填写您的意见"];
+    }
     }
 
 }

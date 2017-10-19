@@ -38,7 +38,10 @@
         _mymodel = videomodel;
         self.select = isSelect;
         [self addsubviewsWithFrame:frame];
-        [self getmessageWithUrl:ChargeVideoCollection];
+        if (isSelect) {
+            [self getmessageWithUrl:ChargeVideoCollection];
+
+        }
         
     }
     return self;
@@ -77,7 +80,7 @@
     if (_mymodel.title.length>0) {
         
         titleLable.text = _mymodel.title;
-        leaderLB.text = [NSString stringWithFormat:@"主讲人：%@",_mymodel.videoName];
+        leaderLB.text = [NSString stringWithFormat:@"主讲人：%@",_mymodel.content];
         view.text = [NSString stringWithFormat:@"%@人观看",_mymodel.count];
         
         dataLB.text = _mymodel.date;
@@ -118,35 +121,41 @@
     
     
     userModel *user = [kApp getusermodel];
+    if (user.Id.length<1) {
+        
+    }else{
     
-    NSDictionary *dic =@{@"userType":@"1",
-                         @"userId":user.Id,
-                         @"vedioId":_mymodel.Id
-                        
-                         };
-     
-    NSString *utf = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    [[HttpRequest sharedInstance] postWithURLString:utf parameters:dic success:^(id responseObject) {
-        //        [MBProgressHUD hideHUD];
-        NSDictionary *dict = responseObject;
-        NSString *code = [NSString stringWithFormat:@"%@",dict[@"state"]];
+        NSDictionary *dic =@{@"userType":@"1",
+                             @"userId":user.Id,
+                             @"vedioId":_mymodel.Id
+                             
+                             };
         
-        
-        if ([code isEqualToString:@"1"]) {
-            _ifselected = YES;
-            [_selectBtn setImage:[UIImage imageNamed:@"icon_collection_selected"] forState:UIControlStateNormal];
+        NSString *utf = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        [[HttpRequest sharedInstance] postWithURLString:utf parameters:dic success:^(id responseObject) {
+            //        [MBProgressHUD hideHUD];
+            NSDictionary *dict = responseObject;
+            NSString *code = [NSString stringWithFormat:@"%@",dict[@"state"]];
             
-        }else if ([code isEqualToString:@"0"])
-        {
-            _ifselected = NO;
-            [_selectBtn setImage:[UIImage imageNamed:@"icon_collection_defaul"] forState:UIControlStateNormal];
-        }
-    } failure:^(NSError *error) {
-        //        [MBProgressHUD hideHUD];
-        
-        [MBProgressHUD showError:@"操作失败，请稍后重试"];
-    }];
-}
+            
+            if ([code isEqualToString:@"1"]) {
+                _ifselected = YES;
+                [_selectBtn setImage:[UIImage imageNamed:@"icon_collection_selected"] forState:UIControlStateNormal];
+                
+            }else if ([code isEqualToString:@"0"])
+            {
+                _ifselected = NO;
+                [_selectBtn setImage:[UIImage imageNamed:@"icon_collection_defaul"] forState:UIControlStateNormal];
+            }
+        } failure:^(NSError *error) {
+            //        [MBProgressHUD hideHUD];
+            
+            [MBProgressHUD showError:@"操作失败，请稍后重试"];
+        }];
+
+    }
+    
+    }
 -(void)sendmessageWithUrl:(NSString *)url {
     
     

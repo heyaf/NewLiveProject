@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		17C1FAF01E1BAB2F009DD9A5 /* RongIMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C1FAEE1E1BAB2F009DD9A5 /* RongIMKit.framework */; };
 		17C1FAF11E1BAB2F009DD9A5 /* RongIMLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C1FAEF1E1BAB2F009DD9A5 /* RongIMLib.framework */; };
+		180B25AD1F98A8E600DEA5A8 /* XieYiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B25AB1F98A8E500DEA5A8 /* XieYiViewController.m */; };
+		180B25AE1F98A8E600DEA5A8 /* XieYiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180B25AC1F98A8E500DEA5A8 /* XieYiViewController.xib */; };
 		180B2FEF1F3AAA6C00B4A792 /* AppDelegate+AppService.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B2FCF1F3AAA6C00B4A792 /* AppDelegate+AppService.m */; };
 		180B2FF01F3AAA6C00B4A792 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B2FD11F3AAA6C00B4A792 /* AppDelegate.m */; };
 		180B2FF21F3AAA6C00B4A792 /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B2FD61F3AAA6C00B4A792 /* RootNavigationController.m */; };
@@ -258,6 +260,9 @@
 		10133E2E2183724E7ACEC01B /* Pods-RongChatRoomDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RongChatRoomDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RongChatRoomDemoUITests/Pods-RongChatRoomDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		17C1FAEE1E1BAB2F009DD9A5 /* RongIMKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RongIMKit.framework; path = framework/RongIMKit.framework; sourceTree = "<group>"; };
 		17C1FAEF1E1BAB2F009DD9A5 /* RongIMLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RongIMLib.framework; path = framework/RongIMLib.framework; sourceTree = "<group>"; };
+		180B25AA1F98A8E500DEA5A8 /* XieYiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XieYiViewController.h; sourceTree = "<group>"; };
+		180B25AB1F98A8E500DEA5A8 /* XieYiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XieYiViewController.m; sourceTree = "<group>"; };
+		180B25AC1F98A8E500DEA5A8 /* XieYiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XieYiViewController.xib; sourceTree = "<group>"; };
 		180B2FCE1F3AAA6C00B4A792 /* AppDelegate+AppService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+AppService.h"; sourceTree = "<group>"; };
 		180B2FCF1F3AAA6C00B4A792 /* AppDelegate+AppService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+AppService.m"; sourceTree = "<group>"; };
 		180B2FD01F3AAA6C00B4A792 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -828,6 +833,9 @@
 				1811933B1F59113A00B960F4 /* RegistViewController.xib */,
 				1852D17A1F5EA176000E1844 /* userModel.h */,
 				1852D17B1F5EA176000E1844 /* userModel.m */,
+				180B25AA1F98A8E500DEA5A8 /* XieYiViewController.h */,
+				180B25AB1F98A8E500DEA5A8 /* XieYiViewController.m */,
+				180B25AC1F98A8E500DEA5A8 /* XieYiViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -2101,6 +2109,7 @@
 				468176911CB4E29000331D64 /* LaunchScreen.storyboard in Resources */,
 				1811930F1F56575E00B960F4 /* OwnerViewController.xib in Resources */,
 				181193071F5653B300B960F4 /* MBProgressHUD.bundle in Resources */,
+				180B25AE1F98A8E600DEA5A8 /* XieYiViewController.xib in Resources */,
 				1852D1E01F6130B0000E1844 /* MJRefresh.bundle in Resources */,
 				181192F11F55456300B960F4 /* MineTableViewCell.xib in Resources */,
 				181192EC1F53FDEE00B960F4 /* ProductTableViewCell.xib in Resources */,
@@ -2313,6 +2322,7 @@
 				188054AF1F346192009E77F4 /* UIProgressView+AFNetworking.m in Sources */,
 				18A5F5241F345A2A00F635AE /* RCDLiveMessageModel.m in Sources */,
 				180B2FF01F3AAA6C00B4A792 /* AppDelegate.m in Sources */,
+				180B25AD1F98A8E600DEA5A8 /* XieYiViewController.m in Sources */,
 				181193681F5A978100B960F4 /* XJAVPlayer.m in Sources */,
 				180B30C01F3C3A3E00B4A792 /* buttonView.m in Sources */,
 				180B31021F459C1B00B4A792 /* DetailViewController.m in Sources */,

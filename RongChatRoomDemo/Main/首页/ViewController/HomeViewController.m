@@ -174,7 +174,7 @@
         [MBProgressHUD hideHUD];
         
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-//        NSLog(@"1......%@",dict);
+        NSLog(@"1......%@",dict);
         if ([dict[@"state"] isEqualToString:@"0"]) {
             [MBProgressHUD showError:dict[@"msg"]];
         }else{
@@ -191,7 +191,7 @@
         }
 
     } failure:^(NSError *error) {
-        
+        NSLog(@"轮播图......%@",error.description);
         [MBProgressHUD hideHUD];
         
         

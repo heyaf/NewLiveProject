@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XieYiViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中思财经用户服务协议" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czW-YR-d5e">
+                    <rect key="frame" x="64" y="24" width="241" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="x3S-Jy-dV8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VY6-vD-hK7">
+                    <rect key="frame" x="10" y="20" width="44" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Ant-ER-1b3"/>
+                        <constraint firstAttribute="width" constant="44" id="Gah-LQ-kpZ"/>
+                    </constraints>
+                    <state key="normal" title="Button" backgroundImage="prev"/>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bqn-J7-ZHG">
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xXz-Jv-Nqg">
+                            <rect key="frame" x="10" y="10" width="355" height="583"/>
+                            <color key="backgroundColor" red="0.94893640279769897" green="0.94907277822494507" blue="0.94890671968460083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <mutableString key="text">服务条款本协议是中思财经网站(以下简称中思财经或“本网站”)与网站使用人（以下简称“用户”或“您”）所达成的协议。为使用本网站的服务，您应当阅读并遵守本《用户服务协议》（以下简称“本协议”）。请您成为本网站的注册用户以前，务必审慎阅读、充分理解各条款内容，特别是免除或者限制责任的条款、管辖与法律适用条款，以及开通或使用某项服务的单独协议。限制、免责条款可能以黑体加粗或加下划线的形式提示您重点注意。您使用本网站的服务即视为您已仔细阅读并充分了解前述协议的内容，并同意接受上述协议的约束。如果您未满18周岁，请在法定监护人的陪同下阅读本协议。本网站禁止在校学生开展任何涉及到现金、货币等方面的交易。 一、个人资料当您在本网站进行用户注册、参加论坛等各种活动，或者在使用本网站特定服务时，本网站可能会通过注册表格等形式要求您提供一些个人资料。这些资料可能包括：1.个人识别资料（姓名、性别、年龄、身份证号码等）2.个人背景（职业、教育程度、家庭及个人收入状况、征信记录等）3.个人经历（个人职业经历、社会履历等）特定情形下，需要您按照本网站的要求提供所需个人资料后才能继续使用本网站的全部或部分服务，请您务必按照要求提供个人资料。否则，可能无法继续使用本网站的全部或部分服务。在前述情形下，本网站会提前向您提醒并说明。如果您提供的信息错误或者不准确，由此产生的责任由您自行承担。2、用户信息的保护与使用本网站将对您所提供的资料进行严格的管理及保护，本网站将使用相应的技术，防止您的个人资料丢失、被盗用或遭篡改。这些安全措施包括向其它服务器备份数据和对用户密码加密。尽管我们有这些安全措施，但请注意在因特网上不存在“完善的安全措施”。尊重用户个人隐私是中思财经的基本政策，中思财经不会在未经合法用户授权时向第三方公开、提供、出售、出租、分享和交易用户的注册资料及其它保存在本网站中的非公开内容，但以下情况除外：1.国家有关法律法规的强制性要求。2.维护中思财经的合法权益所必须。3.在紧急情况下为维护用户个人和社会大众的生命财产安全所必须。4.用户对自身账户及信息保密不当，导致用户非公开信息泄露。  3、用户权利您对于自己的个人资料享有以下的权利：1.随时查询及请求阅览；2.随时请求补充或更正；3.请求停止电脑处理及利用。针对以上权利，本网站为您提供相关服务，您可以发送电子邮件至：zhongsikeji@126.com4、服务条款的生效与变更您使用本网站的服务即视为您已阅读本协议并接受本协议的约束。本网站有权在必要时修改本协议条款。您可以在相关服务页面查阅最新版本的协议条款。本协议条款变更后，如果您继续使用本网站提供的软件或服务，即视为您已接受修改后的协议。如果您不接受修改后的协议，应当停止使用本网站提供的软件或服务。5、Cookiescookies是少量的数据，在您未拒绝接受cookies的情况下，cookies将被发送到您的浏览器，并储存在您的计算机硬盘。我们使用cookies储存您访问我们网站的相关数据，在您访问或再次访问我们的网站时,我们能识别您的身份，并通过分析数据为您提供更好更多的服务。您有权选择接受或拒绝接受cookies。您可以通过修改浏览器的设置以拒绝接受cookies，但是我们需要提醒您，因为您拒绝接受cookies，您可能无法使用依赖于cookies的我们网站的部分功能6、用户违法行为1.您在使用本网站服务时须遵守法律法规，不得利用本网站服务从事任何违法违规行为，包括但不限于：（1）发布、传送、传播、储存危害国家安全统一、破坏社会稳定、违反公序良俗、侮辱、诽谤、淫秽、暴力以及任何违反国家法律法规的内容；（2）发布、传送、传播、储存侵害他人知识产权、商业秘密等合法权利的内容；（3）虚构事实、隐瞒真相以误导、欺骗他人；（4）发布、传送、传播广告信息及垃圾信息；（5）其他法律法规禁止的行为。2.如果您违反本条之约定，有权国家机关可能会对您提起诉讼、罚款或采取其他制裁措施，并要求本网站给予协助或支持，由此产生的责任均应当由您自行承担。造成损害的，您应依法予以赔偿，本网站不承担任何责任。3.如果在您使用本网站服务时违反本条约定，本网站有权进行独立判断并采取技术手段予以删除、屏蔽或断开链接。同时，本网站有权视您的行为性质，采取包括但不限于暂停或终止服务，限制、冻结或终止注册账号等，追究法律责任等措施。4.如果您违反本条约定，导致任何第三方损害的，您应当独立承担责任；导致本网站遭受损失的，您也应当一并赔偿。7、合法传播和第三方投诉处理您通过本服务发送或传播的内容（包括但不限于网页、文字、图片、音频、视频、图表等）均由您自行承担责任。您发送或传播的内容应有合法来源，相关内容为您所有或您已获得权利人的授权。您同意本网站可为履行本协议或提供本服务的目的而使用您发送或传播的内容。如果本网站收到权利人通知，主张您发送或传播的内容侵犯其相关权利的，您同意本网站有权进行独立判断并采取删除、屏蔽或断开链接等措施。您使用本服务时不得违反国家法律法规、侵害他人合法权益。您理解并同意，如您被他人投诉侵权或您投诉他人侵权，本网站有权将争议中相关方的主体、联系方式、投诉相关内容等必要信息提供给其他争议方或相关部门，以便及时解决投诉纠纷，保护他人合法权益。8、第三方服务您在本网站平台上使用第三方提供的产品或服务时，除遵守本协议约定外，还应遵守第三方的用户协议。您已知悉并了解，本网站平台上所链接或嵌入的第三方服务并非本网站提供，如果您对第三方服务有异议，可以直接与第三方联系，也可以向本网站反馈。本网站将协助您联系第三方并转达您的需求和意见。您确认并同意，在您使用第三方服务时，除非适用法律有明确规定，您和第三方的纠纷应由您和第三方解决。根据适用法律的规定，本网站需要承担责任的，本网站和第三方对可能出现的纠纷在法律规定和约定的范围内各自承担责任。9、免责声明中思财经不保证为向用户提供便利而设置的外部链接的准确性和完整性，同时，对于该等外部链接指向的不由中思财经实际控制的任何网页上的内容，本网不承担任何责任。中思财经对因交易所、卫星传输线路、电信部门及网络服务提供商等任何原因造成的信息传递异常情况所至后果不承担法律责任，但有义务积极协助交易所、电信部门、网络服务提供商使之恢复正常。因地震、台风、战争、罢工、政府行为、瘟疫、爆发性和流行性传染病或其他重大疫情、非因各方原因造成的火灾、基础电信网络中断造成的及其它各方不能预见并且对其发生后果不能预防或避免的不可抗力原因，致使相关服务中断，中思财经不承担由此产生的损失，但有义务及时通知服务中断原因，并积极协助相关部门处理善后，避免用户损失扩大。任何由于计算机问题、黑客攻击、计算机病毒侵入或发作、因政府管制而造成的暂时性关闭等影响网络正常经营之不可抗力而造成的个人资料泄露、丢失、被盗用或被篡改等造成的损失，本网不承担任何责任。由于用户使用第三方服务而导致的损失或产生的任何争议与中思财经无关。因违反服务条款造成的损失，本网站不承担任何责任。10、内容所有权中思财经定义的内容包括但不限于：文字、软件、声音、图片、录象、图表、广告中的全部内容；电子邮件的全部内容;中思财经为用户提供的其他信息。所有这些内容受著作权法、商标法及其他相关法律法规的保护。所以，用户只能在中思财经或广告商授权下才能使用这些内容，而不能擅自复制、再造这些内容，或创造与内容有关的派生产品。中思财经所有的文章著作权归原文作者或中思财经所有，任何人需要转载中思财经的文章，必须征得原文作者或中思财经授权。11、法律声明河南省中思科技有限公司及中思财经仅限提供金融数据行情、财经资讯服务，不提供任何交易开户或代客理财服务。任何假冒中思科技有限公司及中思财经从事非法营利活动，河南省中思科技有限公司将依法追究其法律责任。12、其他如果您对本条款中隐私保护措施以及您在使用中的问题有任何意见和建议请和我们联系。zhongsikeji@126.com</mutableString>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.94893640279769897" green="0.94907277822494507" blue="0.94890671968460083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="xXz-Jv-Nqg" firstAttribute="leading" secondItem="Bqn-J7-ZHG" secondAttribute="leading" constant="10" id="CXJ-9r-z3k"/>
+                        <constraint firstAttribute="bottom" secondItem="xXz-Jv-Nqg" secondAttribute="bottom" constant="10" id="i1G-cS-xWn"/>
+                        <constraint firstItem="xXz-Jv-Nqg" firstAttribute="top" secondItem="Bqn-J7-ZHG" secondAttribute="top" constant="10" id="mio-lR-IFz"/>
+                        <constraint firstAttribute="trailing" secondItem="xXz-Jv-Nqg" secondAttribute="trailing" constant="10" id="ryK-Cq-lAg"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="VY6-vD-hK7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="2Rd-tE-Kuv"/>
+                <constraint firstAttribute="trailing" secondItem="czW-YR-d5e" secondAttribute="trailing" constant="70" id="6RN-CG-9Vq"/>
+                <constraint firstAttribute="bottom" secondItem="Bqn-J7-ZHG" secondAttribute="bottom" id="6mj-9R-z4Q"/>
+                <constraint firstItem="Bqn-J7-ZHG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7af-hK-cwQ"/>
+                <constraint firstItem="czW-YR-d5e" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="24" id="8nV-k2-rTo"/>
+                <constraint firstAttribute="trailing" secondItem="Bqn-J7-ZHG" secondAttribute="trailing" id="F5P-rN-jgR"/>
+                <constraint firstItem="Bqn-J7-ZHG" firstAttribute="top" secondItem="VY6-vD-hK7" secondAttribute="bottom" constant="14" id="KNW-Yg-rMV"/>
+                <constraint firstItem="VY6-vD-hK7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="ef0-Ey-bLO"/>
+                <constraint firstItem="czW-YR-d5e" firstAttribute="leading" secondItem="VY6-vD-hK7" secondAttribute="trailing" constant="10" id="hm2-Lq-Csp"/>
+            </constraints>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="prev" width="30" height="30"/>
+    </resources>
+</document>

@@ -119,7 +119,7 @@
                         @"pageSize":@"10"
                         };
     [[HttpRequest sharedInstance] postWithURLString:VideoListUrl parameters:dic success:^(id responseObject) {
-        [MBProgressHUD hideHUD];
+        [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         
         NSDictionary *dict = responseObject;
         
@@ -227,7 +227,7 @@
         cell=[[[NSBundle mainBundle]loadNibNamed:@"HomeTableViewCell" owner:self options:nil] lastObject];
     }
     
-    cell.titleLB.text = videomodel.videoName;
+    cell.titleLB.text = videomodel.title;
     cell.numberLB.text = videomodel.count;
     
     cell.dateLB.text = videomodel.date;

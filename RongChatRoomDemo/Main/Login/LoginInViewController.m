@@ -159,7 +159,18 @@
     }];
     
 //    [self otherLogSubviews];
-    
+    CGFloat btnW = 60;
+    CGFloat btnH = 30;
+    _countBtn = [[UIButton alloc] initWithFrame:CGRectMake(KScreenW - btnW - 24, btnH, btnW, btnH)];
+    [_countBtn addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
+    [_countBtn setTitle:@"跳过" forState:UIControlStateNormal];
+    _countBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+    [_countBtn setTitleColor:RGB(69, 163, 229) forState:UIControlStateNormal];
+    _countBtn.backgroundColor = [UIColor colorWithRed:38 /255.0 green:38 /255.0 blue:38 /255.0 alpha:0.6];
+    _countBtn.layer.cornerRadius = 4;
+    [self.view addSubview:_countBtn];
+
+
     
     UITapGestureRecognizer *tapGr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
     tapGr.cancelsTouchesInView = NO;
@@ -175,7 +186,7 @@
     label.textAlignment=NSTextAlignmentCenter;
     label.textColor=KWhiteColor;
     label.font = [UIFont systemFontOfSize:14.0];
-    [self.view addSubview:label];
+    //[self.view addSubview:label];
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(_LoginBtn).with.offset(40+75);
         make.left.offset(50);
@@ -187,7 +198,7 @@
     [QQbtn setImage:[UIImage imageNamed:@"QQ"] forState:0];
     [QQbtn addTarget:self action:@selector(tiredLoginin) forControlEvents:UIControlEventTouchUpInside];
 
-    [self.view addSubview:QQbtn];
+    //[self.view addSubview:QQbtn];
     [QQbtn mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.top.mas_equalTo(label).offset(20+29);
@@ -200,7 +211,7 @@
     [WXbtn setImage:[UIImage imageNamed:@"wechat"] forState:0];
     [WXbtn addTarget:self action:@selector(tiredLoginin) forControlEvents:UIControlEventTouchUpInside];
 
-    [self.view addSubview:WXbtn];
+    //[self.view addSubview:WXbtn];
     [WXbtn mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.mas_equalTo(label).offset(20+29);
@@ -213,7 +224,7 @@
     [WBbtn setImage:[UIImage imageNamed:@"icon_weibo"] forState:0];
     [WBbtn addTarget:self action:@selector(tiredLoginin) forControlEvents:UIControlEventTouchUpInside];
 
-    [self.view addSubview:WBbtn];
+    //[self.view addSubview:WBbtn];
     [WBbtn mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.mas_equalTo(label).offset(20+29);
@@ -222,18 +233,8 @@
         make.height.offset(44);
     }];
     
-    CGFloat btnW = 60;
-    CGFloat btnH = 30;
-    _countBtn = [[UIButton alloc] initWithFrame:CGRectMake(KScreenW - btnW - 24, btnH, btnW, btnH)];
-    [_countBtn addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
-    [_countBtn setTitle:@"跳过" forState:UIControlStateNormal];
-    _countBtn.titleLabel.font = [UIFont systemFontOfSize:15];
-    [_countBtn setTitleColor:RGB(69, 163, 229) forState:UIControlStateNormal];
-    _countBtn.backgroundColor = [UIColor colorWithRed:38 /255.0 green:38 /255.0 blue:38 /255.0 alpha:0.6];
-    _countBtn.layer.cornerRadius = 4;
     
 //    [self addSubview:_adView];
-    [self.view addSubview:_countBtn];
 
     
 }
@@ -289,13 +290,16 @@
         NSDictionary *dict = responseObject;
         NSString *code = [NSString stringWithFormat:@"%@",dict[@"state"]];
 
-        
+        ASLog(@"登陆页%@",dict);
         if ([code isEqualToString:@"1"]) {
             [MBProgressHUD showSuccess:@"操作成功"];
             
             [self dismiss];
             
             [self saveuserinfoWithdic:dict[@"user"]];
+            
+        
+            NSLog(@"----个人信息-%@",[kApp getusermodel]);
             
             if (self.myRegistblock) {
                 _myRegistblock();

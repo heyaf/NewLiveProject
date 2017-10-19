@@ -42,6 +42,8 @@
 
     if (!self.submitbtn.selected) {
         [kApp userToZero];
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:@"" forKey:@"Token"];
         [self.owentableview reloadData];
         if (self.changeblock) {
             _changeblock();
@@ -138,7 +140,9 @@
 - (void)imagePicker:(LDImagePicker *)imagePicker didFinished:(UIImage *)editedImage{
 
     userModel *model =[kApp getusermodel];
-
+    if (model.Id.length < 1) {
+        [kApp showMessage:@"提示" contentStr:@"请先登录"];
+    }else{
     
     NSData *data = UIImageJPEGRepresentation([UIImage cropImage:editedImage scale:CGSizeMake(0.1, 0.1)] , 0.1);
     
@@ -167,7 +171,7 @@
             NSDictionary *parement =@{@"id":model.Id,
                                       @"picture":_Imageurl
                                       };
-            NSLog(@"111111......%@",_Imageurl);
+            NSLog(@"上传图片......%@",_Imageurl);
 
             [[HttpRequest sharedInstance] postWithURLString:Updateusers parameters:parement success:^(id responseObject) {
                 [MBProgressHUD hideHUD];
@@ -182,7 +186,7 @@
                     [self saveuserinfoWithdic:model angStr:_Imageurl];
                     
                     
-//                    NSLog(@"111111......%@",[kApp getusermodel]);
+                    NSLog(@"上传图片......%@",[kApp getusermodel]);
                     
                 }else
                 {
@@ -216,11 +220,12 @@
     } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
         [MBProgressHUD hideHUD];
         [MBProgressHUD showError:@"操作失败"];
+        NSLog(@"上传图片shibai%@",error.description);
     }];
    
     
     
-    
+    }
 }
 
 -(void)saveuserinfoWithdic:(userModel *)model angStr:(NSString *)picStr{

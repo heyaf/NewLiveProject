@@ -105,6 +105,9 @@
 }
 -(void)makeSureBtn{
     userModel *user = [kApp getusermodel];
+    if (user.Id.length < 1) {
+        [kApp showMessage:@"提示" contentStr:@"请先登录"];
+    }else{
     if (self.PassText.text.length>0 && self.TelText.text.length>0) {
         NSDictionary *dict =@{@"newPassword":self.PassText.text,
                               @"id":user.Id,
@@ -144,7 +147,7 @@
         [kApp showMessage:@"提醒" contentStr:@"请填写新密码"];
     }
 
-
+    }
 }
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {

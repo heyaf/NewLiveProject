@@ -204,7 +204,7 @@
 }
 -(void)btnClickedForchange:(id)sender{
     
-    MBProgressHUD * hud1 = [MBProgressHUD showHUDAddedTo: [UIApplication sharedApplication].keyWindow animated:YES];
+//    MBProgressHUD * hud1 = [MBProgressHUD showHUDAddedTo: [UIApplication sharedApplication].keyWindow animated:YES];
 //    [[[UIApplication sharedApplication].windows lastObject] addSubview:hud1];
     
 

@@ -59,6 +59,7 @@
     NSString *liveTime;
     NSString *headPicUrl;
     NSString *companyId;
+    NSString *countNum;
 
 }
 @property (nonatomic,strong) UICollectionView *collectionview;
@@ -171,7 +172,8 @@
     [MBProgressHUD showMessage:@"正在加载..."];
     [[HttpRequest sharedInstance] getWithURLString:LiveListUrl parameters:nil success:^(id responseObject) {
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-//        NSLog(@"...%@",dict);
+        NSLog(@"直播列表数据..__________________________.%@",dict);
+        
          [MBProgressHUD hideAllHUDsForView:[[UIApplication sharedApplication].windows lastObject] animated:YES];
         if ([dict[@"state"] isEqualToString:@"0"]) {
             UIView *headerview = [[UIView alloc] initWithFrame:CGRectMake(0, 64, KScreenW, 250)];
@@ -226,9 +228,11 @@
         NSDictionary *mydict = responseObject;
         
         
-        if ([mydict[@"state"] isEqualToString:@"1"]) {
-            _numberLB.text = mydict[@"onlineNumber"];
-        }
+        
+            _numberLB.text = [NSString stringWithFormat:@"%@人观看",mydict[@"onlineNumber"]];
+            countNum = [NSString stringWithFormat:@"%@",mydict[@"onlineNumber"]];
+        
+        ASLog(@"直播观看人数%@",mydict);
         
     } failure:^(NSError *error) {
         
@@ -250,7 +254,6 @@
     [headerview addGestureRecognizer:tapGesturRecognizer];
     
     UIImageView *liveimV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, KScreenW, 210)];
-    NSLog(@"000000%@",headPicUrl);
     if (headPicUrl.length>0) {
         [liveimV sd_setImageWithURL:[NSURL URLWithString:headPicUrl]];
     }else{
@@ -285,6 +288,7 @@
     dataLB.text = [NSString stringWithFormat:@"%@",liveTime];
     dataLB.textColor = RGB(153, 153, 153);
     dataLB.font = [UIFont systemFontOfSize:12.0];
+    dataLB = _numberLB;
     [headerview addSubview:dataLB];
     
     UILabel *numberLB = [[UILabel alloc] initWithFrame:CGRectMake(KScreenW-100, 215, 100, 20)];
@@ -292,7 +296,6 @@
     numberLB.textColor = RGB(153, 153, 153);
     numberLB.font = [UIFont systemFontOfSize:12];
     numberLB.textAlignment = NSTextAlignmentCenter;
-    numberLB=_numberLB;
     [headerview addSubview:numberLB];
 }
 -(void)tapAction:(id)tap
@@ -300,14 +303,14 @@
 {
     
     
-    [self enterChatRoom];
+//    [self enterChatRoom];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *token = [userDefaults stringForKey:@"Token"];
     NSString *Name = [userDefaults stringForKey:@"Name"];
     NSString *selfID = [userDefaults stringForKey:@"selfID"];
-    
+    AppDelegate *delegate =kApp;
+
     if (token.length>0) {
-        AppDelegate *delegate =kApp;
         delegate.token=token;
         delegate.selfName=Name;
         delegate.selfID=selfID;
@@ -316,7 +319,15 @@
         [self enterChatRoom];
     }else{
         userModel *usermodel = [kApp getusermodel];
-        [self RCIMgetTokenWithName:usermodel.niceName AndID:@"12545646546456456789454546546544"];
+        
+        NSString *appID = [NSString stringWithFormat:@"%@%i",[self getNowDate],[self getRandomNumber:1 to:1000]];
+        if (usermodel.Id.length < 1) {
+
+            [self RCIMgetTokenWithName:@"游客" AndID:appID];
+        }else{
+            
+        [self RCIMgetTokenWithName:usermodel.niceName AndID:appID];
+        }
     }
 
     
@@ -478,7 +489,7 @@
 -(void)getData{
 
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://192.168.0.250:6660/liveStream/getPageUrl?id=6" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+    [manager GET:@"http://1.192.218.167:6660/liveStream/getPageUrl?id=6" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSLog(@"....%@",responseObject);
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         NSLog(@"失败.......%@",[error description]);
@@ -501,32 +512,70 @@
             chatRoomVC.targetId = chatRoomId;
             chatRoomVC.contentURL = watchUrl;
             chatRoomVC.isScreenVertical = _isScreenVertical;
+            
+            
+            VideoModel *videomodel = [[VideoModel alloc] init];
+            videomodel.title = titleStr;
+            videomodel.content = contentStr;
+            videomodel.count = countNum;
+            chatRoomVC.videomodel = videomodel;
+            
+            
             [self.navigationController pushViewController:chatRoomVC animated:NO];
             
         });
     } error:^(RCConnectErrorCode status) {
         dispatch_async(dispatch_get_main_queue(), ^{
+
+            [kApp showMessage:@"提示" contentStr:@"获取信息失败，请稍后重试"];
+
            
         });
         
     } tokenIncorrect:^{
         dispatch_async(dispatch_get_main_queue(), ^{
-          
+            userModel *usermodel = [kApp getusermodel];
+            
+            NSString *appID = [NSString stringWithFormat:@"%@%i",[self getNowDate],[self getRandomNumber:1 to:1000]];
+            if (usermodel.Id.length < 1) {
+                
+                [self RCIMgetTokenWithName:@"游客" AndID:appID];
+            }else{
+                
+                [self RCIMgetTokenWithName:usermodel.niceName AndID:appID];
+            }
+
         });
     }];
     
-    //    RCDLiveChatRoomViewController *chatRoomVC = [[RCDLiveChatRoomViewController alloc]init];
-    //    chatRoomVC.conversationType = ConversationType_CHATROOM;
-    //    chatRoomVC.targetId = @"ChatRoom01";
-    //    chatRoomVC.contentURL = @"rtmp://live.hkstv.hk.lxdns.com/live/hks";
-    //    chatRoomVC.isScreenVertical = _isScreenVertical;
-    //
-    //    [self.navigationController pushViewController:chatRoomVC animated:NO];
-}
+   }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    
+}
+#pragma mark -----获取当前日期和随机数------
+-(NSString *)getNowDate{
+    
+    // 获取代表公历的NSCalendar对象
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    // 获取当前日期
+    NSDate* dt = [NSDate date];
+    // 定义一个时间字段的旗标，指定将会获取指定年、月、日、时、分、秒的信息
+    unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitWeekday;
+    // 获取不同时间字段的信息
+    NSDateComponents* comp = [gregorian components: unitFlags fromDate:dt];
+    NSString *nowDate = [NSString stringWithFormat:@"%ld%ld%ld%ld%ld%ld",comp.year,comp.month,comp.day,comp.hour,comp.minute,comp.second];
+    
+    return nowDate;
+    
+}
+-(int)getRandomNumber:(int)from to:(int)to
+
+{
+    
+    return (int)(from + (arc4random() % (to-from + 1)));
     
 }
 

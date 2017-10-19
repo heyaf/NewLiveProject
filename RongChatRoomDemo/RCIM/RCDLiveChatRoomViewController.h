@@ -10,6 +10,7 @@
 #import "RCDLiveMessageBaseCell.h"
 #import "RCDLiveMessageModel.h"
 #import "RCDLiveInputBar.h"
+#import "VideoModel.h"
 
 ///输入栏扩展输入的唯一标示
 #define PLUGIN_BOARD_ITEM_ALBUM_TAG    1001
@@ -78,5 +79,8 @@
  -1表示不获取任何历史消息，0表示不特殊设置而使用SDK默认的设置（默认为获取10条），0<messageCount<=50为具体获取的消息数量,最大值为50。
  */
 @property(nonatomic, assign) int defaultHistoryMessageCountOfChatRoom;
+
+
+@property(nonatomic,strong) VideoModel *videomodel;
 
 @end
