@@ -165,8 +165,7 @@
     }else{
         NSDictionary *dic =@{@"userType":@"1",
                              @"userId":user.Id,
-                             @"vedioId":_mymodel.Id
-                             
+                             @"vedioId":_mymodel.Id                             
                              };
 //        NSLog(@"-----------------%@",dic);
         NSString *utf = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];

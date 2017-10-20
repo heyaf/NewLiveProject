@@ -21,6 +21,11 @@
 @property (nonatomic,strong) NSString *token;
 @property (nonatomic,strong) NSString *selfName;
 
+@property (nonatomic,strong) NSString *SectionID;
+
+@property (nonatomic,strong) NSString *userPhone;
+@property (nonatomic,strong) NSString *userPassWord;
+
 
 @end
 

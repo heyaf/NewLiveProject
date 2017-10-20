@@ -7,6 +7,7 @@
 //
 
 #import "RegistViewController.h"
+#import "XieYiViewController.h"
 #import <SMS_SDK/SMSSDK.h>
 //#import "ZXTextField.h"
 
@@ -113,12 +114,39 @@
         
     }];
     
-//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [btn setTintColor:[UIColor whiteColor]];
-//    [btn setBackgroundColor:[UIColor whiteColor]];
-//    [btn setTitle:@"验证码" forState:UIControlStateNormal];
-//    [btn setTitleColor:RGB(69, 163, 229) forState:UIControlStateNormal];
-//    [btn addTarget:self action:@selector(sendMessage) forControlEvents:UIControlEventTouchUpInside];
+    UILabel *hintLabel=[[UILabel alloc]initWithFrame:CGRectMake(30, 120, 320, 20)];
+    hintLabel.numberOfLines=0;
+    hintLabel.font = [UIFont systemFontOfSize:12.0f];
+    [self.view addSubview:hintLabel];
+    [hintLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(textfild).with.offset(55);
+        make.left.mas_equalTo(textfild);
+        make.right.mas_equalTo(textfild);
+        make.height.offset(30);
+    }];
+    
+    NSMutableAttributedString *hintString=[[NSMutableAttributedString alloc]initWithString:@"注册即表示您已同意《中思财经用户服务协议》"];
+    //获取要调整颜色的文字位置,调整颜色
+    
+    
+    NSRange range2=[[hintString string]rangeOfString:@"《中思财经用户服务协议》"];
+    [hintString addAttribute:NSForegroundColorAttributeName value:RGB(69, 163, 229) range:range2];
+    
+    hintLabel.attributedText=hintString;
+    
+
+    UIButton *XieyiBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [XieyiBtn addTarget:self action:@selector(XieyiBtn) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:XieyiBtn];
+    [XieyiBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(hintLabel);
+        make.left.mas_equalTo(hintLabel);
+        make.right.mas_equalTo(hintLabel);
+        make.height.mas_equalTo(hintLabel);
+
+    }];
+    
+    
     [self.view addSubview:self.countdownButton];
     [_countdownButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(textfild);
@@ -141,13 +169,23 @@
 //    _LoginBtn.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.15];
     [self.view addSubview:_LoginBtn];
     [_LoginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(textfild).with.offset(40+50);
+        make.top.mas_equalTo(textfild).with.offset(40+20+50);
         make.left.offset(57.5);
         make.right.offset(-57.5);
         make.height.offset(40.0);
     }];
 
 }
+-(void)XieyiBtn{
+
+    XieYiViewController *xieyiVC = [[XieYiViewController alloc] init];
+    [self presentViewController:xieyiVC animated:YES completion:nil];
+    
+}
+
+
+
+
 - (IBAction)BtnClicked:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }

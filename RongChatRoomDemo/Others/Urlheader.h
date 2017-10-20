@@ -109,8 +109,10 @@
 //获取国籍图片
 #define CountryPicUrl @"http://1.192.218.167.6661/country/%@.png"
 
-
-
+//退出登录
+#define QuartUrl @"http://1.192.218.167.6660/user/loginOutForApp"
+//通过SecTion登录
+#define SectionLoginUrl @"http://1.192.218.167.6660/user/getUserByUUidForApp"
 
 
 

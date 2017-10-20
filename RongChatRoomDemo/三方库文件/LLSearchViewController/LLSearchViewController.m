@@ -27,7 +27,7 @@
 - (NSMutableArray *)hotArray
 {
     if (!_hotArray) {
-        self.hotArray = [NSMutableArray arrayWithObjects:@"悦诗风吟焖鸡米饭去那啊", @"洗面奶", @"兰芝", @"面膜", @"篮球鞋", @"阿迪达斯", @"耐克", @"运动鞋", nil];
+        self.hotArray = [NSMutableArray arrayWithObjects:@"特朗普", @"投机情绪", @"美联储", @"欧洲央行", @"中国GDP", @"外汇", @"黄金", @"原油库存", nil];
     }
     return _hotArray;
 }

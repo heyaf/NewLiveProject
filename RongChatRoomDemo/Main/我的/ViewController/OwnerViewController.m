@@ -36,25 +36,53 @@
 -(void)viewWillAppear:(BOOL)animated{
 
     self.navigationController.automaticallyAdjustsScrollViewInsets = NO;
+    if (kApp.SectionID.length<=0) {
+        self.submitbtn.selected = YES;
+
+    }else{
+    
+        self.submitbtn.selected = NO;
+    }
     
 }
 - (IBAction)submitBtn:(id)sender {
 
     if (!self.submitbtn.selected) {
-        [kApp userToZero];
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        [userDefaults setObject:@"" forKey:@"Token"];
-        [self.owentableview reloadData];
-        if (self.changeblock) {
-            _changeblock();
-        }
+        NSDictionary*dic =@{@"uuid":kApp.SectionID,
+                            
+                            };
+        [MBProgressHUD showMessage:@"请稍候..."];
         
-        self.submitbtn.selected = YES;
-       [self.submitbtn setTintColor:KGrayColor];
-        self.submitbtn.backgroundColor = KGrayColor;
+        [[HttpRequest sharedInstance] postWithURLString:QuartUrl parameters:dic success:^(id responseObject) {
+            [MBProgressHUD hideHUD];
+            
+            [kApp userToZero];
+            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+            [userDefaults setObject:@"" forKey:@"Token"];
+            [self.owentableview reloadData];
+            if (self.changeblock) {
+                _changeblock();
+            }
+            
+            self.submitbtn.selected = YES;
+            [self.submitbtn setTintColor:KGrayColor];
+            self.submitbtn.backgroundColor = KGrayColor;
+            
+            
+            [MBProgressHUD showSuccess:@"操作成功"];
+
+            kApp.SectionID = nil;
+            
+            
+            
+        } failure:^(NSError *error) {
+            
+            [MBProgressHUD showError:@"出错了，请重试"];
+            
+            
+        }];
+
         
-        
-        [MBProgressHUD showSuccess:@"操作成功"];
     }
     
 }
@@ -169,7 +197,7 @@
         if ([dicJson[@"state"] isEqualToString:@"1"]) {
             _Imageurl = dicJson[@"data"];
             NSDictionary *parement =@{@"id":model.Id,
-                                      @"picture":_Imageurl
+                                      @"picture":_Imageurl,
                                       };
             NSLog(@"上传图片......%@",_Imageurl);
 

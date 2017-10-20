@@ -9,6 +9,8 @@
 #import "XieYiViewController.h"
 
 @interface XieYiViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *BackBtn;
+@property (weak, nonatomic) IBOutlet UITextView *contentTextView;
 
 @end
 
@@ -17,6 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+- (IBAction)BackBtn:(id)sender {
+    NSLog(@"............");
+ [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

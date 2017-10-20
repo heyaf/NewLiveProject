@@ -46,9 +46,41 @@
     
     userModel *usermodel = [self getusermodel];
     
-    if (usermodel.Id.length<=0) {
+    if (kApp.SectionID.length<=0||usermodel.Id.length<=0) {
         
         [self presentLoginVC];
+    }else{
+        ASLog(@"通过SECTION登录%@",kApp.SectionID);
+        //通过Section登录
+        NSDictionary *dic =@{@"uuid":kApp.SectionID};
+        [[HttpRequest sharedInstance] postWithURLString:SectionLoginUrl parameters:dic success:^(id responseObject) {
+            
+            NSDictionary *dict = responseObject;
+            NSString *code = [NSString stringWithFormat:@"%@",dict[@"state"]];
+            
+            ASLog(@"登陆页%@",dict);
+            if ([code isEqualToString:@"1"]) {
+                
+                
+                
+                [self saveuserinfoWithdic:dict[@"user"]];
+
+                
+                
+                NSLog(@"----个人信息-%@",[kApp getusermodel]);
+            }else{
+                [self presentLoginVC];
+            
+            }
+            
+        } failure:^(NSError *error) {
+            
+            [MBProgressHUD showError:@"出错了，请重试"];
+            
+            
+        }];
+
+    
     }
     
 }
@@ -108,6 +140,35 @@
 
     
 }
+         -(void)saveuserinfoWithdic:(NSDictionary *)dic{
+             
+             
+             
+             userModel *usermodel = [[userModel alloc] init];
+             usermodel.Id = dic[@"id"];
+             usermodel.niceName = dic[@"niceName"];
+             usermodel.phone = dic[@"phone"];
+             usermodel.state = dic[@"state"];
+             usermodel.loginDate = dic[@"loginDate"];
+             usermodel.picture = dic[@"picture"];
+             usermodel.password = dic[@"password"];
+             usermodel.createTime = dic[@"createTime"];
+             
+             //    [kUserDefaults setObject:usermodel forKey:kUserinfoKey];
+             // 创建归档时所需的data 对象.
+             NSMutableData *data = [NSMutableData data];
+             // 归档类.
+             NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+             // 开始归档（@"model" 是key值，也就是通过这个标识来找到写入的对象）.
+             [archiver encodeObject:usermodel forKey:kUserinfoKey];
+             // 归档结束.
+             [archiver finishEncoding];
+             // 写入本地（@"weather" 是写入的文件名）.
+             NSString *file = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"weather"];
+             [data writeToFile:file atomically:YES];
+             
+         }
+
 
 //显示提示框
 -(void)showMessage:(NSString *)title contentStr:(NSString *)content{

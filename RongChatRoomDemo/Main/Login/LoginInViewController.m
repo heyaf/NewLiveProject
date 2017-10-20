@@ -297,13 +297,18 @@
             [self dismiss];
             
             [self saveuserinfoWithdic:dict[@"user"]];
+            kApp.SectionID = dict[@"uuid"];
             
         
-            NSLog(@"----个人信息-%@",[kApp getusermodel]);
+            NSLog(@"----个人信息-%@，%@----%@",[kApp getusermodel],kApp.SectionID,dict[@"uuid"]);
             
             if (self.myRegistblock) {
                 _myRegistblock();
             }
+            
+            //存储用户手机号和密码
+            kApp.userPhone = self.TelText.inputText.text;
+            kApp.userPassWord = self.PassText.inputText.text;
 
         }else if ([code isEqualToString:@"2"])
         {
@@ -336,30 +341,7 @@
     usermodel.picture = dic[@"picture"];
     usermodel.password = dic[@"password"];
     usermodel.createTime = dic[@"createTime"];
-//    usermodel.niceName = dic[@""];
-//    usermodel.niceName = dic[@""];
-//    usermodel.niceName = dic[@""];
-//    usermodel.niceName = dic[@""];
-//    usermodel.niceName = dic[@""];
-//    usermodel.niceName = dic[@""];
-//    usermodel.niceName = dic[@""];
-//    usermodel.niceName = dic[@""];
-//
-//    
-//    property (nonatomic, strong) NSString <Optional>*identity;
-//    @property (nonatomic, strong) NSString <Optional>*phone;
-//    @property (nonatomic, strong) NSString <Optional>*state;
-//    @property (nonatomic, strong) NSString <Optional>*loginDate;
-//    @property (nonatomic, strong) NSString <Optional>*wechat;
-//    @property (nonatomic, strong) NSString <Optional>*picture;
-//    @property (nonatomic, strong) NSString <Optional>*password;
-//    @property (nonatomic, strong) NSString <Optional>*signature;
-//    @property (nonatomic, strong) NSString <Optional>*createTime;
-//    @property (nonatomic, strong) NSString <Optional>*alterDate;
-//    @property (nonatomic, strong) NSString <Optional>*qq;
-//    @property (nonatomic, strong) NSString <Optional>*email;
-//    @property (nonatomic, strong) NSString <Optional>*name;
-//    @property (nonatomic, strong) NSString <Optional>*certification;
+
     //    [kUserDefaults setObject:usermodel forKey:kUserinfoKey];
     // 创建归档时所需的data 对象.
     NSMutableData *data = [NSMutableData data];

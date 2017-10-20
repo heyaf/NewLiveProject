@@ -12,8 +12,8 @@
 #define KScreenH ([UIScreen mainScreen].bounds.size.height)
 
 
-#define RONGCLOUD_IM_APPKEY @"lmxuhwaglz8fd"
-#define RONGCLOUD_IM_APPSECRET @"JgLoZtVAL5X"
+#define RONGCLOUD_IM_APPKEY @"z3v5yqkbz6o90"
+#define RONGCLOUD_IM_APPSECRET @"7hHYnezYqS8"
 #define userModelKEY @"saveusermodel"
 
 //#define RONGCLOUD_IM_APPKEY @"k51hidwqkeksb"
