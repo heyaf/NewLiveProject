@@ -68,7 +68,9 @@
  */
 @property(nonatomic, assign) BOOL isScreenVertical;
 @property(nonatomic, strong) NSArray *dataArr;
-@property(nonatomic,strong) UILabel *numberLB;
+
+
+@property(nonatomic,strong) UILabel *numberLB; ///<数量按钮
 
 @end
 
@@ -81,6 +83,7 @@
     UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, KScreenW, 64)];
     imageview.image = [UIImage imageNamed:@"navigationitem"];
     UILabel *titleLB = [[UILabel alloc] initWithFrame:CGRectMake(KScreenW/2-100, 30, 200, 20)];
+    
     titleLB.text = @"视频";
     titleLB.font = [UIFont systemFontOfSize:20.0];
     titleLB.textColor = KWhiteColor;

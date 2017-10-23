@@ -66,7 +66,7 @@
 #pragma mark ----登录注册------
 -(void)AddViewloginOrOut{
     
-    UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(KScreenW/2-50, 60, 100, 100)];
+    UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(KScreenW/2-50, 60, 100, 80)];
     imageview.image = IMAGE_NAMED(@"logo");
     [self.view addSubview:imageview];
     
