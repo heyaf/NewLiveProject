@@ -44,6 +44,12 @@
 @interface CompareViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic,strong) NSArray *NameArr;
+@property (nonatomic,strong) NSArray *NumberChargeArr; ///<交易手数
+
+@property (nonatomic,strong) NSArray *AllGetInArr;  ///<总收益率
+@property (nonatomic,strong) NSArray *SomegetInArr; ///<浮动收益率
+
 
 @end
 
@@ -53,7 +59,10 @@
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self.tableView registerNib:[UINib nibWithNibName:@"CompareTableViewCell" bundle:nil] forCellReuseIdentifier:@"comparecell"];
-    
+    _NameArr = @[@"何老师",@"火枪手2017",@"张小白不白",@"张老师"];
+    self.NumberChargeArr = @[@"12138",@"9527",@"5491",@"1956"];
+    self.AllGetInArr = @[@"245%",@"210%",@"163%",@"139%"];
+    self.SomegetInArr = @[@"158.0%",@"222.0%",@"128.2%",@"285.0%"];
     [self creatTableview];
     
     
@@ -76,11 +85,36 @@
     if (cell == nil) {
         cell=[[[NSBundle mainBundle]loadNibNamed:@"CompareTableViewCell" owner:self options:nil] lastObject];
     }
-    cell.titleImageview.image = [UIImage imageNamed:@"icon_gold"];
-    cell.NameLable.text = @"知行合一";
-    cell.shouyilvLB.text = @"121.00%";
-    cell.numberLB.text = @"9527";
-    cell.fushouyiLB.text = @"1213.0%";
+    NSString *imageStr = [NSString string];
+    
+    switch (indexPath.row) {
+        case 0:
+            imageStr = @"icon_gold";
+            break;
+        case 1:
+            imageStr = @"icon_Ag";
+            break;
+        case 2:
+            imageStr = @"icon_Cu";
+            break;
+        
+  
+        default:
+            imageStr = @"icon_Fe";
+            break;
+    }
+    cell.titleImageview.image = IMAGE_NAMED(imageStr);
+    if (indexPath.row>=3) {
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 4, 26, 26)];///<排名数字
+        label.textColor = KWhiteColor;
+        label.textAlignment = NSTextAlignmentCenter;
+        label.text = [NSString stringWithFormat:@"%li",(long)(indexPath.row+1)];
+        [cell.titleImageview addSubview:label];
+    }
+    cell.NameLable.text = self.NameArr[indexPath.row];
+    cell.shouyilvLB.text = self.AllGetInArr[indexPath.row];
+    cell.numberLB.text = self.NumberChargeArr[indexPath.row];
+    cell.fushouyiLB.text = self.SomegetInArr[indexPath.row];
 
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -89,7 +123,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 5;
+    return 4;
 }
 
 

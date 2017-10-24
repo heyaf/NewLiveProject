@@ -280,7 +280,7 @@
     NSString *utf = [self.urlstr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     [[HttpRequest sharedInstance] postWithURLString:utf parameters:dic success:^(id responseObject) {
-        [MBProgressHUD hideHUD];
+         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         NSDictionary *dict = responseObject;
         NSString *message = [NSString stringWithFormat:@"%@",dict[@"message"]];
         NSString *code = [NSString stringWithFormat:@"%@",dict[@"state"]];
@@ -298,7 +298,7 @@
             [MBProgressHUD showError:message];
         }
     } failure:^(NSError *error) {
-        [MBProgressHUD hideHUD];
+         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         NSLog(@"错误原因：%@",error.description);
 
         [MBProgressHUD showError:@"操作失败，请稍后重试"];

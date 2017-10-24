@@ -102,7 +102,7 @@
         }
     } failure:^(NSError *error) {
         
-        [MBProgressHUD hideHUD];
+         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         
         
     }];

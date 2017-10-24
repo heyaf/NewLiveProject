@@ -45,14 +45,16 @@
     self.window.rootViewController = self.mainTabBar;
     
     userModel *usermodel = [self getusermodel];
-    
-    if (kApp.SectionID.length<=0||usermodel.Id.length<=0) {
+    NSString *sectionID = [[NSUserDefaults standardUserDefaults] objectForKey:SectionID];
+    ASLog(@"00000%@,%@",sectionID,usermodel.Id);
+
+    if (sectionID.length<=0||usermodel.Id.length<=0) {
         
         [self presentLoginVC];
     }else{
-        ASLog(@"通过SECTION登录%@",kApp.SectionID);
+        ASLog(@"通过SECTION登录%@",sectionID);
         //通过Section登录
-        NSDictionary *dic =@{@"uuid":kApp.SectionID};
+        NSDictionary *dic =@{@"uuid":sectionID};
         [[HttpRequest sharedInstance] postWithURLString:SectionLoginUrl parameters:dic success:^(id responseObject) {
             
             NSDictionary *dict = responseObject;

@@ -169,12 +169,12 @@
     _lunboImgArr = [NSMutableArray array];
     _lunboTitleArr = [NSMutableArray array];
     _lunboUrlArr = [NSMutableArray array];
-//    [MBProgressHUD showMessage:@"正在加载..."];
+    [MBProgressHUD showMessage:@"正在加载..."];
     [[HttpRequest sharedInstance] getWithURLString:LunboUrl parameters:nil success:^(id responseObject) {
-        [MBProgressHUD hideHUD];
+        [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-        NSLog(@"1......%@",dict);
+        ASLog(@"轮播图......%@",dict);
         if ([dict[@"state"] isEqualToString:@"0"]) {
             [MBProgressHUD showError:dict[@"msg"]];
         }else{
@@ -192,7 +192,7 @@
 
     } failure:^(NSError *error) {
         NSLog(@"轮播图......%@",error.description);
-        [MBProgressHUD hideHUD];
+        [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         
         
     }];
@@ -200,12 +200,14 @@
 }
 -(void)creatHotData{
 
-    [MBProgressHUD showMessage:@"正在加载..."];
+    [MBProgressHUD showMessage:@"正在加载中..."];
+//    MBProgressHUD *HUB = [MBProgressHUD showMessage:@"正在加载..."]
     NSDictionary *parmar = @{@"pageNumber":@"1",
                              @"pageSize":@"10"};
     [[HttpRequest sharedInstance] postWithURLString:MessageHotNewsUrl parameters:parmar success:^(id responseObject) {
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        
+        [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+
+        ASLog(@"热点数据请求成功");
         NSDictionary *dict = responseObject;
         
         if ([dict[@"state"] isEqualToString:@"0"]) {
@@ -218,12 +220,12 @@
             
                 [_tableView reloadData];
             }
-        
+
             
         }
     } failure:^(NSError *error) {
         
-        [MBProgressHUD hideHUD];
+        [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         
         
     }];

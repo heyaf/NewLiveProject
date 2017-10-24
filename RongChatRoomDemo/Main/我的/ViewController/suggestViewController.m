@@ -7,12 +7,16 @@
 //
 
 #import "suggestViewController.h"
+#import "XXTextView.h"
 
 @interface suggestViewController ()
-@property (weak, nonatomic) IBOutlet UITextView *SuggetsTF;
-@property (weak, nonatomic) IBOutlet UITextField *suggestTF;
+
 @property (weak, nonatomic) IBOutlet UITextField *connectTX;
 @property (weak, nonatomic) IBOutlet UIButton *submitBTN;
+
+@property (nonatomic,strong) XXTextView *suggestTextview;
+
+
 
 @end
 
@@ -25,11 +29,23 @@
     self.navigationItem.title = @"用户反馈";
     
     // Do any additional setup after loading the view from its nib.
+    [self creatUI];
 }
 -(void)viewWillAppear:(BOOL)animated{
     
 
    self.navigationController.navigationBarHidden = NO;
+}
+-(void)creatUI{
+
+    _suggestTextview = [[XXTextView alloc] initWithFrame:CGRectMake(20, 20, KScreenW-40, 130)];
+    _suggestTextview.backgroundColor = KWhiteColor;
+    _suggestTextview.xx_placeholderFont = [UIFont systemFontOfSize:16.0f];
+    _suggestTextview.xx_placeholderColor = KGrayColor;
+    _suggestTextview.xx_placeholder = @"请输入您的宝贵意见，我们将第一时间关注，不断优化和改进！";
+    [self.view addSubview:_suggestTextview];
+
+
 }
 -(void)viewWillDisappear:(BOOL)animated{
 
@@ -40,8 +56,8 @@
     if (user.Id.length < 1) {
         [kApp showMessage:@"提示" contentStr:@"请先登录"];
     }else{
-    if (self.suggestTF.text.length>0) {
-        NSDictionary *dict =@{@"content":self.SuggetsTF.text,
+    if (self.suggestTextview.text.length>0) {
+        NSDictionary *dict =@{@"content":self.suggestTextview.text,
                               @"userid":user.Id,
                               @"userType":@"1",
                               @"tel":self.connectTX.text
@@ -49,7 +65,7 @@
         [MBProgressHUD showMessage:@"请稍候..."];
         NSString *utf = [SuggestUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         [[HttpRequest sharedInstance] postWithURLString:utf parameters:dict success:^(id responseObject) {
-            [MBProgressHUD hideHUD];
+             [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
             NSDictionary *dict = responseObject;
             NSString *code = [NSString stringWithFormat:@"%@",dict[@"state"]];
             
@@ -67,7 +83,7 @@
                 [MBProgressHUD showError:message];
             }
         } failure:^(NSError *error) {
-            [MBProgressHUD hideHUD];
+             [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
             
             [MBProgressHUD showError:@"操作失败，请稍后重试"];
         }];

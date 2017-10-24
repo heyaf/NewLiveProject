@@ -20,10 +20,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xFK-oc-Syu">
-                        <rect key="frame" x="13" y="18.5" width="23" height="36"/>
+                        <rect key="frame" x="13" y="18.5" width="26" height="34"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="23" id="ZqL-1M-VSo"/>
-                            <constraint firstAttribute="height" constant="36" id="hMd-cr-t33"/>
+                            <constraint firstAttribute="width" constant="26" id="ZqL-1M-VSo"/>
+                            <constraint firstAttribute="height" constant="34" id="hMd-cr-t33"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="交易手数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CcH-dd-xgJ">
@@ -52,7 +52,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAe-9v-k2C">
-                        <rect key="frame" x="51" y="13.5" width="218" height="25"/>
+                        <rect key="frame" x="54" y="13.5" width="215" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="BOf-nl-p6P"/>
                         </constraints>
@@ -67,7 +67,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总收益率" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSH-6I-kI0">
-                        <rect key="frame" x="51" y="43.5" width="60" height="21"/>
+                        <rect key="frame" x="54" y="43.5" width="60" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="BBm-K8-lxn"/>
                             <constraint firstAttribute="height" constant="21" id="ZCC-mb-wUD"/>
@@ -77,7 +77,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0J-Eq-YJE">
-                        <rect key="frame" x="116" y="43.5" width="159" height="21"/>
+                        <rect key="frame" x="119" y="43.5" width="156" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="4jf-1R-ZPP"/>
                         </constraints>

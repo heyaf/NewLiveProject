@@ -36,7 +36,8 @@
 -(void)viewWillAppear:(BOOL)animated{
 
     self.navigationController.automaticallyAdjustsScrollViewInsets = NO;
-    if (kApp.SectionID.length<=0) {
+    NSString *sectionID = [[NSUserDefaults standardUserDefaults] objectForKey:SectionID];
+    if (sectionID.length<=0) {
         self.submitbtn.selected = YES;
 
     }else{
@@ -46,15 +47,15 @@
     
 }
 - (IBAction)submitBtn:(id)sender {
-
+    NSString *sectionID = [[NSUserDefaults standardUserDefaults] objectForKey:SectionID];
     if (!self.submitbtn.selected) {
-        NSDictionary*dic =@{@"uuid":kApp.SectionID,
+        NSDictionary*dic =@{@"uuid":sectionID,
                             
                             };
         [MBProgressHUD showMessage:@"请稍候..."];
         
         [[HttpRequest sharedInstance] postWithURLString:QuartUrl parameters:dic success:^(id responseObject) {
-            [MBProgressHUD hideHUD];
+             [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
             
             [kApp userToZero];
             NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -71,7 +72,7 @@
             
             [MBProgressHUD showSuccess:@"操作成功"];
 
-            kApp.SectionID = nil;
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:SectionID];
             
             
             
@@ -202,7 +203,7 @@
             NSLog(@"上传图片......%@",_Imageurl);
 
             [[HttpRequest sharedInstance] postWithURLString:Updateusers parameters:parement success:^(id responseObject) {
-                [MBProgressHUD hideHUD];
+                 [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
                 NSDictionary *dict = responseObject;
                 NSString *code = [NSString stringWithFormat:@"%@",dict[@"state"]];
                 
@@ -223,7 +224,7 @@
                     [MBProgressHUD showError:message];
                 }
             } failure:^(NSError *error) {
-                [MBProgressHUD hideHUD];
+                 [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
                 
                 [MBProgressHUD showError:@"操作失败，请稍后重试"];
             }];
@@ -246,7 +247,7 @@
         
         
     } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
-        [MBProgressHUD hideHUD];
+         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         [MBProgressHUD showError:@"操作失败"];
         NSLog(@"上传图片shibai%@",error.description);
     }];

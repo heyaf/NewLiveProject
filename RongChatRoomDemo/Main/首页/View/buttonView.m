@@ -57,11 +57,10 @@
     }];
     
     UIViewController *vc = [self currentVc];
-//    CompareViewController *compareVC = [[CompareViewController alloc] init];
+    CompareViewController *compareVC = [[CompareViewController alloc] init];
     BaseCellViewController *basevc = [[BaseCellViewController alloc] init];
    
     basevc.sizeH = KScreenH;
-//    new2VC.view.frame = CGRectMake(0, 64, KScreenW, KScreenH);
     CalendarViewController *calenderVC = [[CalendarViewController alloc] init];
     RootWebViewController *webVC = [[RootWebViewController alloc] init];
     webVC.url = MessageFastNewsUrl;
@@ -73,10 +72,10 @@
             [vc.navigationController pushViewController:basevc animated:YES];
             break;
         case BTN_TAG+1:
-//            compareVC.title = @"竞赛";
-//            [vc.navigationController pushViewController:compareVC animated:YES];
+            compareVC.title = @"竞赛";
+            [vc.navigationController pushViewController:compareVC animated:YES];
 
-            [alerView show];
+//            [alerView show];
             break;
         case BTN_TAG+2:
             basevc.title = @"要闻";

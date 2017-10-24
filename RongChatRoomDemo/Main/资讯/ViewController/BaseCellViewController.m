@@ -91,8 +91,8 @@
 //    NSLog(@"0.0.0.0%@1212121%@",paramete,self.urlString);
     [[HttpRequest sharedInstance] postWithURLString:self.urlString parameters:paramete success:^(id responseObject) {
        
-        [MBProgressHUD hideHUD];
-         [MBProgressHUD hideAllHUDsForView:[[UIApplication sharedApplication].windows lastObject] animated:YES];
+         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+        
   
 //        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         NSDictionary *dict = responseObject;
@@ -151,12 +151,11 @@
         
     } failure:^(NSError *error) {
         
-        [MBProgressHUD hideHUD];
-        [MBProgressHUD hideAllHUDsForView:self.parentview animated:YES];
+         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
     }];
-//    [MBProgressHUD hideHUD];
+//     [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
 }
 #pragma mark ------设置tableview-------
 -(void)creatTableview{

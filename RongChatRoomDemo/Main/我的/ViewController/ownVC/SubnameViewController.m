@@ -118,7 +118,7 @@
 
         NSString *utf = [UpdatePassusers stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         [[HttpRequest sharedInstance] postWithURLString:utf parameters:dict success:^(id responseObject) {
-            [MBProgressHUD hideHUD];
+             [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
             NSDictionary *dict = responseObject;
             NSString *code = [NSString stringWithFormat:@"%@",dict[@"state"]];
             
@@ -135,7 +135,7 @@
                 [MBProgressHUD showError:message];
             }
         } failure:^(NSError *error) {
-            [MBProgressHUD hideHUD];
+             [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
             NSLog(@"%@",error);
             [MBProgressHUD showError:@"操作失败，请稍后重试"];
         }];

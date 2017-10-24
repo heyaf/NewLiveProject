@@ -286,7 +286,7 @@
     [MBProgressHUD showMessage:@"正在加载..."];
     NSString *utf = [LoginPassUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [[HttpRequest sharedInstance] postWithURLString:utf parameters:dic success:^(id responseObject) {
-        [MBProgressHUD hideHUD];
+         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         NSDictionary *dict = responseObject;
         NSString *code = [NSString stringWithFormat:@"%@",dict[@"state"]];
 
@@ -297,10 +297,10 @@
             [self dismiss];
             
             [self saveuserinfoWithdic:dict[@"user"]];
-            kApp.SectionID = dict[@"uuid"];
-            
+            [[NSUserDefaults standardUserDefaults] setObject:dict[@"uuid"] forKey:SectionID];
+ 
         
-            NSLog(@"----个人信息-%@，%@----%@",[kApp getusermodel],kApp.SectionID,dict[@"uuid"]);
+            NSLog(@"----个人信息-%@，%@----%@",[kApp getusermodel],SectionID,dict[@"uuid"]);
             
             if (self.myRegistblock) {
                 _myRegistblock();
@@ -322,7 +322,7 @@
             [MBProgressHUD showError:message];
         }
     } failure:^(NSError *error) {
-        [MBProgressHUD hideHUD];
+         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         
         [MBProgressHUD showError:@"操作失败，请稍后重试"];
     }];

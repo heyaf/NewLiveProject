@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch1" translatesAutoresizingMaskIntoConstraints="NO" id="g50-Zk-FZv">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="g50-Zk-FZv">
                                 <rect key="frame" x="16" y="20" width="343" height="647"/>
                             </imageView>
                         </subviews>
@@ -41,6 +41,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launch1" width="750" height="1334"/>
+        <image name="launch" width="375" height="667"/>
     </resources>
 </document>

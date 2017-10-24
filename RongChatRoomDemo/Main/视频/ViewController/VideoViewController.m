@@ -110,7 +110,7 @@
     
  //直播列表
 //    [[HttpRequest sharedInstance] postWithURLString:LiveListUrl parameters:nil success:^(id responseObject) {
-//        [MBProgressHUD hideHUD];
+//         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
 //        
 //        NSDictionary *dict = responseObject;
 //        
@@ -130,7 +130,7 @@
 //        }
 //    } failure:^(NSError *error) {
 //        
-//        [MBProgressHUD hideHUD];
+//         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
 //        
 //        
 //    }];
@@ -140,7 +140,7 @@
                         @"pageSize":@"10"
                         };
     [[HttpRequest sharedInstance] postWithURLString:VideoListUrl parameters:dic success:^(id responseObject) {
-        [MBProgressHUD hideHUD];
+         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         
         NSDictionary *dict = responseObject;
         NSLog(@"视频界面----------%@",dict);
@@ -194,7 +194,7 @@
             companyId = dict[@"liveContents"][0][@"companyID"];
             NSDictionary *ditt = @{@"id":dict[@"liveContents"][0][@"id"]};
             [[HttpRequest sharedInstance] postWithURLString:LivePicUrl parameters:ditt success:^(id responseObject) {
-                [MBProgressHUD hideHUD];
+                 [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
                 
                 NSDictionary *mydict = responseObject;
                 
@@ -206,7 +206,7 @@
 
             } failure:^(NSError *error) {
                 
-                [MBProgressHUD hideHUD];
+                 [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
                 
                 
             }];
@@ -226,7 +226,7 @@
                         };
 
     [[HttpRequest sharedInstance] postWithURLString:LiveGetNumberUrl parameters:dic success:^(id responseObject) {
-        [MBProgressHUD hideHUD];
+         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         
         NSDictionary *mydict = responseObject;
         
@@ -239,7 +239,7 @@
         
     } failure:^(NSError *error) {
         
-        [MBProgressHUD hideHUD];
+         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         
         
     }];
@@ -257,12 +257,8 @@
     [headerview addGestureRecognizer:tapGesturRecognizer];
     
     UIImageView *liveimV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, KScreenW, 210)];
-    if (headPicUrl.length>0) {
-        [liveimV sd_setImageWithURL:[NSURL URLWithString:headPicUrl]];
-    }else{
     
-       liveimV.image = IMAGE_NAMED(@"aaa");
-    }
+    [liveimV sd_setImageWithURL:[NSURL URLWithString:headPicUrl] placeholderImage:IMAGE_NAMED(@"aaa")];
     
     liveimV.userInteractionEnabled = YES;
     [headerview addSubview:liveimV];
@@ -492,7 +488,7 @@
 -(void)getData{
 
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://1.192.218.167:6660/liveStream/getPageUrl?id=6" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+    [manager GET:@"http://192.168.1.250:6660/liveStream/getPageUrl?id=6" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSLog(@"....%@",responseObject);
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         NSLog(@"失败.......%@",[error description]);

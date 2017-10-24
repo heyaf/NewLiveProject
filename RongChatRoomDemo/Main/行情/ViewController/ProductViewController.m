@@ -70,14 +70,14 @@
     
     [self creatHeaderView];
     [self creatTableView];
-    [self startGCDTimer];
+//    [self startGCDTimer];
 }
 
 -(void)creatData{
 
 //    [MBProgressHUD showMessage:@"正在加载..."];
     [[HttpRequest sharedInstance] getWithURLString:HangqingUrl parameters:nil success:^(id responseObject) {
-        [MBProgressHUD hideHUD];
+         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
 
         NSDictionary *dicJson=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         
@@ -114,7 +114,7 @@
     } failure:^(NSError *error) {
 
         
-        [MBProgressHUD hideHUD];
+         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         [MBProgressHUD showError:@"加载失败..."];
         [self refreshUI];
 

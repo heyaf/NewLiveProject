@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="suggestViewController">
             <connections>
-                <outlet property="SuggetsTF" destination="53K-di-buK" id="cdH-eK-TQ5"/>
                 <outlet property="connectTX" destination="ORC-wT-YpP" id="0vG-JP-Yfd"/>
                 <outlet property="submitBTN" destination="LlN-6A-fUD" id="gW5-8p-Qp1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -22,20 +21,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="53K-di-buK">
-                    <rect key="frame" x="20" y="88" width="335" height="150"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="150" id="wIa-PO-kCN"/>
-                    </constraints>
-                    <attributedString key="attributedText"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="keyPath" value="请输入您的宝贵意见，我们将第一时间关注，不断优化和改进"/>
-                    </userDefinedRuntimeAttributes>
-                </textView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您的联系方式：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fb3-sy-P5a">
-                    <rect key="frame" x="20" y="258" width="335" height="21"/>
+                    <rect key="frame" x="20" y="180" width="335" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="fpP-fm-ukT"/>
                     </constraints>
@@ -44,7 +31,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ORC-wT-YpP">
-                    <rect key="frame" x="20" y="299" width="335" height="40"/>
+                    <rect key="frame" x="20" y="221" width="335" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="yN0-Sh-NXD"/>
                     </constraints>
@@ -53,13 +40,13 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LlN-6A-fUD">
-                    <rect key="frame" x="20" y="379" width="335" height="40"/>
+                    <rect key="frame" x="20" y="301" width="335" height="40"/>
                     <color key="backgroundColor" red="0.0077566555701196194" green="0.62159693241119385" blue="0.86258262395858765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="4OG-es-TZm"/>
                     </constraints>
                     <state key="normal" title="提交">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" red="0.0077566555701196194" green="0.62159693241119385" blue="0.86258262395858765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
@@ -71,13 +58,10 @@
             <constraints>
                 <constraint firstItem="ORC-wT-YpP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="5ZD-4L-4uG"/>
                 <constraint firstAttribute="trailing" secondItem="LlN-6A-fUD" secondAttribute="trailing" constant="20" id="8VB-CT-LnM"/>
-                <constraint firstItem="53K-di-buK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="BNc-q4-Xfk"/>
+                <constraint firstItem="fb3-sy-P5a" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="180" id="AL1-iY-M5S"/>
                 <constraint firstItem="LlN-6A-fUD" firstAttribute="top" secondItem="ORC-wT-YpP" secondAttribute="bottom" constant="40" id="GqR-6V-cmx"/>
                 <constraint firstAttribute="trailing" secondItem="fb3-sy-P5a" secondAttribute="trailing" constant="20" id="HkW-7p-pAf"/>
                 <constraint firstItem="ORC-wT-YpP" firstAttribute="top" secondItem="fb3-sy-P5a" secondAttribute="bottom" constant="20" id="Hmf-BJ-0fx"/>
-                <constraint firstItem="53K-di-buK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="88" id="LNJ-PR-RNw"/>
-                <constraint firstItem="fb3-sy-P5a" firstAttribute="top" secondItem="53K-di-buK" secondAttribute="bottom" constant="20" id="MaN-F5-3vk"/>
-                <constraint firstAttribute="trailing" secondItem="53K-di-buK" secondAttribute="trailing" constant="20" id="O2l-E0-rem"/>
                 <constraint firstItem="LlN-6A-fUD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Rzh-za-0Xg"/>
                 <constraint firstItem="fb3-sy-P5a" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Vjo-3E-Zao"/>
                 <constraint firstAttribute="trailing" secondItem="ORC-wT-YpP" secondAttribute="trailing" constant="20" id="gTX-YP-H2E"/>

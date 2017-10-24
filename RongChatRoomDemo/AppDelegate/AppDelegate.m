@@ -31,11 +31,17 @@
       
     [self initWindow];
     //广告页
-//    [AppManager appStart];
+
     [self startleader];
     
     
     
+    
+    
+    
+    //键盘弹起
+    [IQKeyboardManager sharedManager].enable = YES;
+    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
     
     //融云即时通讯
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"RoleList" ofType:@"plist"];

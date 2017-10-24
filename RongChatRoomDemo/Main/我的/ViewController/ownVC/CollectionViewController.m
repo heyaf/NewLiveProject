@@ -50,6 +50,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     self.navigationItem.title = @"我的收藏";
 //    self.navigationController.navigationBarHidden = YES;
 //    UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, KScreenW, 64)];
 //    imageview.image = [UIImage imageNamed:@"navigationitem"];

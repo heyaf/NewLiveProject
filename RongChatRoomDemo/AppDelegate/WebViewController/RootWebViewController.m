@@ -80,7 +80,7 @@
         }
     } failure:^(NSError *error) {
         
-        [MBProgressHUD hideHUD];
+         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         
         
     }];
@@ -105,7 +105,7 @@
         //    NSLog(@"0....0%@",self.url);
         hud1.labelText = NSLocalizedString(@"请稍候...", @"HUD loading title");
           [[HttpRequest sharedInstance] postWithURLString:utf parameters:dict success:^(id responseObject) {
-              [MBProgressHUD hideHUD];
+               [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
               NSDictionary *dict = responseObject;
               
               NSString *code = [NSString stringWithFormat:@"%@",dict[@"state"]];
@@ -134,7 +134,7 @@
                   [MBProgressHUD showError:message];
               }
           } failure:^(NSError *error) {
-              [MBProgressHUD hideHUD];
+               [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         
               [MBProgressHUD showError:@"操作失败，请稍后重试"];
           }];
@@ -151,7 +151,7 @@
                           };
     NSString *utf = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [[HttpRequest sharedInstance] postWithURLString:utf parameters:dic success:^(id responseObject) {
-//        [MBProgressHUD hideHUD];
+//         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         NSDictionary *dict = responseObject;
         NSString *code = [NSString stringWithFormat:@"%@",dict[@"state"]];
         
@@ -166,7 +166,7 @@
              [_rightButton setImage:[UIImage imageNamed:@"icon_collection_defaul"] forState:UIControlStateNormal];
         }
     } failure:^(NSError *error) {
-//        [MBProgressHUD hideHUD];
+//         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         
         [MBProgressHUD showError:@"操作失败，请稍后重试"];
     }];

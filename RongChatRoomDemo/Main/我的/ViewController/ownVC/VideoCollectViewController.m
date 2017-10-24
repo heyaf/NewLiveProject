@@ -87,7 +87,7 @@
 #pragma merk ------网络请求数据-------
 -(void)creatDatawithpage:(NSInteger) pagenumber andaddData:(BOOL) adddata{
     
-    [MBProgressHUD showMessage:@"正在加载..."];
+//    [MBProgressHUD showMessage:@"正在加载..."];
     
     NSString *pagenum = [NSString stringWithFormat:@"%li",pagenumber];
     
@@ -103,7 +103,7 @@
     //    NSLog(@"0.0.0.0%@1212121%@",paramete,self.urlString);
     [[HttpRequest sharedInstance] postWithURLString:self.urlString parameters:paramete success:^(id responseObject) {
         
-        [MBProgressHUD hideHUD];
+         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         [MBProgressHUD hideAllHUDsForView:[[UIApplication sharedApplication].windows lastObject] animated:YES];
         
         //        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
@@ -151,12 +151,12 @@
         
     } failure:^(NSError *error) {
         
-        [MBProgressHUD hideHUD];
-        [MBProgressHUD hideAllHUDsForView:self.parentview animated:YES];
+        [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+        [MBProgressHUD hideAllHUDsForView:[[UIApplication sharedApplication].windows lastObject] animated:YES];
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
     }];
-    //    [MBProgressHUD hideHUD];
+    //     [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
 }
 #pragma mark ------设置tableview-------
 -(void)creatTableview{

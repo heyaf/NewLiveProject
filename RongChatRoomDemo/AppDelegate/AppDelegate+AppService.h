@@ -10,11 +10,13 @@
 //#import "userModel.h"
 
 #define ReplaceRootViewController(vc) [[AppDelegate shareAppDelegate] replaceRootViewController:vc]
-
+static NSString * const SectionID = @"SectionID";
 /**
  包含第三方 和 应用内业务的实现，减轻入口代码压力
  */
 @interface AppDelegate (AppService)
+
+
 
 //@property (nonatomic,assign) userModel *myuser;
 //初始化服务

@@ -74,7 +74,7 @@
     [MBProgressHUD showMessage:@"正在加载..."];
     NSDictionary *dic = @{@"datetime":dataStr};
     [[HttpRequest sharedInstance] postWithURLString:CancleDate parameters:dic success:^(id responseObject) {
-        [MBProgressHUD hideHUD];
+         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         
         NSDictionary *dict = responseObject;
         NSLog(@"11111%@",dict);
@@ -100,7 +100,7 @@
         }
     } failure:^(NSError *error) {
         
-        [MBProgressHUD hideHUD];
+         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         
         
     }];
