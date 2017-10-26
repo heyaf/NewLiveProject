@@ -105,7 +105,7 @@
     } failure:^(NSError *error) {
         
          [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
-        
+        [MBProgressHUD hideHUD];
         
     }];
 
@@ -120,14 +120,16 @@
                         };
     [[HttpRequest sharedInstance] postWithURLString:VideoListUrl parameters:dic success:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
-        
+        [MBProgressHUD hideHUD];
         NSDictionary *dict = responseObject;
         
         if ([dict[@"state"] isEqualToString:@"0"]) {
             [MBProgressHUD showError:dict[@"msg"]];
         }else{
             _dataArr = [VideoModel arrayOfModelsFromDictionaries:dict[@"videos"] error:nil];
-            
+            for (VideoModel *model in _dataArr) {
+                model.date = [StringToData StringToDate:model.date];
+            }
             if (!_tableview) {
                 [self creatTableView];
             }else{
@@ -140,7 +142,7 @@
     } failure:^(NSError *error) {
         
          [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
-        
+        [MBProgressHUD hideHUD];
         
     }];
     

@@ -44,18 +44,7 @@
 }
 
 -(void)btnClicked{
-    IBConfigration *configration = [[IBConfigration alloc] init];
-    configration.title = @"提示";
-    configration.message = @"敬请期待...";
-    //        configration.cancelTitle = @"确定";
-    configration.confirmTitle=@"确定";
-    
-    configration.messageAlignment = NSTextAlignmentCenter;
-    
-    IBAlertView *alerView = [IBAlertView alertWithConfigration:configration block:^(NSUInteger index) {
         
-    }];
-    
     UIViewController *vc = [self currentVc];
     CompareViewController *compareVC = [[CompareViewController alloc] init];
     BaseCellViewController *basevc = [[BaseCellViewController alloc] init];

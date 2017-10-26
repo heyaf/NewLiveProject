@@ -75,7 +75,18 @@
 #pragma merk ------网络请求数据-------
 -(void)creatDatawithpage:(NSInteger) pagenumber andaddData:(BOOL) adddata{
     
-    [MBProgressHUD showMessage:@"正在加载..."];
+    [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+    
+    [MBProgressHUD hideHUD];
+    
+    MBProgressHUD *hud = [[MBProgressHUD alloc]init];
+    
+    [[UIApplication sharedApplication].keyWindow addSubview:hud];
+    [hud setMode:MBProgressHUDModeIndeterminate];
+    
+    hud.labelText = @"正在加载...";
+    
+    [hud show:YES];
 
     NSString *pagenum = [NSString stringWithFormat:@"%li",pagenumber];
   
@@ -88,20 +99,17 @@
     }
 
     
-//    NSLog(@"0.0.0.0%@1212121%@",paramete,self.urlString);
     [[HttpRequest sharedInstance] postWithURLString:self.urlString parameters:paramete success:^(id responseObject) {
        
-         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
-        
+        [hud hide:YES];
   
-//        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         NSDictionary *dict = responseObject;
-        NSLog(@"0.0.0.0.0.%@",dict);
 
+        ASLog(@"新闻数据%@",dict);
         
         if ([dict[@"state"] isEqualToString:@"0"]) {
             [MBProgressHUD showError:dict[@"msg"]];
-           if (_isSearchNews) {
+           if (_isSearchNews&&pagenumber==1) {
                
                UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, KScreenW, KScreenH-64)];
                bgView.backgroundColor = KWhiteColor;
@@ -116,13 +124,19 @@
             }
 
         }else{
+            
+            ASLog(@"时间是%@",[StringToData StringToDate:@"1508470946000"]);
         
             NSMutableArray *dataArr = dict[@"news"];
             if (dataArr.count==0) {
                 [MBProgressHUD showSuccess:@"暂无数据"];
             }else{
             
+
                 NSMutableArray *modelarr = [basemodel arrayOfModelsFromDictionaries:dataArr error:nil];
+                for (basemodel *model in modelarr) {
+                    model.createTime = [StringToData StringToDate:model.createTime];
+                }
                 if (!adddata) {
                     [self.MydataArr removeAllObjects];
                 }
@@ -151,7 +165,8 @@
         
     } failure:^(NSError *error) {
         
-         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+        [hud hide:YES];
+
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
     }];
@@ -169,6 +184,10 @@
     
         H = KScreenH-64-48;
        frame = CGRectMake(0, 100, KScreenW, H);
+    }
+    
+    if (_isSearchNews) {
+        frame = CGRectMake(0, 64, KScreenW, KScreenH-64);
     }
     _tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
     _tableView.delegate = self;
@@ -199,7 +218,7 @@
     
     basemodel *basemodel = self.MydataArr[indexPath.row];
     cell.titleLB.text = basemodel.title;
-    cell.numberLB.text = basemodel.newsCount;
+    cell.numberLB.text = [NSString stringWithFormat:@"%@浏览",basemodel.newsCount];
     cell.dateLB.text = basemodel.createTime;
     NSString *imgstr =  [basemodel.picture stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];;
 //    NSLog(@",,,,%@",basemodel);

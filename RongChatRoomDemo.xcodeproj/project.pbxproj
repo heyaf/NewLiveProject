@@ -216,6 +216,7 @@
 		18B557BA1F9F48D100A43BA4 /* IQToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B557A91F9F48D100A43BA4 /* IQToolbar.m */; };
 		18B557BB1F9F48D100A43BA4 /* IQUIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B557AB1F9F48D100A43BA4 /* IQUIView+IQKeyboardToolbar.m */; };
 		18B557BC1F9F48D100A43BA4 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18B557AD1F9F48D100A43BA4 /* IQKeyboardManager.bundle */; };
+		18B557C01FA030A400A43BA4 /* StringToData.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B557BF1FA030A400A43BA4 /* StringToData.m */; };
 		18DF052C1F5D5BD80038067A /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DF05291F5D5BD80038067A /* MOBFoundation.framework */; };
 		18DF052D1F5D5BD80038067A /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DF052B1F5D5BD80038067A /* SMS_SDK.framework */; };
 		18DF05301F5D5EF10038067A /* UIButton+Countdown.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DF052F1F5D5EF10038067A /* UIButton+Countdown.m */; };
@@ -664,6 +665,8 @@
 		18B557AA1F9F48D100A43BA4 /* IQUIView+IQKeyboardToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIView+IQKeyboardToolbar.h"; sourceTree = "<group>"; };
 		18B557AB1F9F48D100A43BA4 /* IQUIView+IQKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIView+IQKeyboardToolbar.m"; sourceTree = "<group>"; };
 		18B557AD1F9F48D100A43BA4 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		18B557BE1FA030A400A43BA4 /* StringToData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringToData.h; sourceTree = "<group>"; };
+		18B557BF1FA030A400A43BA4 /* StringToData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringToData.m; sourceTree = "<group>"; };
 		18DF05261F5D47350038067A /* Urlheader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Urlheader.h; sourceTree = "<group>"; };
 		18DF05291F5D5BD80038067A /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
 		18DF052B1F5D5BD80038067A /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
@@ -1378,6 +1381,7 @@
 		181D80171F33066100420564 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				18B557BD1FA02FDD00A43BA4 /* 时间戳转时间 */,
 				18B557851F9F44A100A43BA4 /* XXTextView */,
 				1852D1931F60F248000E1844 /* HYBUnicodeReadable */,
 				18DF052E1F5D5EF10038067A /* UIButton+Countdown.h */,
@@ -1848,6 +1852,15 @@
 				18B557AD1F9F48D100A43BA4 /* IQKeyboardManager.bundle */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		18B557BD1FA02FDD00A43BA4 /* 时间戳转时间 */ = {
+			isa = PBXGroup;
+			children = (
+				18B557BE1FA030A400A43BA4 /* StringToData.h */,
+				18B557BF1FA030A400A43BA4 /* StringToData.m */,
+			);
+			path = "时间戳转时间";
 			sourceTree = "<group>";
 		};
 		18DF05271F5D5BD80038067A /* SDK */ = {
@@ -2471,6 +2484,7 @@
 				18A5F4D71F3456B300F635AE /* RCDLiveInputBar.m in Sources */,
 				18A5F4F91F34572200F635AE /* RCDLiveAttributedLabel.m in Sources */,
 				1852D1DC1F6130B0000E1844 /* MJRefreshBackStateFooter.m in Sources */,
+				18B557C01FA030A400A43BA4 /* StringToData.m in Sources */,
 				18AF91FE1F90A15600FDE955 /* DAYComponentView.m in Sources */,
 				181193251F56A07200B960F4 /* VPImageCropperViewController.m in Sources */,
 				18AF91EF1F8F58CA00FDE955 /* CalendarModel.m in Sources */,

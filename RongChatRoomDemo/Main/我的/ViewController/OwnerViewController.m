@@ -44,6 +44,9 @@
     
         self.submitbtn.selected = NO;
     }
+    if (_owentableview) {
+        [self.owentableview reloadData];
+    }
     
 }
 - (IBAction)submitBtn:(id)sender {
@@ -52,14 +55,15 @@
         NSDictionary*dic =@{@"uuid":sectionID,
                             
                             };
-        [MBProgressHUD showMessage:@"请稍候..."];
+        ASLog(@".....%@",dic);
         
         [[HttpRequest sharedInstance] postWithURLString:QuartUrl parameters:dic success:^(id responseObject) {
              [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
-            
+            [MBProgressHUD hideHUD];
             [kApp userToZero];
-            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-            [userDefaults setObject:@"" forKey:@"Token"];
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"Token"];
+            
+            
             [self.owentableview reloadData];
             if (self.changeblock) {
                 _changeblock();
@@ -72,6 +76,7 @@
             
             [MBProgressHUD showSuccess:@"操作成功"];
 
+
             [[NSUserDefaults standardUserDefaults] removeObjectForKey:SectionID];
             
             
@@ -79,6 +84,10 @@
         } failure:^(NSError *error) {
             
             [MBProgressHUD showError:@"出错了，请重试"];
+            [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+
+            [MBProgressHUD hideHUD];
+            ASLog(@"退出登录出错了%@",error.description);
             
             
         }];
@@ -154,7 +163,6 @@
         LDImagePicker *imagePicker = [LDImagePicker sharedInstance];
         imagePicker.delegate = self;
         [imagePicker showImagePickerWithType:buttonIndex InViewController:self Scale:0.75];
-//        self.height.constant = 200*0.75;
     }else{
         LDImagePicker *imagePicker = [LDImagePicker sharedInstance];
         imagePicker.delegate = self;
@@ -199,11 +207,13 @@
             _Imageurl = dicJson[@"data"];
             NSDictionary *parement =@{@"id":model.Id,
                                       @"picture":_Imageurl,
+                                      @"uuid":[[NSUserDefaults standardUserDefaults] objectForKey:SectionID]
                                       };
             NSLog(@"上传图片......%@",_Imageurl);
 
             [[HttpRequest sharedInstance] postWithURLString:Updateusers parameters:parement success:^(id responseObject) {
                  [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+                [MBProgressHUD hideHUD];
                 NSDictionary *dict = responseObject;
                 NSString *code = [NSString stringWithFormat:@"%@",dict[@"state"]];
                 
@@ -222,11 +232,13 @@
                     NSString *message = [NSString stringWithFormat:@"%@",dict[@"msg"]];
                     
                     [MBProgressHUD showError:message];
+                    ASLog(@"..返回的..%@",dict);
                 }
             } failure:^(NSError *error) {
                  [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
-                
+                [MBProgressHUD hideHUD];
                 [MBProgressHUD showError:@"操作失败，请稍后重试"];
+                ASLog(@"..上传图片失败...%@",error.description);
             }];
             
             
@@ -239,6 +251,7 @@
         }else{
         
             [MBProgressHUD showError:dicJson[@"msg"]];
+            ASLog(@"------......%@",dicJson);
         }
 
  
@@ -248,6 +261,7 @@
         
     } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
          [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+        [MBProgressHUD hideHUD];
         [MBProgressHUD showError:@"操作失败"];
         NSLog(@"上传图片shibai%@",error.description);
     }];

@@ -123,6 +123,9 @@
             }else{
                 
                 NSMutableArray *modelarr = [VideoModel arrayOfModelsFromDictionaries:dataArr error:nil];
+                for (VideoModel *model in modelarr) {
+                    model.date = [StringToData StringToDate:model.date];
+                }
                 if (!adddata) {
                     [self.MydataArr removeAllObjects];
                 }
@@ -200,7 +203,7 @@
     
     VideoModel *videomodel = self.MydataArr[indexPath.row];
     cell.titleLB.text = videomodel.title;
-    cell.numberLB.text = videomodel.count;
+    cell.numberLB.text = [NSString stringWithFormat:@"%@观看",videomodel.count];
     cell.dateLB.text = videomodel.date;
     NSString *imgstr =  [videomodel.picture stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];;
 //    //    NSLog(@",,,,%@",basemodel);

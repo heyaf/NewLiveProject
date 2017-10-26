@@ -52,6 +52,7 @@
 //    self.navigationController.navigationBarHidden =YES;
 }
 - (IBAction)submitbtn:(id)sender {
+    
     userModel *user = [kApp getusermodel];
     if (user.Id.length < 1) {
         [kApp showMessage:@"提示" contentStr:@"请先登录"];
@@ -65,14 +66,28 @@
         [MBProgressHUD showMessage:@"请稍候..."];
         NSString *utf = [SuggestUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         [[HttpRequest sharedInstance] postWithURLString:utf parameters:dict success:^(id responseObject) {
-             [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+            [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+            
+            [MBProgressHUD hideHUD];
+            
+            MBProgressHUD *hud = [[MBProgressHUD alloc]init];
+            
+            [[UIApplication sharedApplication].keyWindow addSubview:hud];
+            [hud setMode:MBProgressHUDModeIndeterminate];
+            
+            hud.labelText = @"谢谢您的支持，我们将尽快改进";
+            
+            [hud show:YES];
+            
+            [hud hide:YES afterDelay:1.0f];
             NSDictionary *dict = responseObject;
             NSString *code = [NSString stringWithFormat:@"%@",dict[@"state"]];
             
-            
+            self.suggestTextview.text = @"";
+
             if ([code isEqualToString:@"1"]) {
                 
-                [MBProgressHUD showSuccess:@"操作成功"];
+               
                 
                 
                 

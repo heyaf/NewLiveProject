@@ -50,6 +50,7 @@
 
 //主题
 #define HHNavBgColor  RGB(44,50,59)
+#define HHNavBgMoreColor RGB(19, 22, 26)
 #define HHNavBgFontColor  [UIColor blueColor]
 
 //默认页面背景色

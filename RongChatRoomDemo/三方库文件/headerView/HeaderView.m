@@ -71,7 +71,7 @@
     view.text = @"1668人观看";
     [self addSubview:view];
     
-    UILabel *dataLB = [[UILabel alloc] initWithFrame:CGRectMake(120, 50, 100, 25)];
+    UILabel *dataLB = [[UILabel alloc] initWithFrame:CGRectMake(120, 50, 120, 25)];
     dataLB.font = [UIFont systemFontOfSize:12.0f];
     dataLB.textColor = RGB(153, 153, 153);
     dataLB.text = @"2017-09-26";
@@ -175,6 +175,7 @@
         hud1.labelText = NSLocalizedString(@"请稍候...", @"HUD loading title");
         [[HttpRequest sharedInstance] postWithURLString:utf parameters:dic success:^(id responseObject) {
              [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+            [MBProgressHUD hideHUD];
             NSDictionary *dict = responseObject;
 //            NSLog(@"123456%@",dict);
             NSString *code = [NSString stringWithFormat:@"%@",dict[@"state"]];
@@ -204,7 +205,7 @@
             }
         } failure:^(NSError *error) {
              [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
-            
+            [MBProgressHUD hideHUD];
             [MBProgressHUD showError:@"操作失败，请稍后重试"];
             NSLog(@"%@",error.description);
         }];

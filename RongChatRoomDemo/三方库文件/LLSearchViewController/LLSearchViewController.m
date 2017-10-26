@@ -8,7 +8,7 @@
 
 #import "LLSearchViewController.h"
 
-#import "LLSearchSuggestionVC.h"
+//#import "LLSearchSuggestionVC.h"
 #import "LLSearchView.h"
 #import "BaseCellViewController.h"
 
@@ -18,7 +18,7 @@
 @property (nonatomic, strong) LLSearchView *searchView;
 @property (nonatomic, strong) NSMutableArray *hotArray;
 @property (nonatomic, strong) NSMutableArray *historyArray;
-@property (nonatomic, strong) LLSearchSuggestionVC *searchSuggestVC;
+//@property (nonatomic, strong) LLSearchSuggestionVC *searchSuggestVC;
 
 @end
 
@@ -57,19 +57,19 @@
 }
 
 
-- (LLSearchSuggestionVC *)searchSuggestVC
-{
-    if (!_searchSuggestVC) {
-        self.searchSuggestVC = [[LLSearchSuggestionVC alloc] init];
-        _searchSuggestVC.view.frame = CGRectMake(0, 64, KScreenW, KScreenH - 64);
-        _searchSuggestVC.view.hidden = YES;
-        __weak LLSearchViewController *weakSelf = self;
-        _searchSuggestVC.searchBlock = ^(NSString *searchTest) {
-            [weakSelf pushToSearchResultWithSearchStr:searchTest];
-        };
-    }
-    return _searchSuggestVC;
-}
+//- (LLSearchSuggestionVC *)searchSuggestVC
+//{
+//    if (!_searchSuggestVC) {
+//        self.searchSuggestVC = [[LLSearchSuggestionVC alloc] init];
+//        _searchSuggestVC.view.frame = CGRectMake(0, 64, KScreenW, KScreenH - 64);
+//        _searchSuggestVC.view.hidden = YES;
+//        __weak LLSearchViewController *weakSelf = self;
+//        _searchSuggestVC.searchBlock = ^(NSString *searchTest) {
+//            [weakSelf pushToSearchResultWithSearchStr:searchTest];
+//        };
+//    }
+//    return _searchSuggestVC;
+//}
 
 
 
@@ -84,10 +84,9 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    self.navigationController.navigationBar.barTintColor = HHNavBgColor;
     // 回收键盘
     [self.searchBar resignFirstResponder];
-    _searchSuggestVC.view.hidden = YES;
+//    _searchSuggestVC.view.hidden = YES;
 }
 
 
@@ -95,11 +94,10 @@
 {
     [super viewDidLoad];
     [self setBarButtonItem];
-    self.navigationController.navigationBar.barTintColor = KWhiteColor;
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.searchView];
-    [self.view addSubview:self.searchSuggestVC.view];
-    [self addChildViewController:_searchSuggestVC];
+//    [self.view addSubview:self.searchSuggestVC.view];
+//    [self addChildViewController:_searchSuggestVC];
 }
 
 
@@ -195,14 +193,14 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    if (searchBar.text == nil || [searchBar.text length] <= 0) {
-        _searchSuggestVC.view.hidden = YES;
-        [self.view bringSubviewToFront:_searchView];
-    } else {
-        _searchSuggestVC.view.hidden = NO;
-        [self.view bringSubviewToFront:_searchSuggestVC.view];
-        [_searchSuggestVC searchTestChangeWithTest:searchBar.text];
-    }
+//    if (searchBar.text == nil || [searchBar.text length] <= 0) {
+//        _searchSuggestVC.view.hidden = YES;
+//        [self.view bringSubviewToFront:_searchView];
+//    } else {
+//        _searchSuggestVC.view.hidden = NO;
+//        [self.view bringSubviewToFront:_searchSuggestVC.view];
+//        [_searchSuggestVC searchTestChangeWithTest:searchBar.text];
+//    }
 }
 
 - (void)didReceiveMemoryWarning

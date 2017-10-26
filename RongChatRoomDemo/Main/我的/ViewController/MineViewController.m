@@ -205,15 +205,18 @@
 
 -(void)tapAction:(id)tap
 {
-    
-    OwnerViewController *ownVC = [[OwnerViewController alloc] init];
-    ownVC.navigationItem.title = @"个人中心";
-    ownVC.changeblock = ^{
+    userModel *user = [kApp getusermodel];
+    if (user.niceName.length>0) {
+        OwnerViewController *ownVC = [[OwnerViewController alloc] init];
+        ownVC.navigationItem.title = @"个人中心";
+        ownVC.changeblock = ^{
         [self refreshUI];
-//        _headerImageV.image = [UIImage GetImageFromLocal:kHeaderImageKey];
-//        NSLog(@"212132213123");
-    };
-    [self.navigationController pushViewController:ownVC animated:YES];
+           
+        };
+        [self.navigationController pushViewController:ownVC animated:YES];
+    }
+    
+    
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
 
@@ -332,8 +335,8 @@
         
     }else if(indexPath.section ==2&&indexPath.row==1){
      RootWebViewController *webVC = [[RootWebViewController alloc] init];
-        webVC.url = @"http://1.192.218.167:6661/aboutuscontroller/getAboutus";
-//        webVC.url = @"http://192.168.1.250:6661/index/kLine";
+        webVC.url = @"http://www.leaguecc.com:6661/aboutuscontroller/getAboutus";
+//        webVC.url = @"http://www.leaguecc.com:6661/index/kLine";
         [self.navigationController pushViewController:webVC animated:YES];
 
     }

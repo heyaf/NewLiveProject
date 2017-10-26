@@ -72,6 +72,7 @@
     self.view.backgroundColor =RGB(220, 220, 220);
     _imageArr = [NSArray arrayWithObjects:@"banner",@"Logbg",@"logo", nil];
     self.navigationController.navigationBar.tintColor = KWhiteColor;
+    self.navigationItem.title = @"中思财经";
 
 //     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Homecell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"homecell"];
@@ -169,10 +170,10 @@
     _lunboImgArr = [NSMutableArray array];
     _lunboTitleArr = [NSMutableArray array];
     _lunboUrlArr = [NSMutableArray array];
-    [MBProgressHUD showMessage:@"正在加载..."];
+    [MBProgressHUD showMessage:@"正在加载中..."];
     [[HttpRequest sharedInstance] getWithURLString:LunboUrl parameters:nil success:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
-        
+        [MBProgressHUD hideHUD];
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         ASLog(@"轮播图......%@",dict);
         if ([dict[@"state"] isEqualToString:@"0"]) {
@@ -193,20 +194,21 @@
     } failure:^(NSError *error) {
         NSLog(@"轮播图......%@",error.description);
         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
-        
+        [MBProgressHUD hideHUD];
         
     }];
 
 }
 -(void)creatHotData{
 
-    [MBProgressHUD showMessage:@"正在加载中..."];
+//    [MBProgressHUD showMessage:@"正在加载中..."];
 //    MBProgressHUD *HUB = [MBProgressHUD showMessage:@"正在加载..."]
     NSDictionary *parmar = @{@"pageNumber":@"1",
                              @"pageSize":@"10"};
     [[HttpRequest sharedInstance] postWithURLString:MessageHotNewsUrl parameters:parmar success:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
 
+        [MBProgressHUD hideHUD];
         ASLog(@"热点数据请求成功");
         NSDictionary *dict = responseObject;
         
@@ -214,6 +216,9 @@
              [MBProgressHUD showError:dict[@"msg"]];
         }else{
             _dataArr = [basemodel arrayOfModelsFromDictionaries:dict[@"news"] error:nil];
+            for (basemodel *model in _dataArr) {
+                model.createTime = [StringToData StringToDate:model.createTime];
+            }
             if (!_tableView) {
                 [self creatTableview];
             }else{
@@ -226,7 +231,7 @@
     } failure:^(NSError *error) {
         
         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
-        
+        [MBProgressHUD hideHUD];
         
     }];
 
@@ -247,7 +252,7 @@
                                                                                                     
     basemodel *basemodel = self.dataArr[indexPath.row];
     cell.titleLB.text = basemodel.title;
-    cell.numberLB.text = basemodel.newsCount;
+    cell.numberLB.text = [NSString stringWithFormat:@"%@浏览",basemodel.newsCount];
     cell.dateLB.text = basemodel.createTime;
     NSString *imgstr =  [basemodel.picture stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];;
     

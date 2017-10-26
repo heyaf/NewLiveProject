@@ -81,7 +81,7 @@
     } failure:^(NSError *error) {
         
          [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
-        
+        [MBProgressHUD hideHUD];
         
     }];
     
@@ -106,6 +106,7 @@
         hud1.labelText = NSLocalizedString(@"请稍候...", @"HUD loading title");
           [[HttpRequest sharedInstance] postWithURLString:utf parameters:dict success:^(id responseObject) {
                [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+              [MBProgressHUD hideHUD];
               NSDictionary *dict = responseObject;
               
               NSString *code = [NSString stringWithFormat:@"%@",dict[@"state"]];
@@ -136,6 +137,7 @@
           } failure:^(NSError *error) {
                [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         
+              [MBProgressHUD hideHUD];
               [MBProgressHUD showError:@"操作失败，请稍后重试"];
           }];
           }

@@ -141,6 +141,7 @@
                         };
     [[HttpRequest sharedInstance] postWithURLString:VideoListUrl parameters:dic success:^(id responseObject) {
          [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+        [MBProgressHUD hideHUD];
         
         NSDictionary *dict = responseObject;
         NSLog(@"视频界面----------%@",dict);
@@ -150,7 +151,9 @@
             [MBProgressHUD showError:dict[@"msg"]];
         }else{
             _dataArr = [VideoModel arrayOfModelsFromDictionaries:dict[@"videos"] error:nil];
-            
+            for (VideoModel *model in _dataArr) {
+                model.date = [StringToData StringToDate:model.date];
+            }
             if (!_collectionview) {
                 [self CreatCollectionView];
             }else{
@@ -159,10 +162,16 @@
             }
             
             
+
         }
+        [_collectionview.mj_header endRefreshing];
+        [_collectionview.mj_footer endRefreshing];
     } failure:^(NSError *error) {
         
         [MBProgressHUD showError:@"加载错误..."];
+        [_collectionview.mj_header endRefreshing];
+        [_collectionview.mj_footer endRefreshing];
+
         NSLog(@"视频界面----------%@,%@,%@",error.description,VideoListUrl,dic);
         
         
@@ -178,6 +187,7 @@
         NSLog(@"直播列表数据..__________________________.%@",dict);
         
          [MBProgressHUD hideAllHUDsForView:[[UIApplication sharedApplication].windows lastObject] animated:YES];
+        [MBProgressHUD hideHUD];
         if ([dict[@"state"] isEqualToString:@"0"]) {
             UIView *headerview = [[UIView alloc] initWithFrame:CGRectMake(0, 64, KScreenW, 250)];
             [self.view addSubview:headerview];
@@ -195,6 +205,7 @@
             NSDictionary *ditt = @{@"id":dict[@"liveContents"][0][@"id"]};
             [[HttpRequest sharedInstance] postWithURLString:LivePicUrl parameters:ditt success:^(id responseObject) {
                  [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+                [MBProgressHUD hideHUD];
                 
                 NSDictionary *mydict = responseObject;
                 
@@ -207,6 +218,7 @@
             } failure:^(NSError *error) {
                 
                  [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+                [MBProgressHUD hideHUD];
                 
                 
             }];
@@ -217,6 +229,7 @@
         
     } failure:^(NSError *error) {
          [MBProgressHUD hideAllHUDsForView:[[UIApplication sharedApplication].windows lastObject] animated:YES];
+        [MBProgressHUD hideHUD];
     }];
 }
 -(void)creatNumberLBContent{
@@ -227,6 +240,7 @@
 
     [[HttpRequest sharedInstance] postWithURLString:LiveGetNumberUrl parameters:dic success:^(id responseObject) {
          [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+        [MBProgressHUD hideHUD];
         
         NSDictionary *mydict = responseObject;
         
@@ -240,7 +254,7 @@
     } failure:^(NSError *error) {
         
          [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
-        
+        [MBProgressHUD hideHUD];
         
     }];
     
@@ -431,11 +445,11 @@
     _collectionview.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         // 进入刷新状态后会自动调用这个block
         [self.collectionview.mj_header beginRefreshing];
-//        [self creatDatawithpage:1 andaddData:NO];
+        [self creatData];
     }];
     self.collectionview.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         [self.collectionview.mj_footer beginRefreshing];
-//        [self creatDatawithpage:_page+1 andaddData:YES];
+        [self creatData];
         
     }];
 
@@ -457,7 +471,7 @@
 
     VideoModel *videomodel = _dataArr[indexPath.row];
     
-    cell.titleLB.text = videomodel.videoName;
+    cell.titleLB.text = videomodel.title;
     
     cell.dataLB.text = videomodel.date;
     NSString *imgstr =  [videomodel.picture stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];;
@@ -488,7 +502,7 @@
 -(void)getData{
 
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://192.168.1.250:6660/liveStream/getPageUrl?id=6" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+    [manager GET:@"http://www.leaguecc.com:6660/liveStream/getPageUrl?id=6" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSLog(@"....%@",responseObject);
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         NSLog(@"失败.......%@",[error description]);

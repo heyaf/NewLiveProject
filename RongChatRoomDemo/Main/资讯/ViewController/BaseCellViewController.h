@@ -18,6 +18,8 @@
 //界面高度
 @property (nonatomic,assign) CGFloat sizeH;
 @property (nonatomic,assign) BOOL isSearchNews;
+
+
 //-(void)showprogress:(NSString *)
 
 -(void)creatDatawithpage:(NSInteger) pagenumber andaddData:(BOOL) adddata;

@@ -78,6 +78,7 @@
 //    [MBProgressHUD showMessage:@"正在加载..."];
     [[HttpRequest sharedInstance] getWithURLString:HangqingUrl parameters:nil success:^(id responseObject) {
          [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+        [MBProgressHUD hideHUD];
 
         NSDictionary *dicJson=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         
@@ -114,7 +115,8 @@
     } failure:^(NSError *error) {
 
         
-         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+        [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+        [MBProgressHUD hideHUD];
         [MBProgressHUD showError:@"加载失败..."];
         [self refreshUI];
 

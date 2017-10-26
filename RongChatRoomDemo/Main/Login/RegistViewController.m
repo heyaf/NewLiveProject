@@ -21,6 +21,9 @@
 @property (nonatomic,strong) UIButton *LoginBtn;
 @property (nonatomic, strong) UIButton *countdownButton;
 
+@property (nonatomic,assign) BOOL IsHiden;///<是否密文显示密码
+@property (nonatomic,strong) UIImageView *eyeimageView; ///<密文显示的图标
+
 //@property (nonatomic,strong)
 @end
 
@@ -29,6 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    _IsHiden = YES;
     [self creatUI];
 }
 - (UIButton *)countdownButton {
@@ -50,7 +54,7 @@
 
   
     _titleLB.text = _titlestr;
-    CGRect accountF = CGRectMake(40, 100, KScreenW-100, 40);
+    CGRect accountF = CGRectMake(20, 100, KScreenW-40, 40);
     UITextField *TELText = [[UITextField alloc] initWithFrame:accountF];
     TELText.placeholder = @"请输入手机号";
     TELText.frame = accountF;
@@ -71,6 +75,7 @@
     
     UITextField *textfild1 = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, KScreenW-100, 40) ];
     textfild1.placeholder = @"6～15位密码";
+    textfild1.secureTextEntry = YES;
     [self.view addSubview:textfild1];
     self.PassText = textfild1;
     
@@ -80,6 +85,30 @@
         make.right.mas_equalTo(TELText);
         make.height.offset(40);
     }];
+    
+    UIButton *hidenBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [hidenBtn addTarget:self action:@selector(hidenBtn) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:hidenBtn];
+    
+    [hidenBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(TELText).with.offset(60);
+        make.width.offset(50);
+        make.right.mas_equalTo(TELText);
+        make.height.offset(40);
+    }];
+    
+    UIImageView *hidenimageview = [[UIImageView alloc] init];
+    [self.view addSubview:hidenimageview];
+    hidenimageview.image = IMAGE_NAMED(@"icon_eye_close");
+    self.eyeimageView = hidenimageview;
+    [hidenimageview mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(hidenBtn).with.offset(10);
+        make.width.offset(30);
+        make.right.mas_equalTo(hidenBtn).with.offset(10);
+        make.height.offset(20);
+    }];
+    
+    
 
     UIView *lineview1 = [[UIView alloc] initWithFrame:CGRectMake(50, 0, 0, 0)];
     lineview1.backgroundColor = RGB(242, 242, 242);
@@ -124,6 +153,7 @@
         make.right.mas_equalTo(textfild);
         make.height.offset(30);
     }];
+    
     
     NSMutableAttributedString *hintString=[[NSMutableAttributedString alloc]initWithString:@"注册即表示您已同意《中思财经用户服务协议》"];
     //获取要调整颜色的文字位置,调整颜色
@@ -183,7 +213,21 @@
     
 }
 
+-(void)hidenBtn{
+    if (self.IsHiden) {
+        self.PassText.secureTextEntry = NO;
+        self.eyeimageView.image = IMAGE_NAMED(@"icon_eye_open");
+        
+    }else{
+    
+        self.PassText.secureTextEntry = YES;
+        self.eyeimageView.image = IMAGE_NAMED(@"icon_eye_close");
+    }
 
+    self.IsHiden = !self.IsHiden;
+
+
+}
 
 
 - (IBAction)BtnClicked:(id)sender {
@@ -281,6 +325,7 @@
     
     [[HttpRequest sharedInstance] postWithURLString:utf parameters:dic success:^(id responseObject) {
          [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+        [MBProgressHUD hideHUD];
         NSDictionary *dict = responseObject;
         NSString *message = [NSString stringWithFormat:@"%@",dict[@"message"]];
         NSString *code = [NSString stringWithFormat:@"%@",dict[@"state"]];
@@ -299,6 +344,7 @@
         }
     } failure:^(NSError *error) {
          [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+        [MBProgressHUD hideHUD];
         NSLog(@"错误原因：%@",error.description);
 
         [MBProgressHUD showError:@"操作失败，请稍后重试"];

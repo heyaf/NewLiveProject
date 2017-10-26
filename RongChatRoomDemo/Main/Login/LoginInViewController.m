@@ -66,7 +66,7 @@
 #pragma mark ----登录注册------
 -(void)AddViewloginOrOut{
     
-    UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(KScreenW/2-50, 60, 100, 80)];
+    UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(KScreenW/2-50, 60, 100, 70)];
     imageview.image = IMAGE_NAMED(@"logo");
     [self.view addSubview:imageview];
     
@@ -287,10 +287,11 @@
     NSString *utf = [LoginPassUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [[HttpRequest sharedInstance] postWithURLString:utf parameters:dic success:^(id responseObject) {
          [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+        [MBProgressHUD hideHUD];
         NSDictionary *dict = responseObject;
         NSString *code = [NSString stringWithFormat:@"%@",dict[@"state"]];
 
-        ASLog(@"登陆页%@",dict);
+        ASLog(@"登陆页的信息%@",dict);
         if ([code isEqualToString:@"1"]) {
             [MBProgressHUD showSuccess:@"操作成功"];
             
@@ -321,10 +322,12 @@
 
             [MBProgressHUD showError:message];
         }
+        
     } failure:^(NSError *error) {
          [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         
         [MBProgressHUD showError:@"操作失败，请稍后重试"];
+        [MBProgressHUD hideHUD];
     }];
 }
 #pragma mark ——————存储用户信息和登陆状态——————

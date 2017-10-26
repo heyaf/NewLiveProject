@@ -61,7 +61,7 @@
 -(void)AddViewloginOrOut{
     
      userModel *user = [kApp getusermodel];
-    CGRect accountF = CGRectMake(20, 80, KScreenW-40, 40);
+    CGRect accountF = CGRectMake(20, 20, KScreenW-40, 40);
     UITextField *TELText = [[UITextField alloc] initWithFrame:accountF];
     TELText.placeholder = user.name;
     TELText.frame = accountF;
@@ -99,12 +99,14 @@
     if (self.TelText.text.length>0) {
         NSDictionary *dict =@{@"niceName":self.TelText.text,
                               @"id":user.Id,
-                              
+                              @"uuid":[[NSUserDefaults standardUserDefaults] objectForKey:SectionID]
+
                               };
-        [MBProgressHUD showMessage:@"请稍候..."];
+//        [MBProgressHUD showMessage:@"请稍候..."];
         NSString *utf = [Updateusers stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         [[HttpRequest sharedInstance] postWithURLString:utf parameters:dict success:^(id responseObject) {
              [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+            [MBProgressHUD hideHUD];
             NSDictionary *dict = responseObject;
             NSString *code = [NSString stringWithFormat:@"%@",dict[@"state"]];
             
@@ -113,7 +115,8 @@
                 
                 [MBProgressHUD showSuccess:@"操作成功"];
                 userModel *usermodel =[kApp getusermodel];
-                usermodel.niceName = self.TelText.text;
+                [self saveuserinfoWithdic:usermodel andName:self.TelText.text];
+                self.TelText.text = @"";
                 
                 NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
                 NSString *token = [userDefaults stringForKey:@"Token"];
@@ -127,7 +130,8 @@
             }
         } failure:^(NSError *error) {
              [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
-            
+            [MBProgressHUD hideHUD];
+            ASLog(@"....%@",error.description);
             [MBProgressHUD showError:@"操作失败，请稍后重试"];
         }];
     }else{
@@ -137,6 +141,34 @@
     }
     
 }
+
+-(void)saveuserinfoWithdic:(userModel *)model andName:(NSString *)name{
+    
+    
+    
+    userModel *usermodel = [[userModel alloc] init];
+    usermodel.Id = model.Id;
+    usermodel.niceName = name;
+    usermodel.phone = model.phone;
+    usermodel.state = model.state;
+    usermodel.loginDate = model.loginDate;
+    usermodel.picture = usermodel.picture;
+    usermodel.password = model.password;
+    usermodel.createTime = model.createTime;
+        // 创建归档时所需的data 对象.
+    NSMutableData *data = [NSMutableData data];
+    // 归档类.
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+    // 开始归档（@"model" 是key值，也就是通过这个标识来找到写入的对象）.
+    [archiver encodeObject:usermodel forKey:kUserinfoKey];
+    // 归档结束.
+    [archiver finishEncoding];
+    // 写入本地（@"weather" 是写入的文件名）.
+    NSString *file = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"weather"];
+    [data writeToFile:file atomically:YES];
+    
+}
+
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
     

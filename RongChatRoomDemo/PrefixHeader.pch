@@ -68,6 +68,7 @@ alpha:1.0]
 #import "HttpRequest.h"
 #import "userModel.h"
 #import "RootWebViewController.h"
+#import "StringToData.h"
 
 //#import <SDCycleScrollView.h>
 

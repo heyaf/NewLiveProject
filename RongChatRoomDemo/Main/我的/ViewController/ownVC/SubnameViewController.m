@@ -111,14 +111,14 @@
     if (self.PassText.text.length>0 && self.TelText.text.length>0) {
         NSDictionary *dict =@{@"newPassword":self.PassText.text,
                               @"id":user.Id,
-                              @"oldPassword":self.TelText.text
-                              
+                              @"oldPassword":self.TelText.text                              
                               };
-        [MBProgressHUD showMessage:@"请稍候..."];
+//        [MBProgressHUD showMessage:@"请稍候..."];
 
         NSString *utf = [UpdatePassusers stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         [[HttpRequest sharedInstance] postWithURLString:utf parameters:dict success:^(id responseObject) {
              [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+            [MBProgressHUD hideHUD];
             NSDictionary *dict = responseObject;
             NSString *code = [NSString stringWithFormat:@"%@",dict[@"state"]];
             
@@ -136,6 +136,7 @@
             }
         } failure:^(NSError *error) {
              [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+            [MBProgressHUD hideHUD];
             NSLog(@"%@",error);
             [MBProgressHUD showError:@"操作失败，请稍后重试"];
         }];
