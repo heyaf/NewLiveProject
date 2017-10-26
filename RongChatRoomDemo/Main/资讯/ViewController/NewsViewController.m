@@ -80,7 +80,7 @@
 
 -(void)creatSegementController{
 
-    self.segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"资讯",@"快讯"]];
+    self.segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"新闻",@"快讯"]];
     _segmentedControl.frame = CGRectMake(0, 0, 180, 30);
     self.navigationItem.titleView = self.segmentedControl;
 //    self.navigationController.navigationBar.barTintColor = KWhiteColor;
@@ -90,6 +90,8 @@
     self.segmentedControl.layer.masksToBounds = YES;
     self.segmentedControl.layer.cornerRadius = 15;
     self.segmentedControl.selectedSegmentIndex = 0;
+    self.segmentedControl.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.segmentedControl.layer.borderWidth = 1;
     //设置普通状态下(未选中)状态下的文字颜色和字体
     [self.segmentedControl setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17],NSForegroundColorAttributeName: [UIColor whiteColor]} forState:UIControlStateNormal];
     //设置选中状态下的文字颜色和字体
