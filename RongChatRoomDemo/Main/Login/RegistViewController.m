@@ -154,37 +154,39 @@
         make.height.offset(30);
     }];
     
-    
-    NSMutableAttributedString *hintString=[[NSMutableAttributedString alloc]initWithString:@"注册即表示您已同意《中思财经用户服务协议》"];
-    //获取要调整颜色的文字位置,调整颜色
-    
-    
-    NSRange range2=[[hintString string]rangeOfString:@"《中思财经用户服务协议》"];
-    [hintString addAttribute:NSForegroundColorAttributeName value:RGB(69, 163, 229) range:range2];
-    
-    hintLabel.attributedText=hintString;
-    
-
-    UIButton *XieyiBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [XieyiBtn addTarget:self action:@selector(XieyiBtn) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:XieyiBtn];
-    [XieyiBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(hintLabel);
-        make.left.mas_equalTo(hintLabel);
-        make.right.mas_equalTo(hintLabel);
-        make.height.mas_equalTo(hintLabel);
-
-    }];
-    
-    
-    [self.view addSubview:self.countdownButton];
-    [_countdownButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    if ([self.titlestr isEqualToString:@"注册"]) {
+        NSMutableAttributedString *hintString=[[NSMutableAttributedString alloc]initWithString:@"注册即表示您已同意《中思财经用户服务协议》"];
+        //获取要调整颜色的文字位置,调整颜色
+        
+        
+        NSRange range2=[[hintString string]rangeOfString:@"《中思财经用户服务协议》"];
+        [hintString addAttribute:NSForegroundColorAttributeName value:RGB(69, 163, 229) range:range2];
+        
+        hintLabel.attributedText=hintString;
+        
+        
+        UIButton *XieyiBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [XieyiBtn addTarget:self action:@selector(XieyiBtn) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:XieyiBtn];
+        [XieyiBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(hintLabel);
+            make.left.mas_equalTo(hintLabel);
+            make.right.mas_equalTo(hintLabel);
+            make.height.mas_equalTo(hintLabel);
+            
+        }];
+        
+        
+        [self.view addSubview:self.countdownButton];
+        [_countdownButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(textfild);
             make.right.mas_equalTo(TELText);
             make.bottom.mas_equalTo(textfild);
             make.width.offset(120);
-    }];
-    /*
+        }];
+
+    }
+       /*
      登录按钮
      */
     _LoginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -329,7 +331,7 @@
         NSDictionary *dict = responseObject;
         NSString *message = [NSString stringWithFormat:@"%@",dict[@"message"]];
         NSString *code = [NSString stringWithFormat:@"%@",dict[@"state"]];
-        NSLog(@"....%@,%@",dict,message);
+//        NSLog(@"....%@,%@",dict,message);
         if ([code isEqualToString:@"1"]) {
             [MBProgressHUD showSuccess:@"操作成功"];
             [self dismissViewControllerAnimated:YES completion:nil];
@@ -345,7 +347,7 @@
     } failure:^(NSError *error) {
          [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         [MBProgressHUD hideHUD];
-        NSLog(@"错误原因：%@",error.description);
+//        NSLog(@"错误原因：%@",error.description);
 
         [MBProgressHUD showError:@"操作失败，请稍后重试"];
     }];

@@ -93,7 +93,6 @@
 
     [self creatLiveListDate];
     [self creatData];
-//    [self creatHeaderView];
 
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -144,7 +143,7 @@
         [MBProgressHUD hideHUD];
         
         NSDictionary *dict = responseObject;
-        NSLog(@"视频界面----------%@",dict);
+//        NSLog(@"视频界面----------%@",dict);
 
 
         if ([dict[@"state"] isEqualToString:@"0"]) {
@@ -172,7 +171,7 @@
         [_collectionview.mj_header endRefreshing];
         [_collectionview.mj_footer endRefreshing];
 
-        NSLog(@"视频界面----------%@,%@,%@",error.description,VideoListUrl,dic);
+//        NSLog(@"视频界面----------%@,%@,%@",error.description,VideoListUrl,dic);
         
         
         
@@ -184,7 +183,7 @@
     [MBProgressHUD showMessage:@"正在加载..."];
     [[HttpRequest sharedInstance] getWithURLString:LiveListUrl parameters:nil success:^(id responseObject) {
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-        NSLog(@"直播列表数据..__________________________.%@",dict);
+//        NSLog(@"直播列表数据..__________________________.%@",dict);
         
          [MBProgressHUD hideAllHUDsForView:[[UIApplication sharedApplication].windows lastObject] animated:YES];
         [MBProgressHUD hideHUD];
@@ -212,9 +211,12 @@
                 if ([mydict[@"state"] isEqualToString:@"1"]) {
                     headPicUrl = mydict[@"pictureUrl"];
                 }
-                [self creatHeaderView];
-                [self creatNumberLBContent];
+                if (!kApp.isCheck) {
+                    [self creatHeaderView];
+                    [self creatNumberLBContent];
 
+                }
+               
             } failure:^(NSError *error) {
                 
                  [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
@@ -436,7 +438,17 @@
     // 滚动方向
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     
-    _collectionview = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 250+64, KScreenW, KScreenH-250-64-48) collectionViewLayout:flowLayout];
+    CGFloat H;
+
+    if (kApp.isCheck) {
+        
+        H = 0;
+    }else{
+    
+        H = 250;
+    }
+    
+    _collectionview = [[UICollectionView alloc] initWithFrame:CGRectMake(0, H+64, KScreenW, KScreenH-H-64-48) collectionViewLayout:flowLayout];
     _collectionview.backgroundColor = KWhiteColor;
     _collectionview.delegate = self;
     _collectionview.dataSource = self;
@@ -503,9 +515,9 @@
 
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:@"http://www.leaguecc.com:6660/liveStream/getPageUrl?id=6" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        NSLog(@"....%@",responseObject);
+//        NSLog(@"....%@",responseObject);
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
-        NSLog(@"失败.......%@",[error description]);
+//        NSLog(@"失败.......%@",[error description]);
     }];
     
 }

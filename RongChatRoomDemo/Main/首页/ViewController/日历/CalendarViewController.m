@@ -65,10 +65,16 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"News2TableViewCell" bundle:nil] forCellReuseIdentifier:@"news2cell"];
     [self creatRightbutton];
-    [self creatDataWithData:[self getNowDate]];
+    
+}
+-(void)viewWillAppear:(BOOL)animated{
+
+
+    [self creatDataWithData:[self getNowDate] andHidenRightBtn:YES];
+    
 }
 
--(void)creatDataWithData:(NSString *)dataStr{
+-(void)creatDataWithData:(NSString *)dataStr andHidenRightBtn:(BOOL) hiden{
     
     
     [MBProgressHUD showMessage:@"正在加载..."];
@@ -77,13 +83,27 @@
         [MBProgressHUD hideHUDForView:[UIApplication sharedApplication].keyWindow animated:YES];
         [MBProgressHUD hideHUD];
         NSDictionary *dict = responseObject;
-        
+        ASLog(@"日历%@",dict);
         if ([dict[@"state"] isEqualToString:@"0"]) {
             [MBProgressHUD showError:dict[@"msg"]];
             _dataArr=(NSMutableArray *)[[_dataArr reverseObjectEnumerator] allObjects];
             [_tableView reloadData];
+            UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, KScreenW, KScreenH-64)];
+            bgView.backgroundColor = KWhiteColor;
+            UIImageView *imagev = [[UIImageView alloc] initWithFrame:CGRectMake(KScreenW/2-60,100 , 120, 100)];
+            imagev.image = IMAGE_NAMED(@"icon_nonewsimage");
+            [bgView addSubview:imagev];
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(KScreenW/2-60,210 , 120, 20)];
+            label.textAlignment = NSTextAlignmentCenter;
+            label.text = @"暂无相关新闻";
+            [bgView addSubview:label];
+            [self.view addSubview:bgView];
+            if (hiden) {
+                self.navigationItem.rightBarButtonItem= nil;
+            }
 
         }else{
+            
             _dataArr = [CalendarModel arrayOfModelsFromDictionaries:dict[@"events"] error:nil];
             _dataArr=(NSMutableArray *)[[_dataArr reverseObjectEnumerator] allObjects];
             
@@ -159,8 +179,7 @@
     formatter.dateFormat = @"YYYYMMdd";
     NSString *dateStr = [formatter stringFromDate:self.calendarView.selectedDate];
     _bgView.hidden = YES;
-    NSLog(@"....%@",dateStr);
-    [self creatDataWithData:dateStr];
+    [self creatDataWithData:dateStr andHidenRightBtn:NO];
 }
 
 

@@ -1336,7 +1336,6 @@ static NSString *const RCDLiveGiftMessageCellIndentifier = @"RCDLiveGiftMessageC
 
     _isScreenVertical = !isVertical;
     if (!isVertical) {
-        NSLog(@"---------------------changeModel---------------11111");
         [UIView animateWithDuration:0.2 animations:^{
             [self.livePlayingManager.currentLiveView setTransform:CGAffineTransformRotate(CGAffineTransformIdentity, M_PI_2)];
             self.livePlayingManager.currentLiveView.frame = self.view.frame;
@@ -1352,7 +1351,6 @@ static NSString *const RCDLiveGiftMessageCellIndentifier = @"RCDLiveGiftMessageC
         [_backBtn setTransform:CGAffineTransformRotate(CGAffineTransformIdentity, M_PI_2)];
         
     } else {
-        NSLog(@"---------------------changeModel---------------222222");
         [UIView animateWithDuration:0.2 animations:^{
             [self.livePlayingManager.currentLiveView setTransform:CGAffineTransformMakeRotation(0*M_PI/180)];
             self.livePlayingManager.currentLiveView.frame = CGRectMake(0, 0, self.view.frame.size.width, KScreenW*9/16);
@@ -1393,7 +1391,6 @@ static NSString *const RCDLiveGiftMessageCellIndentifier = @"RCDLiveGiftMessageC
     CGFloat scale = round(random() % 2) + 1.0;
     CGFloat speed = 1 / round(random() % 900) + 0.6;
     int imageName = round(random() % 7);
-    NSLog(@"%.2f - %.2f -- %d",startX,scale,imageName);
     
     [UIView beginAnimations:nil context:(__bridge void *_Nullable)(imageView)];
     [UIView setAnimationDuration:7 * speed];
@@ -1420,7 +1417,7 @@ static NSString *const RCDLiveGiftMessageCellIndentifier = @"RCDLiveGiftMessageC
     CGFloat scale = round(random() % 2) + 1.0;
     CGFloat speed = 1 / round(random() % 900) + 0.6;
     int imageName = round(random() % 2);
-    NSLog(@"%.2f - %.2f -- %d",startX,scale,imageName);
+    
     
     [UIView beginAnimations:nil context:(__bridge void *_Nullable)(imageView)];
     [UIView setAnimationDuration:7 * speed];

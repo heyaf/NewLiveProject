@@ -145,7 +145,7 @@
 
 - (void)rc_playDanmaku:(RCDDanmaku *)danmaku
 {
-    NSLog(@"总弹幕数%zd",RCDanmakuManager.danmakus.count);
+//    NSLog(@"总弹幕数%zd",RCDanmakuManager.danmakus.count);
     UILabel* playerLabel = [[UILabel alloc] init];
     playerLabel.tag = RCDDanmakuLabelTag;
     playerLabel.attributedText = danmaku.contentStr;
@@ -180,7 +180,7 @@
 
 - (void)rc_sendOverLoadDanmaku {
     if(RCDanmakuManager.danmakus.count > 0){
-        NSLog(@"count total %zd",RCDanmakuManager.danmakus.count);
+//        NSLog(@"count total %zd",RCDanmakuManager.danmakus.count);
         [self rc_playDanmaku:RCDanmakuManager.danmakus[0]];
         [RCDanmakuManager.danmakus removeObjectAtIndex:0];
     }
@@ -225,7 +225,7 @@
                 [self rc_addCenterAnimation:newInfo centerDict:centerDict];
             }else{
                 [self rc_removeDanmakuInfoAfterAnimation:newInfo];
-                NSLog(@"同一时间评论太多--排不开了--------------------------");
+//                NSLog(@"同一时间评论太多--排不开了--------------------------");
             }
         }
     }
@@ -240,10 +240,10 @@
     
     if (info.danmaku.position == RCDDanmakuPositionCenterTop) {
         label.frame = CGRectMake((Width(self) - Width(label)) * 0.5, (RCDanmakuManager.lineHeight + RCDanmakuManager.lineMargin) * lineCount, Width(label), Height(label));
-        NSLog(@"top frame %@",NSStringFromCGRect(label.frame));
+//        NSLog(@"top frame %@",NSStringFromCGRect(label.frame));
     }else{
         label.frame = CGRectMake((Width(self) - Width(label)) * 0.5, Height(self) - Height(label) - (RCDanmakuManager.lineHeight + RCDanmakuManager.lineMargin) * lineCount, Width(label), Height(label));
-        NSLog(@"bottom frame %@",NSStringFromCGRect(label.frame));
+//        NSLog(@"bottom frame %@",NSStringFromCGRect(label.frame));
     }
     
     centerDict[@(lineCount)] = info;
@@ -294,7 +294,7 @@
             RCDDanmakuInfo* oldInfo = RCDanmakuManager.linesDict[@(newInfo.lineCount)];
             if(oldInfo){
                 NSInteger randNum = [self rc_getRandomNum:arr];
-                NSLog(@"----------------------------------");
+//                NSLog(@"----------------------------------");
                 newInfo.lineCount = randNum*randNum % RCDanmakuManager.maxShowLineCount;
             }else{
                 break;
@@ -363,7 +363,7 @@
         if (finished) {
             [weakSelf rc_removeDanmakuInfoAfterAnimation:info];
             [RCDanmakuManager.linesDict removeObjectForKey:@(info.lineCount)];
-            NSLog(@"count left %zd",RCDanmakuManager.danmakus.count);
+//            NSLog(@"count left %zd",RCDanmakuManager.danmakus.count);
         }
     }];
 }
@@ -407,7 +407,7 @@
 //检测特定位置弹幕是否是在视频页面的可视范围中，如果需要做不在可视范围的处理，可以在该方法中进行操作
 - (void)rc_checkDanmakuLabelInView:(UILabel *)label {
     if(!CGRectContainsRect(self.frame, label.frame)){
-        NSLog(@"warning : 特殊点弹幕的位置超出可视范围");
+//        NSLog(@"warning : 特殊点弹幕的位置超出可视范围");
     }
 }
 

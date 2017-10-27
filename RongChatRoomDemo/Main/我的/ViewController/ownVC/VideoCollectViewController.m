@@ -108,7 +108,7 @@
         
         //        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         NSDictionary *dict = responseObject;
-        NSLog(@"0.0.0.0.0.%@",dict);
+//        NSLog(@"0.0.0.0.0.%@",dict);
         
         
         if ([dict[@"state"] isEqualToString:@"0"]) {

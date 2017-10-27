@@ -113,7 +113,7 @@
                               @"id":user.Id,
                               @"oldPassword":self.TelText.text                              
                               };
-//        [MBProgressHUD showMessage:@"请稍候..."];
+//        [MBProgressHUD showMessage:@"正在加载..."];
 
         NSString *utf = [UpdatePassusers stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         [[HttpRequest sharedInstance] postWithURLString:utf parameters:dict success:^(id responseObject) {
@@ -137,7 +137,7 @@
         } failure:^(NSError *error) {
              [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
             [MBProgressHUD hideHUD];
-            NSLog(@"%@",error);
+//            NSLog(@"%@",error);
             [MBProgressHUD showError:@"操作失败，请稍后重试"];
         }];
     }else if(self.TelText.text.length==0){

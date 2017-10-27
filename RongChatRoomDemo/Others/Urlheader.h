@@ -111,11 +111,13 @@
 
 //退出登录
 #define QuartUrl @"http://www.leaguecc.com:6660/user/loginOutForApp"
-//通过SecTion登录
+//通过SecTion登录6661/ios/ioscheck
 #define SectionLoginUrl @"http://www.leaguecc.com:6660/user/getUserByUUidForApp"
 
 
 
+//是否苹果审核状态
+#define iOSCheckUrl @"http://www.leaguecc.com:6661/ios/ioscheck"
 
 
 

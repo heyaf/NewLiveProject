@@ -74,23 +74,18 @@
     self.navigationController.navigationBar.tintColor = KWhiteColor;
     self.navigationItem.title = @"中思财经";
 
-//     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Homecell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"homecell"];
     [self creatLunboData];
     [self creatHotData];
-//    [self creatHeadScrollView];
     [self setcenterView];
-//    [self creatTableview];
     [self creatRightbutton];
     
     
 }
-//-(void)viewWillAppear:(BOOL)animated{
-//
-//    MBProgressHUD *hub = [[MBProgressHUD alloc] initWithView:self.view];
-//    [self.view addSubview:hub];
-//    [hub hide:YES afterDelay:1.0];
-//}
+-(void)viewWillAppear:(BOOL)animated{
+    
+
+}
 
 
 #pragma mark ---------设置右上角搜索按钮-----
@@ -170,7 +165,7 @@
     _lunboImgArr = [NSMutableArray array];
     _lunboTitleArr = [NSMutableArray array];
     _lunboUrlArr = [NSMutableArray array];
-    [MBProgressHUD showMessage:@"正在加载中..."];
+    [MBProgressHUD showMessage:@"正在加载..."];
     [[HttpRequest sharedInstance] getWithURLString:LunboUrl parameters:nil success:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         [MBProgressHUD hideHUD];
@@ -192,7 +187,7 @@
         }
 
     } failure:^(NSError *error) {
-        NSLog(@"轮播图......%@",error.description);
+//        NSLog(@"轮播图......%@",error.description);
         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         [MBProgressHUD hideHUD];
         

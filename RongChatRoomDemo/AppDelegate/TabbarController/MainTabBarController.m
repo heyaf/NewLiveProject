@@ -72,6 +72,10 @@
     [self setupChildViewController:thrVC title:@"视频" imageName:@"tab_video_defaul" seleceImageName:@"tab_video_selected"];
     [self setupChildViewController:fourVC title:@"行情" imageName:@"icon_hangq" seleceImageName:@"icon_hangq_selected"];
     [self setupChildViewController:fivVC title:@"我的" imageName:@"tab_mine_default" seleceImageName:@"tab_mine_selected"];
+
+    
+    
+    
     
 
     
@@ -102,7 +106,6 @@
     controller.tabBarItem.image = [UIImage imageNamed:imageName];
     controller.tabBarItem.selectedImage = [UIImage imageNamed:selectImageName];
 
-//    controller.tabBarItem.badgeValue = _VCS.count%2==0 ? @"100": @"1";
     //包装导航控制器
     RootNavigationController *nav = [[RootNavigationController alloc]initWithRootViewController:controller];
     controller.title = title;

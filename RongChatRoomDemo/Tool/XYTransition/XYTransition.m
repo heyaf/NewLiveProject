@@ -164,10 +164,10 @@
     } completion:^(BOOL finished) {
         //        if (finished) {
         if (transitionContext.transitionWasCancelled) {
-            NSLog(@"动画取消");
+//            NSLog(@"动画取消");
             kAppDelegate.mainTabBar.tabBar.alpha = 0;
         }else{
-            NSLog(@"动画完成");
+//            NSLog(@"动画完成");
         }
         
         [snapShot removeFromSuperview];

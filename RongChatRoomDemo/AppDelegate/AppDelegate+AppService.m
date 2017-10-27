@@ -43,10 +43,10 @@
     
     self.mainTabBar = [MainTabBarController new];
     self.window.rootViewController = self.mainTabBar;
+    [self isChecking];
     
     userModel *usermodel = [self getusermodel];
     NSString *sectionID = [[NSUserDefaults standardUserDefaults] objectForKey:SectionID];
-    ASLog(@"00000%@,%@",sectionID,usermodel.Id);
 
     if (sectionID.length<=0||usermodel.Id.length<=0) {
         
@@ -69,7 +69,7 @@
 
                 
                 
-                NSLog(@"----个人信息-%@",[kApp getusermodel]);
+//                NSLog(@"----个人信息-%@",[kApp getusermodel]);
             }else{
                 [self presentLoginVC];
             
@@ -84,6 +84,27 @@
 
     
     }
+    
+}
+
+#pragma mark -判断是否是苹果审核状态
+-(void)isChecking{
+
+    
+
+        [[HttpRequest sharedInstance] getWithURLString:iOSCheckUrl parameters:nil success:^(id responseObject) {
+        
+            ASLog(@"789987%@",responseObject);
+        NSString *dict = [[ NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+            ASLog(@"..........%@",dict);
+        if ([dict isEqualToString:@"1"]) {
+            kApp.isCheck =YES;
+        }
+        
+    } failure:^(NSError *error) {
+        
+    }];
+    
     
 }
 

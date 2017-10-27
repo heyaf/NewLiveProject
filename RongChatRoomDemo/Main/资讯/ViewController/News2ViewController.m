@@ -77,7 +77,7 @@
          [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         [MBProgressHUD hideHUD];
         NSDictionary *dict = responseObject;
-        NSLog(@"11111%@",dict);
+//        NSLog(@"11111%@",dict);
         
         if ([dict[@"state"] isEqualToString:@"0"]) {
             [MBProgressHUD showError:dict[@"msg"]];
@@ -194,7 +194,7 @@
     
     CalendarModel *basem = _dataArr[indexPath.row];
     NSString *countryUrl = [NSString stringWithFormat:CountryPicUrl,[basem.Country stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-    NSLog(@"......%@",countryUrl);
+//    NSLog(@"......%@",countryUrl);
     [cell.countryImv sd_setImageWithURL:[NSURL URLWithString:countryUrl]];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.titleImageV.image = IMAGE_NAMED(@"1");

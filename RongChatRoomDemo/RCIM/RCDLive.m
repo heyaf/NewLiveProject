@@ -60,7 +60,7 @@ static RCDLive *__rongUIKit = nil;
 }
 - (void)initRongCloud:(NSString *)appKey{
     if ([self.appKey isEqual:appKey]) {
-        NSLog(@"Warning:请不要重复调用Init！！！");
+//        NSLog(@"Warning:请不要重复调用Init！！！");
         return;
     }
     

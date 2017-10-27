@@ -404,7 +404,7 @@ YYTextAttributeType YYTextAttributeGetType(NSString *name){
         data = [YYTextArchiver archivedDataWithRootObject:self.attributes];
     }
     @catch (NSException *exception) {
-        NSLog(@"%@",exception);
+//        NSLog(@"%@",exception);
     }
     [aCoder encodeObject:data forKey:@"attributes"];
 }
@@ -416,7 +416,7 @@ YYTextAttributeType YYTextAttributeGetType(NSString *name){
         _attributes = [YYTextUnarchiver unarchiveObjectWithData:data];
     }
     @catch (NSException *exception) {
-        NSLog(@"%@",exception);
+//        NSLog(@"%@",exception);
     }
     return self;
 }

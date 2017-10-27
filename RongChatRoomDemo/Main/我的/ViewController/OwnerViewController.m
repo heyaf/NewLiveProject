@@ -186,7 +186,7 @@
 //    NSMutableDictionary *imageDic = [[NSMutableDictionary alloc]initWithCapacity:0];
 //    imageDic[@"id"] = model.Id;
 //    imageDic[@"file"] = data;
-    [MBProgressHUD showMessage:@"请稍候..."];
+    [MBProgressHUD showMessage:@"正在加载..."];
 
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -209,7 +209,7 @@
                                       @"picture":_Imageurl,
                                       @"uuid":[[NSUserDefaults standardUserDefaults] objectForKey:SectionID]
                                       };
-            NSLog(@"上传图片......%@",_Imageurl);
+//            NSLog(@"上传图片......%@",_Imageurl);
 
             [[HttpRequest sharedInstance] postWithURLString:Updateusers parameters:parement success:^(id responseObject) {
                  [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
@@ -225,7 +225,7 @@
                     [self saveuserinfoWithdic:model angStr:_Imageurl];
                     
                     
-                    NSLog(@"上传图片......%@",[kApp getusermodel]);
+//                    NSLog(@"上传图片......%@",[kApp getusermodel]);
                     
                 }else
                 {
@@ -263,7 +263,7 @@
          [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         [MBProgressHUD hideHUD];
         [MBProgressHUD showError:@"操作失败"];
-        NSLog(@"上传图片shibai%@",error.description);
+//        NSLog(@"上传图片shibai%@",error.description);
     }];
    
     

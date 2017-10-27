@@ -43,7 +43,7 @@
     _hud = [MBProgressHUD showHUDAddedTo: [UIApplication sharedApplication].keyWindow animated:YES];
     [[[UIApplication sharedApplication].windows lastObject] addSubview:_hud];
     //    NSLog(@"0....0%@",self.url);
-    _hud.labelText = NSLocalizedString(@"请稍候...", @"HUD loading title");
+    _hud.labelText = NSLocalizedString(@"正在加载...", @"HUD loading title");
 
     
 }
@@ -56,7 +56,7 @@
         [self getmessageWithUrl:ChargeCollection];
     }
     [self initProgressView];
-    NSLog(@"WEbyeURl%@",self.url);
+//    NSLog(@"WEbyeURl%@",self.url);
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -103,7 +103,7 @@
         MBProgressHUD * hud1 = [MBProgressHUD showHUDAddedTo: [UIApplication sharedApplication].keyWindow animated:YES];
         [[[UIApplication sharedApplication].windows lastObject] addSubview:hud1];
         //    NSLog(@"0....0%@",self.url);
-        hud1.labelText = NSLocalizedString(@"请稍候...", @"HUD loading title");
+        hud1.labelText = NSLocalizedString(@"正在加载...", @"HUD loading title");
           [[HttpRequest sharedInstance] postWithURLString:utf parameters:dict success:^(id responseObject) {
                [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
               [MBProgressHUD hideHUD];

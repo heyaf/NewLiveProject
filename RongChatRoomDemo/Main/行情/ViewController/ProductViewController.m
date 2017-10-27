@@ -108,6 +108,18 @@
         
             [MBProgressHUD showError:@"加载失败..."];
             [self refreshUI];
+            UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, KScreenW, KScreenH-64)];
+            bgView.backgroundColor = KWhiteColor;
+            UIImageView *imagev = [[UIImageView alloc] initWithFrame:CGRectMake(KScreenW/2-60,100 , 120, 100)];
+            imagev.image = IMAGE_NAMED(@"icon_nonewsimage");
+            [bgView addSubview:imagev];
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(KScreenW/2-60,210 , 120, 20)];
+            label.textAlignment = NSTextAlignmentCenter;
+            label.text = @"暂无相关数据";
+            [bgView addSubview:label];
+            [self.view addSubview:bgView];
+            _tabelView.backgroundColor = KBlackColor;
+            
         }
         
         

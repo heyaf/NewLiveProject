@@ -95,7 +95,7 @@ static NSString *const kTrashDirectoryName = @"trash";
         _dbOpenErrorCount++;
         
         if (_errorLogsEnabled) {
-            NSLog(@"%s line:%d sqlite open failed (%d).", __FUNCTION__, __LINE__, result);
+//            NSLog(@"%s line:%d sqlite open failed (%d).", __FUNCTION__, __LINE__, result);
         }
         return NO;
     }
@@ -125,7 +125,7 @@ static NSString *const kTrashDirectoryName = @"trash";
             }
         } else if (result != SQLITE_OK) {
             if (_errorLogsEnabled) {
-                NSLog(@"%s line:%d sqlite close failed (%d).", __FUNCTION__, __LINE__, result);
+//                NSLog(@"%s line:%d sqlite close failed (%d).", __FUNCTION__, __LINE__, result);
             }
         }
     } while (retry);
@@ -163,7 +163,8 @@ static NSString *const kTrashDirectoryName = @"trash";
     char *error = NULL;
     int result = sqlite3_exec(_db, sql.UTF8String, NULL, NULL, &error);
     if (error) {
-        if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite exec error (%d): %s", __FUNCTION__, __LINE__, result, error);
+        if (_errorLogsEnabled)
+//            NSLog(@"%s line:%d sqlite exec error (%d): %s", __FUNCTION__, __LINE__, result, error);
         sqlite3_free(error);
     }
     
@@ -176,7 +177,8 @@ static NSString *const kTrashDirectoryName = @"trash";
     if (!stmt) {
         int result = sqlite3_prepare_v2(_db, sql.UTF8String, -1, &stmt, NULL);
         if (result != SQLITE_OK) {
-            if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite stmt prepare error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+            if (_errorLogsEnabled)
+//                NSLog(@"%s line:%d sqlite stmt prepare error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
             return NULL;
         }
         CFDictionarySetValue(_dbStmtCache, (__bridge const void *)(sql), stmt);
@@ -224,7 +226,8 @@ static NSString *const kTrashDirectoryName = @"trash";
     
     int result = sqlite3_step(stmt);
     if (result != SQLITE_DONE) {
-        if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite insert error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+        if (_errorLogsEnabled)
+//            NSLog(@"%s line:%d sqlite insert error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
         return NO;
     }
     return YES;
@@ -238,7 +241,8 @@ static NSString *const kTrashDirectoryName = @"trash";
     sqlite3_bind_text(stmt, 2, key.UTF8String, -1, NULL);
     int result = sqlite3_step(stmt);
     if (result != SQLITE_DONE) {
-        if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite update error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+        if (_errorLogsEnabled)
+//            NSLog(@"%s line:%d sqlite update error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
         return NO;
     }
     return YES;
@@ -252,7 +256,8 @@ static NSString *const kTrashDirectoryName = @"trash";
     sqlite3_stmt *stmt = NULL;
     int result = sqlite3_prepare_v2(_db, sql.UTF8String, -1, &stmt, NULL);
     if (result != SQLITE_OK) {
-        if (_errorLogsEnabled)  NSLog(@"%s line:%d sqlite stmt prepare error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+        if (_errorLogsEnabled)
+//            NSLog(@"%s line:%d sqlite stmt prepare error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
         return NO;
     }
     
@@ -260,7 +265,8 @@ static NSString *const kTrashDirectoryName = @"trash";
     result = sqlite3_step(stmt);
     sqlite3_finalize(stmt);
     if (result != SQLITE_DONE) {
-        if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite update error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+        if (_errorLogsEnabled)
+//            NSLog(@"%s line:%d sqlite update error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
         return NO;
     }
     return YES;
@@ -274,7 +280,8 @@ static NSString *const kTrashDirectoryName = @"trash";
     
     int result = sqlite3_step(stmt);
     if (result != SQLITE_DONE) {
-        if (_errorLogsEnabled) NSLog(@"%s line:%d db delete error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+        if (_errorLogsEnabled)
+//            NSLog(@"%s line:%d db delete error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
         return NO;
     }
     return YES;
@@ -286,7 +293,8 @@ static NSString *const kTrashDirectoryName = @"trash";
     sqlite3_stmt *stmt = NULL;
     int result = sqlite3_prepare_v2(_db, sql.UTF8String, -1, &stmt, NULL);
     if (result != SQLITE_OK) {
-        if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite stmt prepare error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+        if (_errorLogsEnabled)
+//            NSLog(@"%s line:%d sqlite stmt prepare error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
         return NO;
     }
     
@@ -294,7 +302,8 @@ static NSString *const kTrashDirectoryName = @"trash";
     result = sqlite3_step(stmt);
     sqlite3_finalize(stmt);
     if (result == SQLITE_ERROR) {
-        if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite delete error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+        if (_errorLogsEnabled)
+//            NSLog(@"%s line:%d sqlite delete error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
         return NO;
     }
     return YES;
@@ -307,7 +316,8 @@ static NSString *const kTrashDirectoryName = @"trash";
     sqlite3_bind_int(stmt, 1, size);
     int result = sqlite3_step(stmt);
     if (result != SQLITE_DONE) {
-        if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite delete error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+        if (_errorLogsEnabled)
+//            NSLog(@"%s line:%d sqlite delete error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
         return NO;
     }
     return YES;
@@ -320,7 +330,8 @@ static NSString *const kTrashDirectoryName = @"trash";
     sqlite3_bind_int(stmt, 1, time);
     int result = sqlite3_step(stmt);
     if (result != SQLITE_DONE) {
-        if (_errorLogsEnabled)  NSLog(@"%s line:%d sqlite delete error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+        if (_errorLogsEnabled)
+//            NSLog(@"%s line:%d sqlite delete error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
         return NO;
     }
     return YES;
@@ -361,7 +372,7 @@ static NSString *const kTrashDirectoryName = @"trash";
         item = [self _dbGetItemFromStmt:stmt excludeInlineData:excludeInlineData];
     } else {
         if (result != SQLITE_DONE) {
-            if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+//            if (_errorLogsEnabled)NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
         }
     }
     return item;
@@ -379,7 +390,7 @@ static NSString *const kTrashDirectoryName = @"trash";
     sqlite3_stmt *stmt = NULL;
     int result = sqlite3_prepare_v2(_db, sql.UTF8String, -1, &stmt, NULL);
     if (result != SQLITE_OK) {
-        if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite stmt prepare error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+//        if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite stmt prepare error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
         return nil;
     }
     
@@ -393,7 +404,7 @@ static NSString *const kTrashDirectoryName = @"trash";
         } else if (result == SQLITE_DONE) {
             break;
         } else {
-            if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+//            if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
             items = nil;
             break;
         }
@@ -416,7 +427,7 @@ static NSString *const kTrashDirectoryName = @"trash";
         return [NSData dataWithBytes:inline_data length:inline_data_bytes];
     } else {
         if (result != SQLITE_DONE) {
-            if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+//            if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
         }
         return nil;
     }
@@ -435,7 +446,7 @@ static NSString *const kTrashDirectoryName = @"trash";
         }
     } else {
         if (result != SQLITE_DONE) {
-            if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+//            if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
         }
     }
     return nil;
@@ -447,7 +458,7 @@ static NSString *const kTrashDirectoryName = @"trash";
     sqlite3_stmt *stmt = NULL;
     int result = sqlite3_prepare_v2(_db, sql.UTF8String, -1, &stmt, NULL);
     if (result != SQLITE_OK) {
-        if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite stmt prepare error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+//        if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite stmt prepare error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
         return nil;
     }
     
@@ -464,7 +475,7 @@ static NSString *const kTrashDirectoryName = @"trash";
         } else if (result == SQLITE_DONE) {
             break;
         } else {
-            if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+//            if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
             filenames = nil;
             break;
         }
@@ -491,7 +502,7 @@ static NSString *const kTrashDirectoryName = @"trash";
         } else if (result == SQLITE_DONE) {
             break;
         } else {
-            if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+//            if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
             filenames = nil;
             break;
         }
@@ -517,7 +528,7 @@ static NSString *const kTrashDirectoryName = @"trash";
         } else if (result == SQLITE_DONE) {
             break;
         } else {
-            if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+//            if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
             filenames = nil;
             break;
         }
@@ -549,7 +560,7 @@ static NSString *const kTrashDirectoryName = @"trash";
         } else if (result == SQLITE_DONE) {
             break;
         } else {
-            if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+//            if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
             items = nil;
             break;
         }
@@ -564,7 +575,7 @@ static NSString *const kTrashDirectoryName = @"trash";
     sqlite3_bind_text(stmt, 1, key.UTF8String, -1, NULL);
     int result = sqlite3_step(stmt);
     if (result != SQLITE_ROW) {
-        if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+//        if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
         return -1;
     }
     return sqlite3_column_int(stmt, 0);
@@ -576,7 +587,7 @@ static NSString *const kTrashDirectoryName = @"trash";
     if (!stmt) return -1;
     int result = sqlite3_step(stmt);
     if (result != SQLITE_ROW) {
-        if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+//        if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
         return -1;
     }
     return sqlite3_column_int(stmt, 0);
@@ -588,7 +599,7 @@ static NSString *const kTrashDirectoryName = @"trash";
     if (!stmt) return -1;
     int result = sqlite3_step(stmt);
     if (result != SQLITE_ROW) {
-        if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+//        if (_errorLogsEnabled) NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
         return -1;
     }
     return sqlite3_column_int(stmt, 0);
@@ -663,11 +674,11 @@ static NSString *const kTrashDirectoryName = @"trash";
 
 - (instancetype)initWithPath:(NSString *)path type:(YYKVStorageType)type {
     if (path.length == 0 || path.length > kPathLengthMax) {
-        NSLog(@"YYKVStorage init error: invalid path: [%@].", path);
+//        NSLog(@"YYKVStorage init error: invalid path: [%@].", path);
         return nil;
     }
     if (type > YYKVStorageTypeMixed) {
-        NSLog(@"YYKVStorage init error: invalid type: %lu.", (unsigned long)type);
+//        NSLog(@"YYKVStorage init error: invalid type: %lu.", (unsigned long)type);
         return nil;
     }
     
@@ -692,7 +703,7 @@ static NSString *const kTrashDirectoryName = @"trash";
                                    withIntermediateDirectories:YES
                                                     attributes:nil
                                                          error:&error]) {
-        NSLog(@"YYKVStorage init error:%@", error);
+//        NSLog(@"YYKVStorage init error:%@", error);
         return nil;
     }
     
@@ -702,7 +713,7 @@ static NSString *const kTrashDirectoryName = @"trash";
         [self _reset]; // rebuild
         if (![self _dbOpen] || ![self _dbInitialize]) {
             [self _dbClose];
-            NSLog(@"YYKVStorage init error: fail to open sqlite db.");
+//            NSLog(@"YYKVStorage init error: fail to open sqlite db.");
             return nil;
         }
     }

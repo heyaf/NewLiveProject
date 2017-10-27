@@ -25,6 +25,7 @@
 
 @property (nonatomic,strong) NSString *userPhone;
 @property (nonatomic,strong) NSString *userPassWord;
+@property (nonatomic,assign) BOOL isCheck;
 
 
 @end

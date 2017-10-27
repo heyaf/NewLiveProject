@@ -31,7 +31,7 @@ YYSYNTH_DUMMY_CLASS(NSAttributedString_YYText)
         data = [YYTextArchiver archivedDataWithRootObject:self];
     }
     @catch (NSException *exception) {
-        NSLog(@"%@",exception);
+//        NSLog(@"%@",exception);
     }
     return data;
 }
@@ -42,7 +42,7 @@ YYSYNTH_DUMMY_CLASS(NSAttributedString_YYText)
         one = [YYTextUnarchiver unarchiveObjectWithData:data];
     }
     @catch (NSException *exception) {
-        NSLog(@"%@",exception);
+//        NSLog(@"%@",exception);
     }
     return one;
 }

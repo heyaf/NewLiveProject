@@ -277,7 +277,7 @@ typedef NS_ENUM(NSUInteger, Direction) {
     if ([keyPath isEqualToString:@"status"]) {
         if (playerItem.status == AVPlayerItemStatusReadyToPlay) {
             
-            NSLog(@"播放成功");
+//            NSLog(@"播放成功");
             [self.loadingView stopAnimating];
             [self setUserInteractionEnabled:YES];//成功才能弹出底部菜单
             
@@ -496,16 +496,16 @@ typedef NS_ENUM(NSUInteger, Direction) {
     
     if ([fileManager fileExistsAtPath:url]) {
         self.filePath = [NSURL fileURLWithPath:url];
-        NSLog(@"filePath:%@",self.filePath);
+//        NSLog(@"filePath:%@",self.filePath);
         return YES;
     }
     
     if ([fileManager fileExistsAtPath:str]) {
         self.filePath = [NSURL fileURLWithPath:str];
-        NSLog(@"filePath:%@",str);
+//        NSLog(@"filePath:%@",str);
         return YES;
     }else{
-        NSLog(@"没有缓存");
+//        NSLog(@"没有缓存");
         return NO;
     }
     
@@ -663,7 +663,7 @@ typedef NS_ENUM(NSUInteger, Direction) {
             str = [NSString stringWithFormat:@"%@", @"(_errorCode)"];
             break;
     }
-    NSLog(@"%@",str);
+//    NSLog(@"%@",str);
     
 }
 

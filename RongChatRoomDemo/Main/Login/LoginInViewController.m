@@ -301,7 +301,7 @@
             [[NSUserDefaults standardUserDefaults] setObject:dict[@"uuid"] forKey:SectionID];
  
         
-            NSLog(@"----个人信息-%@，%@----%@",[kApp getusermodel],SectionID,dict[@"uuid"]);
+//            NSLog(@"----个人信息-%@，%@----%@",[kApp getusermodel],SectionID,dict[@"uuid"]);
             
             if (self.myRegistblock) {
                 _myRegistblock();
@@ -392,7 +392,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 -(void)tiredLoginin{
-    NSLog(@"三方登录");
+//    NSLog(@"三方登录");
 
 }
 

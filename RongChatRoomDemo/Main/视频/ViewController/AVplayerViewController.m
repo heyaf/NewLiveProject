@@ -114,7 +114,7 @@
 
 -(void)creatData{
     
-    [MBProgressHUD showMessage:@"正在加载..."];
+//    [MBProgressHUD showMessage:@"正在加载..."];
     NSDictionary*dic =@{@"pageNumber":@"1",
                         @"pageSize":@"10"
                         };

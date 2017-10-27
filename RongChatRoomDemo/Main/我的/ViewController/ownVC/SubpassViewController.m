@@ -102,7 +102,7 @@
                               @"uuid":[[NSUserDefaults standardUserDefaults] objectForKey:SectionID]
 
                               };
-//        [MBProgressHUD showMessage:@"请稍候..."];
+//        [MBProgressHUD showMessage:@"正在加载..."];
         NSString *utf = [Updateusers stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         [[HttpRequest sharedInstance] postWithURLString:utf parameters:dict success:^(id responseObject) {
              [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];

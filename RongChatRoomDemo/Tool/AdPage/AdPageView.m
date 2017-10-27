@@ -260,13 +260,13 @@ static int const showtime = 3;
         NSString *filePath = [self getFilePathWithImageName:imageName]; // 保存文件的名称
         
         if ([UIImagePNGRepresentation(image) writeToFile:filePath atomically:YES]) {// 保存成功
-            NSLog(@"广告页保存成功");
+//            NSLog(@"广告页保存成功");
             [self deleteOldImage];
             [kUserDefaults setValue:imageName forKey:adImageName];
             [kUserDefaults synchronize];
             // 如果有广告链接，将广告链接也保存下来
         }else{
-            NSLog(@"广告页保存失败");
+//            NSLog(@"广告页保存失败");
         }
         
     });
