@@ -111,13 +111,14 @@
     searchBar.backgroundImage = [UIImage imageNamed:@"clearImage"];
     searchBar.delegate = self;
     searchBar.showsCancelButton = YES;
+    [[[searchBar.subviews objectAtIndex:0].subviews objectAtIndex:1] setTintColor:[UIColor grayColor]];
     UIView *searchTextField = searchTextField = [searchBar valueForKey:@"_searchField"];
     searchTextField.backgroundColor = [UIColor colorWithRed:234/255.0 green:235/255.0 blue:237/255.0 alpha:1];
     [searchBar setImage:[UIImage imageNamed:@"sort_magnifier"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
     UIButton *cancleBtn = [searchBar valueForKey:@"cancelButton"];
     //修改标题和标题颜色
     [cancleBtn setTitle:@"取消" forState:UIControlStateNormal];
-    [cancleBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [cancleBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     [titleView addSubview:searchBar];
     self.searchBar = searchBar;

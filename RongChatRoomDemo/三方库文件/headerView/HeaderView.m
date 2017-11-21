@@ -50,7 +50,7 @@
 -(void)addsubviewsWithFrame:(CGRect)frame{
     
 
-    UILabel *titleLable = [[UILabel alloc] initWithFrame:CGRectMake(15, 15, KScreenW-15-15, 30)];
+    UILabel *titleLable = [[UILabel alloc] initWithFrame:CGRectMake(15, 15, (KScreenW-15-15)/2, 30)];
     titleLable.textAlignment=NSTextAlignmentLeft;
     titleLable.font = [UIFont systemFontOfSize:15.0];
     titleLable.text = @"汇市风云，股海狂潮";
@@ -58,7 +58,7 @@
     [self addSubview:titleLable];
     
     
-    UILabel *leaderLB = [[UILabel alloc] initWithFrame:CGRectMake(15, 15, KScreenW-15-15, 30)];
+    UILabel *leaderLB = [[UILabel alloc] initWithFrame:CGRectMake(15, 15, 20+(KScreenW-15-15)/2, 30)];
     leaderLB.textAlignment = NSTextAlignmentRight;
     leaderLB.font = [UIFont systemFontOfSize:15.0];
     leaderLB.textColor = RGB(51, 51, 51);
@@ -80,7 +80,11 @@
     if (_mymodel.title.length>0) {
         
         titleLable.text = _mymodel.title;
-        leaderLB.text = [NSString stringWithFormat:@"主讲人：%@",_mymodel.content];
+        NSInteger num =[_mymodel.content integerValue];
+        if (num<100) {
+            num = [self getRandomNumber:100 to:200];
+        }
+        leaderLB.text = [NSString stringWithFormat:@"主讲人：%li",num];
         view.text = [NSString stringWithFormat:@"%@人观看",_mymodel.count];
         
         dataLB.text = _mymodel.date;
@@ -99,6 +103,10 @@
     
     
     
+}
+-(int)getRandomNumber:(int)from to:(int)to
+{
+    return (int)(from + (arc4random() % (to - from + 1)));
 }
 -(void)clickBtn{
     

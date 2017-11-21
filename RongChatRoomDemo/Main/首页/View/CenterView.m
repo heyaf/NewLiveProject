@@ -42,7 +42,8 @@
     
     
     
-    for (int i = 0; i<_imageArr.count; i++) {
+    for (int i = 0; i<_imageArr.count; i++){
+        
         //总间距宽度
         float AllW = KScreenW - _imageArr.count*viewW;
         //半间距

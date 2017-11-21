@@ -45,6 +45,7 @@
     self.window.rootViewController = self.mainTabBar;
     [self isChecking];
     
+    
     userModel *usermodel = [self getusermodel];
     NSString *sectionID = [[NSUserDefaults standardUserDefaults] objectForKey:SectionID];
 
@@ -94,11 +95,9 @@
 
         [[HttpRequest sharedInstance] getWithURLString:iOSCheckUrl parameters:nil success:^(id responseObject) {
         
-            ASLog(@"789987%@",responseObject);
         NSString *dict = [[ NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-            ASLog(@"..........%@",dict);
         if ([dict isEqualToString:@"1"]) {
-            kApp.isCheck =YES;
+//            kApp.isCheck =YES;
         }
         
     } failure:^(NSError *error) {

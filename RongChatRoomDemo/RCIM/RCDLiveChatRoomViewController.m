@@ -297,6 +297,9 @@ static NSString *const RCDLiveGiftMessageCellIndentifier = @"RCDLiveGiftMessageC
     if (self.livePlayingManager) {
         [self.livePlayingManager resumePlaying];
     }
+    //键盘弹起
+    [IQKeyboardManager sharedManager].enable = NO;
+    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -324,6 +327,9 @@ static NSString *const RCDLiveGiftMessageCellIndentifier = @"RCDLiveGiftMessageC
     //退出页面，弹幕停止
 //    [self.view stopDanmaku];
 //    [self.navigationController setNavigationBarHidden:NO];
+    //键盘弹起
+    [IQKeyboardManager sharedManager].enable = YES;
+    [IQKeyboardManager sharedManager].enableAutoToolbar = YES;
 
 }
 

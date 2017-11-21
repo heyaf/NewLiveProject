@@ -206,9 +206,7 @@
     cell.numberLB.text = [NSString stringWithFormat:@"%@观看",videomodel.count];
     cell.dateLB.text = videomodel.date;
     NSString *imgstr =  [videomodel.picture stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];;
-//    //    NSLog(@",,,,%@",basemodel);
     [cell.titleImv sd_setImageWithURL:[NSURL URLWithString:imgstr]];
-//    cell.titleImv.image = IMAGE_NAMED(@"bbb");
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;

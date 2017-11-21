@@ -93,6 +93,7 @@
 
     [self creatLiveListDate];
     [self creatData];
+    
 
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -482,6 +483,7 @@
     VideoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"VideoCELL" forIndexPath:indexPath];
 
     VideoModel *videomodel = _dataArr[indexPath.row];
+    
     
     cell.titleLB.text = videomodel.title;
     

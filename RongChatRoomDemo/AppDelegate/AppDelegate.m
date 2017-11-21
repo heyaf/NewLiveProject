@@ -14,6 +14,7 @@
 #import "RCDLiveGiftMessage.h"
 #import <RongIMLib/RongIMLib.h>
 #import "AppManager.h"
+#import "RCDLiveChatRoomViewController.h"
 
 
 @interface AppDelegate ()
@@ -37,7 +38,7 @@
     
     
     
-    
+
     
     //键盘弹起
     [IQKeyboardManager sharedManager].enable = YES;

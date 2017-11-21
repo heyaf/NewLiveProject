@@ -118,7 +118,6 @@
     cycleScrollView.pageDotColor = KWhiteColor;
     cycleScrollView.titlesGroup =_lunboTitleArr;
     cycleScrollView.delegate = self;
-//    cycleScrollView 
     [self.view addSubview:cycleScrollView];
     
 }
@@ -138,10 +137,41 @@
 
 }
 #pragma mark ---------设置center中心图------
+-(void)isChecking{
+    
+    
+    
+    [[HttpRequest sharedInstance] getWithURLString:iOSCheckUrl parameters:nil success:^(id responseObject) {
+        
+        NSString *dict = [[ NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+
+        if ([dict isEqualToString:@"1"]) {
+            kApp.isCheck =YES;
+        }
+        [self setcenterView];
+        
+    } failure:^(NSError *error) {
+        
+    }];
+    
+    
+}
+
+
 -(void)setcenterView{
     
-    NSArray *imageArr = @[@"icon_analyst",@"icon_contest",@"icon_news",@"icon_fast",@"icon_calender"];
-    NSArray *titleArr = @[@"分析",@"竞赛",@"要闻",@"快讯",@"日历"];
+    NSArray *imageArr;
+    NSArray *titleArr;
+    if (kApp.isCheck) {
+    
+    imageArr = @[@"icon_analyst",@"icon_news",@"icon_fast",@"icon_calender"];
+    titleArr = @[@"分析",@"要闻",@"快讯",@"日历"];
+    }else{
+    
+        imageArr = @[@"icon_analyst",@"icon_contest",@"icon_news",@"icon_fast",@"icon_calender"];
+        titleArr = @[@"分析",@"竞赛",@"要闻",@"快讯",@"日历"];
+    
+    }
     
     CenterView *cenview = [[CenterView alloc] initWithFrame:CGRectMake(0, 64+LunboH, KScreenW, 96.5) imageArr:imageArr andtitle:titleArr];
     [self.view addSubview:cenview];

@@ -53,38 +53,71 @@
     CalendarViewController *calenderVC = [[CalendarViewController alloc] init];
     RootWebViewController *webVC = [[RootWebViewController alloc] init];
     webVC.url = MessageFastNewsUrl;
-    switch (self.tagInt) {
-        case BTN_TAG:
+    
+    if (kApp.isCheck) {
+        switch (self.tagInt) {
+            case BTN_TAG:
+                
+                basevc.title = @"分析";
+                basevc.urlString = AnalyzeNewsUrl;
+                [vc.navigationController pushViewController:basevc animated:YES];
+                break;
+            case BTN_TAG+1:
+                basevc.title = @"要闻";
+                
+                basevc.urlString = MessageNewsUrl;
+                basevc.parament = @{@"NewscategoryID":@"1"};
+                [vc.navigationController pushViewController:basevc animated:YES];                break;
+            case BTN_TAG+2:
+                [vc.navigationController pushViewController:webVC animated:YES];
+                break;
+            case BTN_TAG+3:
+                calenderVC.title = @"日历";
+                [vc.navigationController pushViewController:calenderVC animated:YES];
+                
+                break;
 
-            basevc.title = @"分析";
-            basevc.urlString = AnalyzeNewsUrl;
-            [vc.navigationController pushViewController:basevc animated:YES];
-            break;
-        case BTN_TAG+1:
-            compareVC.title = @"竞赛";
-            [vc.navigationController pushViewController:compareVC animated:YES];
+            default:
+                break;
+        }
 
-//            [alerView show];
-            break;
-        case BTN_TAG+2:
-            basevc.title = @"要闻";
+        
+    }else{
+    
+        switch (self.tagInt) {
+            case BTN_TAG:
+                
+                basevc.title = @"分析";
+                basevc.urlString = AnalyzeNewsUrl;
+                [vc.navigationController pushViewController:basevc animated:YES];
+                break;
+            case BTN_TAG+1:
+                compareVC.title = @"竞赛";
+                [vc.navigationController pushViewController:compareVC animated:YES];
+                
+                //            [alerView show];
+                break;
+            case BTN_TAG+2:
+                basevc.title = @"要闻";
+                
+                basevc.urlString = MessageNewsUrl;
+                basevc.parament = @{@"NewscategoryID":@"1"};
+                [vc.navigationController pushViewController:basevc animated:YES];
+                break;
+            case BTN_TAG+3:
+                
+                
+                
+                [vc.navigationController pushViewController:webVC animated:YES];
+                break;
+            case BTN_TAG+4:
+                calenderVC.title = @"日历";
+                [vc.navigationController pushViewController:calenderVC animated:YES];
+                break;
+            default:
+                break;
+        }
 
-            basevc.urlString = MessageNewsUrl;
-            basevc.parament = @{@"NewscategoryID":@"1"};
-            [vc.navigationController pushViewController:basevc animated:YES];
-            break;
-        case BTN_TAG+3:
-
-  
-
-            [vc.navigationController pushViewController:webVC animated:YES];
-            break;
-        case BTN_TAG+4:
-            calenderVC.title = @"日历";
-            [vc.navigationController pushViewController:calenderVC animated:YES];
-            break;
-        default:
-            break;
     }
     
    
