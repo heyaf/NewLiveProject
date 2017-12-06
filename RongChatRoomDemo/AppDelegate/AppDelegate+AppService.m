@@ -7,11 +7,10 @@
 //
 
 #import "AppDelegate+AppService.h"
-//#import <UMSocialCore/UMSocialCore.h>
-//#import "LoginViewController.h"
 #import "OpenUDID.h"
 #import "LoginInViewController.h"
 #import "LaunchIntroductionView.h"
+#import "DWTabBarController.h"
 
 @implementation AppDelegate (AppService)
 
@@ -42,7 +41,7 @@
     
     
     self.mainTabBar = [MainTabBarController new];
-    self.window.rootViewController = self.mainTabBar;
+    self.window.rootViewController = [[DWTabBarController alloc] init];;
     [self isChecking];
     
     

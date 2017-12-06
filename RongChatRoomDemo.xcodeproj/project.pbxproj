@@ -69,7 +69,7 @@
 		180B30F51F45490700B4A792 /* News2TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B30F31F45490700B4A792 /* News2TableViewCell.m */; };
 		180B30F61F45490700B4A792 /* News2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180B30F41F45490700B4A792 /* News2TableViewCell.xib */; };
 		180B30F91F4580D600B4A792 /* News2HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B30F81F4580D600B4A792 /* News2HeaderView.m */; };
-		180B31021F459C1B00B4A792 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B31011F459C1B00B4A792 /* DetailViewController.m */; };
+		18105A2E1FD6673900E9B07E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18105A2D1FD6673800E9B07E /* DetailViewController.m */; };
 		181192E71F53FD3C00B960F4 /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181192E51F53FD3C00B960F4 /* ProductViewController.m */; };
 		181192EB1F53FDEE00B960F4 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 181192E91F53FDEE00B960F4 /* ProductTableViewCell.m */; };
 		181192EC1F53FDEE00B960F4 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181192EA1F53FDEE00B960F4 /* ProductTableViewCell.xib */; };
@@ -106,6 +106,8 @@
 		181193711F5A97D400B960F4 /* AVplayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181193701F5A97D400B960F4 /* AVplayerViewController.m */; };
 		181A9F931F70FA8100C3A03D /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 181A9F921F70FA8100C3A03D /* VideoModel.m */; };
 		181D801B1F33066100420564 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 181D801A1F33066100420564 /* OpenUDID.m */; };
+		1823554E1FD7E7460027470A /* DWTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823554B1FD7E7460027470A /* DWTabBar.m */; };
+		1823554F1FD7E7460027470A /* DWTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823554D1FD7E7460027470A /* DWTabBarController.m */; };
 		182AA2DB1F5D3CCD00FA9811 /* LaunchIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AA2DA1F5D3CCD00FA9811 /* LaunchIntroductionView.m */; };
 		1841F5821F35B80300185803 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D3C00F1CCE1AA2005F551D /* MediaPlayer.framework */; };
 		1841F5841F35B82300185803 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1841F5831F35B82300185803 /* MobileCoreServices.framework */; };
@@ -379,8 +381,8 @@
 		180B30F71F4580D600B4A792 /* News2HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News2HeaderView.h; sourceTree = "<group>"; };
 		180B30F81F4580D600B4A792 /* News2HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News2HeaderView.m; sourceTree = "<group>"; };
 		180B30FF1F45992500B4A792 /* MyMain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyMain.h; sourceTree = "<group>"; };
-		180B31001F459C1B00B4A792 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = "RongChatRoomDemo/Main/首页/ViewController/详情界面/DetailViewController.h"; sourceTree = SOURCE_ROOT; };
-		180B31011F459C1B00B4A792 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = "RongChatRoomDemo/Main/首页/ViewController/详情界面/DetailViewController.m"; sourceTree = SOURCE_ROOT; };
+		18105A2C1FD6673800E9B07E /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		18105A2D1FD6673800E9B07E /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		181192E41F53FD3C00B960F4 /* ProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductViewController.h; sourceTree = "<group>"; };
 		181192E51F53FD3C00B960F4 /* ProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductViewController.m; sourceTree = "<group>"; };
 		181192E81F53FDEE00B960F4 /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
@@ -447,6 +449,10 @@
 		181A9F921F70FA8100C3A03D /* VideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoModel.m; sourceTree = "<group>"; };
 		181D80191F33066100420564 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
 		181D801A1F33066100420564 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
+		1823554A1FD7E7460027470A /* DWTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWTabBar.h; sourceTree = "<group>"; };
+		1823554B1FD7E7460027470A /* DWTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWTabBar.m; sourceTree = "<group>"; };
+		1823554C1FD7E7460027470A /* DWTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWTabBarController.h; sourceTree = "<group>"; };
+		1823554D1FD7E7460027470A /* DWTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWTabBarController.m; sourceTree = "<group>"; };
 		182AA2D91F5D3CCD00FA9811 /* LaunchIntroductionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchIntroductionView.h; sourceTree = "<group>"; };
 		182AA2DA1F5D3CCD00FA9811 /* LaunchIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchIntroductionView.m; sourceTree = "<group>"; };
 		1841F5831F35B82300185803 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -795,6 +801,7 @@
 				181193331F59085900B960F4 /* AppManager.h */,
 				181193341F59085900B960F4 /* AppManager.m */,
 				180B2FD41F3AAA6C00B4A792 /* NavigationController */,
+				182355491FD7E7460027470A /* MytabbarController */,
 				180B2FD71F3AAA6C00B4A792 /* RootViewController */,
 				180B2FDA1F3AAA6C00B4A792 /* TabbarController */,
 				180B2FE31F3AAA6C00B4A792 /* WebViewController */,
@@ -1004,7 +1011,7 @@
 				1886D85D1F4BCDF70014FF82 /* 快讯 */,
 				1886D85E1F4BCDF70014FF82 /* 日历 */,
 				1886D85F1F4BCDF70014FF82 /* 要闻 */,
-				180B30FA1F4592A100B4A792 /* 详情界面 */,
+				18105A2B1FD6673800E9B07E /* 详情界面 */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1206,21 +1213,20 @@
 			path = PageContrllerView;
 			sourceTree = "<group>";
 		};
-		180B30FA1F4592A100B4A792 /* 详情界面 */ = {
-			isa = PBXGroup;
-			children = (
-				180B31001F459C1B00B4A792 /* DetailViewController.h */,
-				180B31011F459C1B00B4A792 /* DetailViewController.m */,
-			);
-			name = "详情界面";
-			path = "../View/详情界面";
-			sourceTree = "<group>";
-		};
 		180B31031F459C4200B4A792 /* 分析 */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = "分析";
+			sourceTree = "<group>";
+		};
+		18105A2B1FD6673800E9B07E /* 详情界面 */ = {
+			isa = PBXGroup;
+			children = (
+				18105A2C1FD6673800E9B07E /* DetailViewController.h */,
+				18105A2D1FD6673800E9B07E /* DetailViewController.m */,
+			);
+			path = "详情界面";
 			sourceTree = "<group>";
 		};
 		181192E01F53FD3C00B960F4 /* 行情 */ = {
@@ -1409,6 +1415,17 @@
 				181D801A1F33066100420564 /* OpenUDID.m */,
 			);
 			path = OpenUDID;
+			sourceTree = "<group>";
+		};
+		182355491FD7E7460027470A /* MytabbarController */ = {
+			isa = PBXGroup;
+			children = (
+				1823554A1FD7E7460027470A /* DWTabBar.h */,
+				1823554B1FD7E7460027470A /* DWTabBar.m */,
+				1823554C1FD7E7460027470A /* DWTabBarController.h */,
+				1823554D1FD7E7460027470A /* DWTabBarController.m */,
+			);
+			path = MytabbarController;
 			sourceTree = "<group>";
 		};
 		182AA2D81F5D3CCD00FA9811 /* LaunchIntroduction */ = {
@@ -2478,11 +2495,11 @@
 				180B25AD1F98A8E600DEA5A8 /* XieYiViewController.m in Sources */,
 				181193681F5A978100B960F4 /* XJAVPlayer.m in Sources */,
 				180B30C01F3C3A3E00B4A792 /* buttonView.m in Sources */,
-				180B31021F459C1B00B4A792 /* DetailViewController.m in Sources */,
 				1852D19C1F60F248000E1844 /* NSSet+HYBUnicodeReadable.m in Sources */,
 				188054B01F346192009E77F4 /* UIRefreshControl+AFNetworking.m in Sources */,
 				18A5F4D71F3456B300F635AE /* RCDLiveInputBar.m in Sources */,
 				18A5F4F91F34572200F635AE /* RCDLiveAttributedLabel.m in Sources */,
+				1823554E1FD7E7460027470A /* DWTabBar.m in Sources */,
 				1852D1DC1F6130B0000E1844 /* MJRefreshBackStateFooter.m in Sources */,
 				18B557C01FA030A400A43BA4 /* StringToData.m in Sources */,
 				18AF91FE1F90A15600FDE955 /* DAYComponentView.m in Sources */,
@@ -2569,6 +2586,7 @@
 				1886D8621F4BCE510014FF82 /* CompareViewController.m in Sources */,
 				188054A41F346192009E77F4 /* AFURLConnectionOperation.m in Sources */,
 				180B30F91F4580D600B4A792 /* News2HeaderView.m in Sources */,
+				18105A2E1FD6673900E9B07E /* DetailViewController.m in Sources */,
 				18A5F4CB1F3453E600F635AE /* RCDDanmakuManager.m in Sources */,
 				18B557BB1F9F48D100A43BA4 /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				18A5F5231F345A2A00F635AE /* RCDLiveMessageCellNotificationModel.m in Sources */,
@@ -2604,6 +2622,7 @@
 				181A9F931F70FA8100C3A03D /* VideoModel.m in Sources */,
 				1856BDB41F395A3500AF531D /* HeaderView.m in Sources */,
 				1811936A1F5A978100B960F4 /* XJGestureButton.m in Sources */,
+				1823554F1FD7E7460027470A /* DWTabBarController.m in Sources */,
 				181193321F59081E00B960F4 /* AdPageView.m in Sources */,
 				188054B11F346192009E77F4 /* UIWebView+AFNetworking.m in Sources */,
 				180B2FFA1F3AAA6C00B4A792 /* RootWebViewController.m in Sources */,

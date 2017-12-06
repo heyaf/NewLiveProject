@@ -52,7 +52,8 @@
         TabBar *tabBar = [[TabBar alloc] init];
         tabBar.frame     = self.tabBar.bounds;
         tabBar.delegate  = self;
-        
+       
+//        tabBar.frame = CGRectMake(0, KScreenH-83, KScreenW, 83);
         self.TabBar = tabBar;
     })];
     
@@ -123,6 +124,7 @@
     self.TabBar.selectedItemTitleColor = HHTabSelectedColor;
 //    self.TabBar.tintColor = KBlackColor;
     [self.TabBar setBackgroundColor:HHNavBgColor];
+    
     
     self.TabBar.tabBarItemCount = viewControllers.count;
     

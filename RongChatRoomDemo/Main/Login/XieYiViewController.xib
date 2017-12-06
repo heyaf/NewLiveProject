@@ -48,7 +48,7 @@
                             <color key="backgroundColor" red="0.94893640279769897" green="0.94907277822494507" blue="0.94890671968460083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <attributedString key="attributedText">
                                 <fragment>
-                                    <string key="content">本协议是中思财经网站(以下简称中思财经或“本网站”)与网站使用人（以下简称“用户”或“您”）所达成的协议。为使用本网站的服务，您应当阅读并遵守本《用户服务协议》（以下简称“本协议”）。请您成为本网站的注册用户以前，务必审慎阅读、充分理解各条款内容，特别是免除或者限制责任的条款、管辖与法律适用条款，以及开通或使用某项服务的单独协议。限制、免责条款可能以黑体加粗或加下划线的形式提示您重点注意。</string>
+                                    <string key="content">本协议是中思财经客户端(以下简称中思财经或“本网站”)与客户端使用人（以下简称“用户”或“您”）所达成的协议。为使用本客户端的服务，您应当阅读并遵守本《用户服务协议》（以下简称“本协议”）。请您成为本客户端的注册用户以前，务必审慎阅读、充分理解各条款内容，特别是免除或者限制责任的条款、管辖与法律适用条款，以及开通或使用某项服务的单独协议。限制、免责条款可能以黑体加粗或加下划线的形式提示您重点注意。</string>
                                     <attributes>
                                         <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0" headerLevel="2"/>
@@ -63,7 +63,7 @@ Cg
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0" headerLevel="2"/>
                                     </attributes>
                                 </fragment>
-                                <fragment content="您使用本网站的服务即视为您已仔细阅读并充分了解前述协议的内容，并同意接受上述协议的约束。">
+                                <fragment content="您使用本客户端的服务即视为您已仔细阅读并充分了解前述协议的内容，并同意接受上述协议的约束。">
                                     <attributes>
                                         <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="charWrapping" baseWritingDirection="natural" lineSpacing="1" tighteningFactorForTruncation="0.0"/>
@@ -101,7 +101,7 @@ Cg
                                         <font key="NSFont" metaFont="system" size="16"/>
                                     </attributes>
                                 </fragment>
-                                <fragment content="本网站禁止在校学生开展任何涉及到现金、货币等方面的交易。">
+                                <fragment content="本客户端禁止在校学生开展任何涉及到现金、货币等方面的交易。">
                                     <attributes>
                                         <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -131,7 +131,7 @@ Cg
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="20" tighteningFactorForTruncation="0.0"/>
                                     </attributes>
                                 </fragment>
-                                <fragment content="当您在本网站进行用户注册、参加论坛等各种活动，或者在使用本网站特定服务时，本网站可能会通过注册表格等形式要求您提供一些个人资料。这些资料可能包括：">
+                                <fragment content="当您在本客户端进行用户注册、参加论坛等各种活动，或者在使用本客户端特定服务时，本客户端可能会通过注册表格等形式要求您提供一些个人资料。这些资料可能包括：">
                                     <attributes>
                                         <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
                                     </attributes>
@@ -181,7 +181,7 @@ Cg
                                     </attributes>
                                 </fragment>
                                 <fragment>
-                                    <string key="content">特定情形下，需要您按照本网站的要求提供所需个人资料后才能继续使用本网站的全部或部分服务，请您务必按照要求提供个人资料。否则，可能无法继续使用本网站的全部或部分服务。在前述情形下，本网站会提前向您提醒并说明。如果您提供的信息错误或者不准确，由此产生的责任由您自行承担。</string>
+                                    <string key="content">特定情形下，需要您按照本客户端的要求提供所需个人资料后才能继续使用本网站的全部或部分服务，请您务必按照要求提供个人资料。否则，可能无法继续使用本客户端的全部或部分服务。在前述情形下，本客户端会提前向您提醒并说明。如果您提供的信息错误或者不准确，由此产生的责任由您自行承担。</string>
                                     <attributes>
                                         <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="4" tighteningFactorForTruncation="0.0"/>
@@ -211,7 +211,7 @@ Cg
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="20" tighteningFactorForTruncation="0.0"/>
                                     </attributes>
                                 </fragment>
-                                <fragment content="本网站将对您所提供的资料进行严格的管理及保护，本网站将使用相应的技术，防止您的个人资料丢失、被盗用或遭篡改。这些安全措施包括向其它服务器备份数据和对用户密码加密。尽管我们有这些安全措施，但请注意在因特网上不存在“完善的安全措施”。">
+                                <fragment content="本客户端将对您所提供的资料进行严格的管理及保护，本客户端将使用相应的技术，防止您的个人资料丢失、被盗用或遭篡改。这些安全措施包括向其它服务器备份数据和对用户密码加密。尽管我们有这些安全措施，但请注意在因特网上不存在“完善的安全措施”。">
                                     <attributes>
                                         <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
                                     </attributes>
@@ -355,7 +355,7 @@ Cg
                                         <font key="NSFont" metaFont="system" size="16"/>
                                     </attributes>
                                 </fragment>
-                                <fragment content="针对以上权利，本网站为您提供相关服务，您可以发送电子邮件至：">
+                                <fragment content="针对以上权利，本客户端为您提供相关服务，您可以发送电子邮件至：">
                                     <attributes>
                                         <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
                                     </attributes>
@@ -384,7 +384,7 @@ Cg
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="20" tighteningFactorForTruncation="0.0"/>
                                     </attributes>
                                 </fragment>
-                                <fragment content="您使用本网站的服务即视为您已阅读本协议并接受本协议的约束。">
+                                <fragment content="您使用本客户端的服务即视为您已阅读本协议并接受本协议的约束。">
                                     <attributes>
                                         <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
                                     </attributes>
@@ -397,7 +397,7 @@ Cg
                                         <font key="NSFont" metaFont="system" size="16"/>
                                     </attributes>
                                 </fragment>
-                                <fragment content="本网站有权在必要时修改本协议条款。您可以在相关服务页面查阅最新版本的协议条款。">
+                                <fragment content="本客户端有权在必要时修改本协议条款。您可以在相关服务页面查阅最新版本的协议条款。">
                                     <attributes>
                                         <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
                                     </attributes>
@@ -410,7 +410,7 @@ Cg
                                         <font key="NSFont" metaFont="system" size="16"/>
                                     </attributes>
                                 </fragment>
-                                <fragment content="本协议条款变更后，如果您继续使用本网站提供的软件或服务，即视为您已接受修改后的协议。如果您不接受修改后的协议，应当停止使用本网站提供的软件或服务。">
+                                <fragment content="本协议条款变更后，如果您继续使用本客户端提供的软件或服务，即视为您已接受修改后的协议。如果您不接受修改后的协议，应当停止使用本客户端提供的软件或服务。">
                                     <attributes>
                                         <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
                                     </attributes>
@@ -485,7 +485,7 @@ Cg
                                         <font key="NSFont" metaFont="system" size="16"/>
                                     </attributes>
                                 </fragment>
-                                <fragment content="储存您访问我们网站的相关数据，在您访问或再次访问我们的网站时,我们能识别您的身份，并通过分析数据为您提供更好更多的服务。">
+                                <fragment content="储存您访问我们客户端的相关数据，在您访问或再次访问我们的客户端时,我们能识别您的身份，并通过分析数据为您提供更好更多的服务。">
                                     <attributes>
                                         <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
                                     </attributes>
@@ -538,7 +538,7 @@ Cg
                                         <font key="NSFont" metaFont="system" size="16"/>
                                     </attributes>
                                 </fragment>
-                                <fragment content="的我们网站的部分功能">
+                                <fragment content="的我们客户端的部分功能">
                                     <attributes>
                                         <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
                                     </attributes>
@@ -571,7 +571,7 @@ Cg
                                         <font key="NSFont" metaFont="system" size="16"/>
                                     </attributes>
                                 </fragment>
-                                <fragment content="您在使用本网站服务时须遵守法律法规，不得利用本网站服务从事任何违法违规行为，包括但不限于：">
+                                <fragment content="您在使用本客户端服务时须遵守法律法规，不得利用本客户端服务从事任何违法违规行为，包括但不限于：">
                                     <attributes>
                                         <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
                                     </attributes>
@@ -708,7 +708,7 @@ Cg
                                         <font key="NSFont" metaFont="system" size="16"/>
                                     </attributes>
                                 </fragment>
-                                <fragment content="如果您违反本条之约定，有权国家机关可能会对您提起诉讼、罚款或采取其他制裁措施，并要求本网站给予协助或支持，由此产生的责任均应当由您自行承担。造成损害的，您应依法予以赔偿，本网站不承担任何责任。">
+                                <fragment content="如果您违反本条之约定，有权国家机关可能会对您提起诉讼、罚款或采取其他制裁措施，并要求本网站给予协助或支持，由此产生的责任均应当由您自行承担。造成损害的，您应依法予以赔偿，本客户端不承担任何责任。">
                                     <attributes>
                                         <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
                                     </attributes>
@@ -720,7 +720,7 @@ Cg
                                         <font key="NSFont" metaFont="system" size="16"/>
                                     </attributes>
                                 </fragment>
-                                <fragment content="如果在您使用本网站服务时违反本条约定，本网站有权进行独立判断并采取技术手段予以删除、屏蔽或断开链接。同时，本网站有权视您的行为性质，采取包括但不限于暂停或终止服务，限制、冻结或终止注册账号等，追究法律责任等措施。">
+                                <fragment content="如果在您使用本客户端服务时违反本条约定，本网站有权进行独立判断并采取技术手段予以删除、屏蔽或断开链接。同时，本客户端有权视您的行为性质，采取包括但不限于暂停或终止服务，限制、冻结或终止注册账号等，追究法律责任等措施。">
                                     <attributes>
                                         <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
                                     </attributes>
@@ -786,7 +786,7 @@ Cg
                                         <font key="NSFont" metaFont="system" size="16"/>
                                     </attributes>
                                 </fragment>
-                                <fragment content="您同意本网站可为履行本协议或提供本服务的目的而使用您发送或传播的内容。">
+                                <fragment content="您同意本客户端可为履行本协议或提供本服务的目的而使用您发送或传播的内容。">
                                     <attributes>
                                         <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
                                     </attributes>
@@ -799,7 +799,7 @@ Cg
                                         <font key="NSFont" metaFont="system" size="16"/>
                                     </attributes>
                                 </fragment>
-                                <fragment content="如果本网站收到权利人通知，主张您发送或传播的内容侵犯其相关权利的，您同意本网站有权进行独立判断并采取删除、屏蔽或断开链接等措施。">
+                                <fragment content="如果本客户端收到权利人通知，主张您发送或传播的内容侵犯其相关权利的，您同意本客户端有权进行独立判断并采取删除、屏蔽或断开链接等措施。">
                                     <attributes>
                                         <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
                                     </attributes>
@@ -812,7 +812,7 @@ Cg
                                         <font key="NSFont" metaFont="system" size="16"/>
                                     </attributes>
                                 </fragment>
-                                <fragment content="您使用本服务时不得违反国家法律法规、侵害他人合法权益。您理解并同意，如您被他人投诉侵权或您投诉他人侵权，本网站有权将争议中相关方的主体、联系方式、投诉相关内容等必要信息提供给其他争议方或相关部门，以便及时解决投诉纠纷，保护他人合法权益。">
+                                <fragment content="您使用本服务时不得违反国家法律法规、侵害他人合法权益。您理解并同意，如您被他人投诉侵权或您投诉他人侵权，本客户端有权将争议中相关方的主体、联系方式、投诉相关内容等必要信息提供给其他争议方或相关部门，以便及时解决投诉纠纷，保护他人合法权益。">
                                     <attributes>
                                         <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
                                     </attributes>
@@ -840,7 +840,7 @@ Cg
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="20" tighteningFactorForTruncation="0.0"/>
                                     </attributes>
                                 </fragment>
-                                <fragment content="您在本网站平台上使用第三方提供的产品或服务时，除遵守本协议约定外，还应遵守第三方的用户协议。">
+                                <fragment content="您在本客户端平台上使用第三方提供的产品或服务时，除遵守本协议约定外，还应遵守第三方的用户协议。">
                                     <attributes>
                                         <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
                                     </attributes>
@@ -853,7 +853,7 @@ Cg
                                         <font key="NSFont" metaFont="system" size="16"/>
                                     </attributes>
                                 </fragment>
-                                <fragment content="您已知悉并了解，本网站平台上所链接或嵌入的第三方服务并非本网站提供，如果您对第三方服务有异议，可以直接与第三方联系，也可以向本网站反馈。本网站将协助您联系第三方并转达您的需求和意见。">
+                                <fragment content="您已知悉并了解，本客户端平台上所链接或嵌入的第三方服务并非本客户端提供，如果您对第三方服务有异议，可以直接与第三方联系，也可以向本客户端反馈。本客户端将协助您联系第三方并转达您的需求和意见。">
                                     <attributes>
                                         <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
                                     </attributes>
@@ -866,7 +866,7 @@ Cg
                                         <font key="NSFont" metaFont="system" size="16"/>
                                     </attributes>
                                 </fragment>
-                                <fragment content="您确认并同意，在您使用第三方服务时，除非适用法律有明确规定，您和第三方的纠纷应由您和第三方解决。根据适用法律的规定，本网站需要承担责任的，本网站和第三方对可能出现的纠纷在法律规定和约定的范围内各自承担责任。">
+                                <fragment content="您确认并同意，在您使用第三方服务时，除非适用法律有明确规定，您和第三方的纠纷应由您和第三方解决。根据适用法律的规定，本客户端需要承担责任的，本客户端和第三方对可能出现的纠纷在法律规定和约定的范围内各自承担责任。">
                                     <attributes>
                                         <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
                                     </attributes>
@@ -894,7 +894,7 @@ Cg
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="20" tighteningFactorForTruncation="0.0"/>
                                     </attributes>
                                 </fragment>
-                                <fragment content="中思财经不保证为向用户提供便利而设置的外部链接的准确性和完整性，同时，对于该等外部链接指向的不由中思财经实际控制的任何网页上的内容，本网不承担任何责任。">
+                                <fragment content="中思财经不保证为向用户提供便利而设置的外部链接的准确性和完整性，同时，对于该等外部链接指向的不由中思财经实际控制的任何网页上的内容，本客户端不承担任何责任。">
                                     <attributes>
                                         <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
                                     </attributes>
@@ -960,7 +960,7 @@ Cg
                                         <font key="NSFont" metaFont="system" size="16"/>
                                     </attributes>
                                 </fragment>
-                                <fragment content="因违反服务条款造成的损失，本网站不承担任何责任。">
+                                <fragment content="因违反服务条款造成的损失，本客户端不承担任何责任。">
                                     <attributes>
                                         <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
                                     </attributes>
