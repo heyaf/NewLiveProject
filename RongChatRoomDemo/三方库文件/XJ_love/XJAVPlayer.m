@@ -277,7 +277,7 @@ typedef NS_ENUM(NSUInteger, Direction) {
     if ([keyPath isEqualToString:@"status"]) {
         if (playerItem.status == AVPlayerItemStatusReadyToPlay) {
             
-//            NSLog(@"播放成功");
+            NSLog(@"播放成功");
             [self.loadingView stopAnimating];
             [self setUserInteractionEnabled:YES];//成功才能弹出底部菜单
             

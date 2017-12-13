@@ -80,12 +80,12 @@
     [super viewDidLoad];
    
     
-    UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, KScreenW, 64)];
+    UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, KScreenW, HYFNavAndStatusHeight)];
     imageview.image = [UIImage imageNamed:@"navigationitem"];
-    UILabel *titleLB = [[UILabel alloc] initWithFrame:CGRectMake(KScreenW/2-100, 30, 200, 20)];
+    UILabel *titleLB = [[UILabel alloc] initWithFrame:CGRectMake(KScreenW/2-100, HYFNavAndStatusHeight-34, 200, 20)];
     
     titleLB.text = @"视频";
-    titleLB.font = [UIFont systemFontOfSize:20.0];
+    titleLB.font = [UIFont systemFontOfSize:18.0];
     titleLB.textColor = KWhiteColor;
     titleLB.textAlignment = NSTextAlignmentCenter;
     [imageview addSubview:titleLB];
@@ -144,7 +144,6 @@
         [MBProgressHUD hideHUD];
         
         NSDictionary *dict = responseObject;
-//        NSLog(@"视频界面----------%@",dict);
 
 
         if ([dict[@"state"] isEqualToString:@"0"]) {
@@ -189,7 +188,7 @@
          [MBProgressHUD hideAllHUDsForView:[[UIApplication sharedApplication].windows lastObject] animated:YES];
         [MBProgressHUD hideHUD];
         if ([dict[@"state"] isEqualToString:@"0"]) {
-            UIView *headerview = [[UIView alloc] initWithFrame:CGRectMake(0, 64, KScreenW, 250)];
+            UIView *headerview = [[UIView alloc] initWithFrame:CGRectMake(0, HYFNavAndStatusHeight, KScreenW, 250)];
             [self.view addSubview:headerview];
             UIImageView *liveimV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, KScreenW, 210)];
             liveimV.image = IMAGE_NAMED(@"Playnostart");
@@ -266,7 +265,7 @@
 
 -(void)creatHeaderView{
 
-    UIView *headerview = [[UIView alloc] initWithFrame:CGRectMake(0, 64, KScreenW, 250)];
+    UIView *headerview = [[UIView alloc] initWithFrame:CGRectMake(0, HYFNavAndStatusHeight, KScreenW, 250)];
 //    headerview.backgroundColor = [UIColor cyanColor];
     [self.view addSubview:headerview];
     UITapGestureRecognizer *tapGesturRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
@@ -449,7 +448,7 @@
         H = 250;
     }
     
-    _collectionview = [[UICollectionView alloc] initWithFrame:CGRectMake(0, H+64, KScreenW, KScreenH-H-64-48) collectionViewLayout:flowLayout];
+    _collectionview = [[UICollectionView alloc] initWithFrame:CGRectMake(0, H+HYFNavAndStatusHeight, KScreenW, KScreenH-H-HYFNavAndStatusHeight-48) collectionViewLayout:flowLayout];
     _collectionview.backgroundColor = KWhiteColor;
     _collectionview.delegate = self;
     _collectionview.dataSource = self;
@@ -517,9 +516,7 @@
 
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:@"http://www.leaguecc.com:6660/liveStream/getPageUrl?id=6" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-//        NSLog(@"....%@",responseObject);
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
-//        NSLog(@"失败.......%@",[error description]);
     }];
     
 }

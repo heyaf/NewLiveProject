@@ -61,7 +61,7 @@
     self.navigationController.automaticallyAdjustsScrollViewInsets = NO;
     self.automaticallyAdjustsScrollViewInsets = NO;
     _news1VC = [[News1ViewController alloc] init];
-    _news1VC.view.frame = CGRectMake(0, 64, KScreenW, KScreenH-64);
+    _news1VC.view.frame = CGRectMake(0,HYFNavAndStatusHeight , KScreenW, KScreenH-HYFNavAndStatusHeight);
     [self addChildViewController:_news1VC];
     
     _rootwebVC = [[RootWebViewController alloc] init];

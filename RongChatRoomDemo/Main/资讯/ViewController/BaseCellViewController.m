@@ -221,7 +221,7 @@
     cell.numberLB.text = [NSString stringWithFormat:@"%@浏览",basemodel.newsCount];
     cell.dateLB.text = basemodel.createTime;
     NSString *imgstr =  [basemodel.picture stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];;
-//    NSLog(@",,,,%@",basemodel);
+
     [cell.titleImv sd_setImageWithURL:[NSURL URLWithString:imgstr] placeholderImage:IMAGE_NAMED(@"image_zhanwei")];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

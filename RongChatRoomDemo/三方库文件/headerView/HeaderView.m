@@ -58,7 +58,7 @@
     [self addSubview:titleLable];
     
     
-    UILabel *leaderLB = [[UILabel alloc] initWithFrame:CGRectMake(15, 15, 20+(KScreenW-15-15)/2, 30)];
+    UILabel *leaderLB = [[UILabel alloc] initWithFrame:CGRectMake((KScreenW-15-15)/2, 15, 20+(KScreenW-15-15)/2, 30)];
     leaderLB.textAlignment = NSTextAlignmentRight;
     leaderLB.font = [UIFont systemFontOfSize:15.0];
     leaderLB.textColor = RGB(51, 51, 51);

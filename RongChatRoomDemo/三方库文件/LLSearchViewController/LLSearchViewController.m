@@ -47,7 +47,7 @@
 - (LLSearchView *)searchView
 {
     if (!_searchView) {
-        self.searchView = [[LLSearchView alloc] initWithFrame:CGRectMake(0, 64, KScreenW, KScreenH - 64) hotArray:self.hotArray historyArray:self.historyArray];
+        self.searchView = [[LLSearchView alloc] initWithFrame:CGRectMake(0, HYFNavAndStatusHeight, KScreenW, KScreenH - HYFNavAndStatusHeight) hotArray:self.hotArray historyArray:self.historyArray];
         __weak LLSearchViewController *weakSelf = self;
         _searchView.tapAction = ^(NSString *str) {
             [weakSelf pushToSearchResultWithSearchStr:str];

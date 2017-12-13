@@ -39,55 +39,118 @@
 
 
 #import "AVplayerViewController.h"
-#import "XJAVPlayer.h"
+//#import "XJAVPlayer.h"
 #import "HeaderView.h"
 #import "HomeTableViewCell.h"
 #import "VideoModel.h"
+#import "ZFPlayer.h"
 
-@interface AVplayerViewController ()<XJAVPlayerDelegate,UITableViewDelegate,UITableViewDataSource>
-
-@property (nonatomic,strong)XJAVPlayer *myPlayer;
+@interface AVplayerViewController ()<ZFPlayerDelegate,UITableViewDelegate,UITableViewDataSource>
+@property (strong, nonatomic) ZFPlayerView *playerView;
+@property (nonatomic, strong) ZFPlayerModel *playerModel;
+@property (strong, nonatomic)  UIView *playerFatherView;
 
 @property (nonatomic,strong)HeaderView *headerView;
 
 @property (nonatomic,strong)UITableView *tableview;
 @property(nonatomic, strong) NSArray *dataArr;
-
+@property (nonatomic,strong) UIButton *backBtn;
 @end
 
 @implementation AVplayerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
     self.view.backgroundColor =KWhiteColor;
     self.navigationController.navigationBar.tintColor = KWhiteColor;
-//    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin) forBarMetrics:UIBarMetricsDefault];
-//    self.navigationItem.backBarButtonItem = item;
+
     
-    _myPlayer = [[XJAVPlayer alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
-    if (self.RemoveBackBtn) {
-        _myPlayer.hasback=NO;
-    }else{
-    
-        _myPlayer.hasback = YES;
-    }
-    _myPlayer.delegate = self;
-    //
-    _myPlayer.xjPlayerUrl = self.videourl;
-    //    myPlayer.xjPlayerUrl = [[NSBundle mainBundle] pathForResource:@"Swift.mp4" ofType:nil];
-    
-    [self.view addSubview:_myPlayer];//(看自动缩小就把它注释了)
-    [self creatUI];
-    [self creatData];
-//    [self creatTableView];
-    [self.view bringSubviewToFront:_myPlayer];
-    
+   
     
     //把视频被点击信息传给服务器
     [self sendNumber];
+    [self setMoviePlayer];
+    [self creatUIWithmodel:self.videomodel];
+    [self creatData];
+    // 自动播放，默认不自动播放
+    [self.playerView autoPlayTheVideo];
 }
+-(void)setMoviePlayer{
+    self.playerFatherView = [[UIView alloc] init];
+    [self.view addSubview:self.playerFatherView];
+    [self.playerFatherView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(ISIPHONEX ? 30.f : 0.f);
+        make.leading.trailing.mas_equalTo(0);
+        // 这里宽高比16：9,可自定义宽高比
+        make.height.mas_equalTo(self.playerFatherView.mas_width).multipliedBy(9.0f/16.0f);
+    }];
+
+    
+}
+- (void)zf_playerBackAction {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+- (void)zf_playerControlViewWillShow:(UIView *)controlView isFullscreen:(BOOL)fullscreen {
+    //    self.backBtn.hidden = YES;
+    [UIView animateWithDuration:0.25 animations:^{
+        self.backBtn.alpha = 0;
+    }];
+}
+
+- (void)zf_playerControlViewWillHidden:(UIView *)controlView isFullscreen:(BOOL)fullscreen {
+    //    self.backBtn.hidden = fullscreen;
+    [UIView animateWithDuration:0.25 animations:^{
+        self.backBtn.alpha = !fullscreen;
+    }];
+}
+
+#pragma mark - Getter
+
+- (ZFPlayerModel *)playerModel {
+    if (!_playerModel) {
+        _playerModel                  = [[ZFPlayerModel alloc] init];
+        _playerModel.title            = @"";
+        _playerModel.videoURL         = [NSURL URLWithString:self.videourl];
+        _playerModel.placeholderImage = [UIImage imageNamed:@"loading_bgView1"];
+        _playerModel.fatherView       = self.playerFatherView;
+        
+    }
+    return _playerModel;
+}
+
+- (ZFPlayerView *)playerView {
+    if (!_playerView) {
+        _playerView = [[ZFPlayerView alloc] init];
+        
+        /*****************************************************************************************
+         *   // 指定控制层(可自定义)
+         *   // ZFPlayerControlView *controlView = [[ZFPlayerControlView alloc] init];
+         *   // 设置控制层和播放模型
+         *   // 控制层传nil，默认使用ZFPlayerControlView(如自定义可传自定义的控制层)
+         *   // 等效于 [_playerView playerModel:self.playerModel];
+         ******************************************************************************************/
+        [_playerView playerControlView:nil playerModel:self.playerModel];
+        
+        // 设置代理
+        _playerView.delegate = self;
+        
+        //（可选设置）可以设置视频的填充模式，内部设置默认（ZFPlayerLayerGravityResizeAspect：等比例填充，直到一个维度到达区域边界）
+        // _playerView.playerLayerGravity = ZFPlayerLayerGravityResize;
+        
+        // 打开下载功能（默认没有这个功能）
+//        _playerView.hasDownload    = YES;
+        
+        // 打开预览图
+        self.playerView.hasPreviewView = YES;
+        
+    }
+    return _playerView;
+}
+
 -(void)sendNumber{
 
     NSDictionary *dic = @{@"id":self.videomodel.Id};
@@ -114,7 +177,6 @@
 
 -(void)creatData{
     
-//    [MBProgressHUD showMessage:@"正在加载..."];
     NSDictionary*dic =@{@"pageNumber":@"1",
                         @"pageSize":@"10"
                         };
@@ -149,14 +211,19 @@
 }
 
 
--(void)creatUI{
+-(void)creatUIWithmodel:(VideoModel *)myvideomodel{
 
     
-    _headerView = [[HeaderView alloc] initWithFrame:CGRectMake(0, 200, KScreenW, 80) andVideomodel:self.videomodel isselected:YES];
+    _headerView = [[HeaderView alloc] initWithFrame:CGRectMake(0, 200, KScreenW, 80) andVideomodel:myvideomodel isselected:YES];
  
     _headerView.select = YES;
     _headerView.ifselected = YES;
     [self.view addSubview:_headerView];
+    [_headerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.playerFatherView.mas_bottom);
+        make.leading.trailing.mas_equalTo(0);
+        make.height.equalTo(@80);
+    }];
     
 }
 
@@ -164,15 +231,19 @@
 -(void)creatTableView{
 
     _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 280, KScreenW, KScreenH-280)];
+    
     _tableview.delegate = self;
     _tableview.dataSource = self;
     [_tableview registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"homecell"];
     [self.view addSubview:_tableview];
-    
+    [_tableview mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.playerFatherView.mas_bottom).offset(80);
+        make.leading.trailing.mas_equalTo(0);
+        make.bottom.equalTo(self.view.mas_bottom);
+    }];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-//    [self.navigationItem setHidesBackButton:YES];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault]; //去掉 bar 下面有一条黑色的线
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     
@@ -180,45 +251,13 @@
 }
 -(void)viewDidAppear:(BOOL)animated{
 
-    if (_myPlayer) {
-        [_myPlayer play];
-    }
+    
 }
 -(void)viewWillDisappear:(BOOL)animated{
     
-    [_myPlayer mypause];
+   
     
     
-}
-
-#pragma mark - xjAVPlayer代理
-- (void)nextXJPlayer{
-//    myPlayer.xjPlayerUrl = @"http://www.jxgbwlxy.gov.cn/tm/course/041629011/sco1/1.mp4";
-}
-
-- (void)xjPlayerFullOrSmall:(BOOL)flag{
-    
-    //如果xjPlayer的界面有导航栏或者有tabbar,在全屏代理方法里全屏时进行如下隐藏；
-    if (flag) {
-//        self.navigationController.navigationBarHidden = YES;
-//        self.tabBarController.tabBar.hidden = YES;
-        _myPlayer.BBtn.hidden = YES;
-        _tableview.hidden  = YES;
-    }else{
-//        self.navigationController.navigationBarHidden = NO;
-//        self.tabBarController.tabBar.hidden = NO;
-        _myPlayer.BBtn.hidden = NO;
-        _tableview.hidden = NO;
-    }
-    
-    if (flag) {
-        /**
-         *  全屏时隐藏顶部状态栏。由于iOS7.0后，如果你的plist文件已经设置View controller-based status bar appearance，value设为NO，就不用写下面的代码（我已经封装好）,如果没设置，就把下面的代码放开，就能在全屏时隐藏头部状态栏；
-         */
-            [[UIApplication sharedApplication] setStatusBarHidden:YES];
-    }else{
-        //        [[UIApplication sharedApplication] setStatusBarHidden:NO];
-    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -265,26 +304,20 @@
     
 
     VideoModel *videomodel = _dataArr[indexPath.row];
-
-    AVplayerViewController *plaervc = [[AVplayerViewController alloc] init];
-    plaervc.videourl =videomodel.videourl;
-    plaervc.videomodel = videomodel;
-    [self.navigationController pushViewController:plaervc animated:YES];
+    _playerModel.videoURL = [NSURL URLWithString:videomodel.videourl];
+    [self.playerView resetToPlayNewVideo:_playerModel];
+    [_headerView removeFromSuperview];
+    [self creatUIWithmodel:videomodel];
+    
 }
+
+#pragma mark ----ZFPlayerDelegate-----
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

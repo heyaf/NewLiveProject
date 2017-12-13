@@ -212,9 +212,9 @@ static NSString *const RCDLiveGiftMessageCellIndentifier = @"RCDLiveGiftMessageC
     self.view.backgroundColor = [UIColor whiteColor];
     //默认进行弹幕缓存，不过量加载弹幕，如果想要同时大批量的显示弹幕，设置为yes，弹幕就不会做弹道检测和缓存
 //    RCDanmakuManager.isAllowOverLoad = NO;
-    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    self.userList = delegate.userList;
-    
+//    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+//    self.userList = delegate.userList;
+//
     //初始化UI
     [self initializedSubViews];
     

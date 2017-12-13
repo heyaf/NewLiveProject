@@ -70,7 +70,8 @@
     
     [self creatHeaderView];
     [self creatTableView];
-//    [self startGCDTimer];
+    self.navigationController.navigationBar.tintColor = KWhiteColor;
+    self.navigationItem.title = @"行情";
 }
 
 -(void)creatData{
@@ -183,7 +184,7 @@
 
 -(void)creatHeaderView{
 
-    _headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, KScreenW, 30)];
+    _headerView = [[UIView alloc] initWithFrame:CGRectMake(0, HYFNavAndStatusHeight, KScreenW, 30)];
     _headerView.backgroundColor = RGB(35, 43, 55);
     
     UILabel *titleLB = [[UILabel alloc] initWithFrame:CGRectMake(20, 5, 40, 20)];
@@ -237,7 +238,7 @@
 
 -(void)creatTableView{
 
-    _tabelView =[[UITableView alloc] initWithFrame:CGRectMake(0, 64+30, KScreenW, KScreenH-30-48-64) style:UITableViewStylePlain];
+    _tabelView =[[UITableView alloc] initWithFrame:CGRectMake(0, HYFNavAndStatusHeight+30, KScreenW, KScreenH-30-48-64) style:UITableViewStylePlain];
     _tabelView.delegate = self;
     _tabelView.dataSource = self;
     _tabelView.alwaysBounceVertical = NO;

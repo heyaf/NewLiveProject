@@ -108,6 +108,33 @@
 		181D801B1F33066100420564 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 181D801A1F33066100420564 /* OpenUDID.m */; };
 		1823554E1FD7E7460027470A /* DWTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823554B1FD7E7460027470A /* DWTabBar.m */; };
 		1823554F1FD7E7460027470A /* DWTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823554D1FD7E7460027470A /* DWTabBarController.m */; };
+		182944C41FDFBC29002B6BFC /* RCDDanmaku.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944AA1FDFBC29002B6BFC /* RCDDanmaku.m */; };
+		182944C51FDFBC29002B6BFC /* RCDDanmakuInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944AC1FDFBC29002B6BFC /* RCDDanmakuInfo.m */; };
+		182944C61FDFBC29002B6BFC /* RCDDanmakuManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944AE1FDFBC29002B6BFC /* RCDDanmakuManager.m */; };
+		182944C71FDFBC29002B6BFC /* UIView+RCDDanmaku.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944B01FDFBC29002B6BFC /* UIView+RCDDanmaku.m */; };
+		182944C81FDFBC29002B6BFC /* RCDLiveEmojiBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944B41FDFBC29002B6BFC /* RCDLiveEmojiBoardView.m */; };
+		182944C91FDFBC29002B6BFC /* RCDLiveEmojiPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944B61FDFBC29002B6BFC /* RCDLiveEmojiPageControl.m */; };
+		182944CA1FDFBC29002B6BFC /* RCDLiveInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944B91FDFBC29002B6BFC /* RCDLiveInputBar.m */; };
+		182944CB1FDFBC29002B6BFC /* RCDLiveInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944BB1FDFBC29002B6BFC /* RCDLiveInputView.m */; };
+		182944CC1FDFBC29002B6BFC /* RCDLiveAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944BD1FDFBC29002B6BFC /* RCDLiveAttributedLabel.m */; };
+		182944CD1FDFBC29002B6BFC /* RCDLiveCollectionViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944BF1FDFBC29002B6BFC /* RCDLiveCollectionViewHeader.m */; };
+		182944CE1FDFBC29002B6BFC /* RCDLiveContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944C11FDFBC29002B6BFC /* RCDLiveContentView.m */; };
+		182944CF1FDFBC29002B6BFC /* RCDLiveTipLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944C31FDFBC29002B6BFC /* RCDLiveTipLabel.m */; };
+		182944F11FDFCAA1002B6BFC /* ASValuePopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944D21FDFCAA0002B6BFC /* ASValuePopUpView.m */; };
+		182944F21FDFCAA1002B6BFC /* ASValueTrackingSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944D41FDFCAA0002B6BFC /* ASValueTrackingSlider.m */; };
+		182944F31FDFCAA1002B6BFC /* UIAlertController+ZFPlayerRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944D71FDFCAA0002B6BFC /* UIAlertController+ZFPlayerRotation.m */; };
+		182944F41FDFCAA1002B6BFC /* UIImageView+ZFCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944D91FDFCAA0002B6BFC /* UIImageView+ZFCache.m */; };
+		182944F51FDFCAA1002B6BFC /* UINavigationController+ZFPlayerRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944DB1FDFCAA0002B6BFC /* UINavigationController+ZFPlayerRotation.m */; };
+		182944F61FDFCAA1002B6BFC /* UITabBarController+ZFPlayerRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944DD1FDFCAA0002B6BFC /* UITabBarController+ZFPlayerRotation.m */; };
+		182944F71FDFCAA1002B6BFC /* UIView+CustomControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944DF1FDFCAA0002B6BFC /* UIView+CustomControlView.m */; };
+		182944F81FDFCAA1002B6BFC /* UIViewController+ZFPlayerRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944E11FDFCAA0002B6BFC /* UIViewController+ZFPlayerRotation.m */; };
+		182944F91FDFCAA1002B6BFC /* UIWindow+CurrentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944E31FDFCAA0002B6BFC /* UIWindow+CurrentViewController.m */; };
+		182944FA1FDFCAA1002B6BFC /* MMMaterialDesignSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944E51FDFCAA0002B6BFC /* MMMaterialDesignSpinner.m */; };
+		182944FB1FDFCAA1002B6BFC /* ZFBrightnessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944E71FDFCAA0002B6BFC /* ZFBrightnessView.m */; };
+		182944FC1FDFCAA1002B6BFC /* ZFPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 182944E81FDFCAA0002B6BFC /* ZFPlayer.bundle */; };
+		182944FD1FDFCAA1002B6BFC /* ZFPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944EB1FDFCAA0002B6BFC /* ZFPlayerControlView.m */; };
+		182944FE1FDFCAA1002B6BFC /* ZFPlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944EE1FDFCAA0002B6BFC /* ZFPlayerModel.m */; };
+		182944FF1FDFCAA1002B6BFC /* ZFPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944F01FDFCAA0002B6BFC /* ZFPlayerView.m */; };
 		182AA2DB1F5D3CCD00FA9811 /* LaunchIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AA2DA1F5D3CCD00FA9811 /* LaunchIntroductionView.m */; };
 		1841F5821F35B80300185803 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D3C00F1CCE1AA2005F551D /* MediaPlayer.framework */; };
 		1841F5841F35B82300185803 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1841F5831F35B82300185803 /* MobileCoreServices.framework */; };
@@ -173,18 +200,6 @@
 		18A5F2FD1F34280B00F635AE /* RCDLive.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5F2FC1F34280B00F635AE /* RCDLive.m */; };
 		18A5F3001F34281E00F635AE /* RCDLiveChatRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5F2FF1F34281E00F635AE /* RCDLiveChatRoomViewController.m */; };
 		18A5F30C1F344F9200F635AE /* RCDLiveKitUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5F30B1F344F9200F635AE /* RCDLiveKitUtility.m */; };
-		18A5F4C91F3453E600F635AE /* RCDDanmaku.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5F4C21F3453E600F635AE /* RCDDanmaku.m */; };
-		18A5F4CA1F3453E600F635AE /* RCDDanmakuInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5F4C41F3453E600F635AE /* RCDDanmakuInfo.m */; };
-		18A5F4CB1F3453E600F635AE /* RCDDanmakuManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5F4C61F3453E600F635AE /* RCDDanmakuManager.m */; };
-		18A5F4CC1F3453E600F635AE /* UIView+RCDDanmaku.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5F4C81F3453E600F635AE /* UIView+RCDDanmaku.m */; };
-		18A5F4D11F3456A900F635AE /* RCDLiveEmojiBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5F4CE1F3456A900F635AE /* RCDLiveEmojiBoardView.m */; };
-		18A5F4D21F3456A900F635AE /* RCDLiveEmojiPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5F4D01F3456A900F635AE /* RCDLiveEmojiPageControl.m */; };
-		18A5F4D71F3456B300F635AE /* RCDLiveInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5F4D41F3456B300F635AE /* RCDLiveInputBar.m */; };
-		18A5F4D81F3456B300F635AE /* RCDLiveInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5F4D61F3456B300F635AE /* RCDLiveInputView.m */; };
-		18A5F4F91F34572200F635AE /* RCDLiveAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5F4F21F34572200F635AE /* RCDLiveAttributedLabel.m */; };
-		18A5F4FA1F34572200F635AE /* RCDLiveCollectionViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5F4F41F34572200F635AE /* RCDLiveCollectionViewHeader.m */; };
-		18A5F4FB1F34572200F635AE /* RCDLiveContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5F4F61F34572200F635AE /* RCDLiveContentView.m */; };
-		18A5F4FC1F34572200F635AE /* RCDLiveTipLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5F4F81F34572200F635AE /* RCDLiveTipLabel.m */; };
 		18A5F5221F345A2A00F635AE /* RCDLiveGiftMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5F51C1F345A2A00F635AE /* RCDLiveGiftMessage.m */; };
 		18A5F5231F345A2A00F635AE /* RCDLiveMessageCellNotificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5F51E1F345A2A00F635AE /* RCDLiveMessageCellNotificationModel.m */; };
 		18A5F5241F345A2A00F635AE /* RCDLiveMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5F5201F345A2A00F635AE /* RCDLiveMessageModel.m */; };
@@ -427,7 +442,6 @@
 		181193371F59106A00B960F4 /* LoginInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginInViewController.m; sourceTree = "<group>"; };
 		181193391F59113A00B960F4 /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
 		1811933A1F59113A00B960F4 /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
-		1811933E1F5A8CAB00B960F4 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IJKMediaFramework.framework; path = ../../../../IJKMediaFramework.framework; sourceTree = "<group>"; };
 		181193461F5A907E00B960F4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		181193501F5A978100B960F4 /* XJAVPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJAVPlayer.h; sourceTree = "<group>"; };
 		181193511F5A978100B960F4 /* XJAVPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJAVPlayer.m; sourceTree = "<group>"; };
@@ -453,6 +467,61 @@
 		1823554B1FD7E7460027470A /* DWTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWTabBar.m; sourceTree = "<group>"; };
 		1823554C1FD7E7460027470A /* DWTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWTabBarController.h; sourceTree = "<group>"; };
 		1823554D1FD7E7460027470A /* DWTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWTabBarController.m; sourceTree = "<group>"; };
+		182944A91FDFBC29002B6BFC /* RCDDanmaku.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDDanmaku.h; sourceTree = "<group>"; };
+		182944AA1FDFBC29002B6BFC /* RCDDanmaku.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDDanmaku.m; sourceTree = "<group>"; };
+		182944AB1FDFBC29002B6BFC /* RCDDanmakuInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDDanmakuInfo.h; sourceTree = "<group>"; };
+		182944AC1FDFBC29002B6BFC /* RCDDanmakuInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDDanmakuInfo.m; sourceTree = "<group>"; };
+		182944AD1FDFBC29002B6BFC /* RCDDanmakuManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDDanmakuManager.h; sourceTree = "<group>"; };
+		182944AE1FDFBC29002B6BFC /* RCDDanmakuManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDDanmakuManager.m; sourceTree = "<group>"; };
+		182944AF1FDFBC29002B6BFC /* UIView+RCDDanmaku.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RCDDanmaku.h"; sourceTree = "<group>"; };
+		182944B01FDFBC29002B6BFC /* UIView+RCDDanmaku.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RCDDanmaku.m"; sourceTree = "<group>"; };
+		182944B31FDFBC29002B6BFC /* RCDLiveEmojiBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDLiveEmojiBoardView.h; sourceTree = "<group>"; };
+		182944B41FDFBC29002B6BFC /* RCDLiveEmojiBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDLiveEmojiBoardView.m; sourceTree = "<group>"; };
+		182944B51FDFBC29002B6BFC /* RCDLiveEmojiPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDLiveEmojiPageControl.h; sourceTree = "<group>"; };
+		182944B61FDFBC29002B6BFC /* RCDLiveEmojiPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDLiveEmojiPageControl.m; sourceTree = "<group>"; };
+		182944B81FDFBC29002B6BFC /* RCDLiveInputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDLiveInputBar.h; sourceTree = "<group>"; };
+		182944B91FDFBC29002B6BFC /* RCDLiveInputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDLiveInputBar.m; sourceTree = "<group>"; };
+		182944BA1FDFBC29002B6BFC /* RCDLiveInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDLiveInputView.h; sourceTree = "<group>"; };
+		182944BB1FDFBC29002B6BFC /* RCDLiveInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDLiveInputView.m; sourceTree = "<group>"; };
+		182944BC1FDFBC29002B6BFC /* RCDLiveAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDLiveAttributedLabel.h; sourceTree = "<group>"; };
+		182944BD1FDFBC29002B6BFC /* RCDLiveAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDLiveAttributedLabel.m; sourceTree = "<group>"; };
+		182944BE1FDFBC29002B6BFC /* RCDLiveCollectionViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDLiveCollectionViewHeader.h; sourceTree = "<group>"; };
+		182944BF1FDFBC29002B6BFC /* RCDLiveCollectionViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDLiveCollectionViewHeader.m; sourceTree = "<group>"; };
+		182944C01FDFBC29002B6BFC /* RCDLiveContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDLiveContentView.h; sourceTree = "<group>"; };
+		182944C11FDFBC29002B6BFC /* RCDLiveContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDLiveContentView.m; sourceTree = "<group>"; };
+		182944C21FDFBC29002B6BFC /* RCDLiveTipLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDLiveTipLabel.h; sourceTree = "<group>"; };
+		182944C31FDFBC29002B6BFC /* RCDLiveTipLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDLiveTipLabel.m; sourceTree = "<group>"; };
+		182944D11FDFCAA0002B6BFC /* ASValuePopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValuePopUpView.h; sourceTree = "<group>"; };
+		182944D21FDFCAA0002B6BFC /* ASValuePopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValuePopUpView.m; sourceTree = "<group>"; };
+		182944D31FDFCAA0002B6BFC /* ASValueTrackingSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValueTrackingSlider.h; sourceTree = "<group>"; };
+		182944D41FDFCAA0002B6BFC /* ASValueTrackingSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValueTrackingSlider.m; sourceTree = "<group>"; };
+		182944D61FDFCAA0002B6BFC /* UIAlertController+ZFPlayerRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+ZFPlayerRotation.h"; sourceTree = "<group>"; };
+		182944D71FDFCAA0002B6BFC /* UIAlertController+ZFPlayerRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+ZFPlayerRotation.m"; sourceTree = "<group>"; };
+		182944D81FDFCAA0002B6BFC /* UIImageView+ZFCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ZFCache.h"; sourceTree = "<group>"; };
+		182944D91FDFCAA0002B6BFC /* UIImageView+ZFCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ZFCache.m"; sourceTree = "<group>"; };
+		182944DA1FDFCAA0002B6BFC /* UINavigationController+ZFPlayerRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+ZFPlayerRotation.h"; sourceTree = "<group>"; };
+		182944DB1FDFCAA0002B6BFC /* UINavigationController+ZFPlayerRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+ZFPlayerRotation.m"; sourceTree = "<group>"; };
+		182944DC1FDFCAA0002B6BFC /* UITabBarController+ZFPlayerRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+ZFPlayerRotation.h"; sourceTree = "<group>"; };
+		182944DD1FDFCAA0002B6BFC /* UITabBarController+ZFPlayerRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+ZFPlayerRotation.m"; sourceTree = "<group>"; };
+		182944DE1FDFCAA0002B6BFC /* UIView+CustomControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CustomControlView.h"; sourceTree = "<group>"; };
+		182944DF1FDFCAA0002B6BFC /* UIView+CustomControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CustomControlView.m"; sourceTree = "<group>"; };
+		182944E01FDFCAA0002B6BFC /* UIViewController+ZFPlayerRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ZFPlayerRotation.h"; sourceTree = "<group>"; };
+		182944E11FDFCAA0002B6BFC /* UIViewController+ZFPlayerRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZFPlayerRotation.m"; sourceTree = "<group>"; };
+		182944E21FDFCAA0002B6BFC /* UIWindow+CurrentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+CurrentViewController.h"; sourceTree = "<group>"; };
+		182944E31FDFCAA0002B6BFC /* UIWindow+CurrentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+CurrentViewController.m"; sourceTree = "<group>"; };
+		182944E41FDFCAA0002B6BFC /* MMMaterialDesignSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMaterialDesignSpinner.h; sourceTree = "<group>"; };
+		182944E51FDFCAA0002B6BFC /* MMMaterialDesignSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMaterialDesignSpinner.m; sourceTree = "<group>"; };
+		182944E61FDFCAA0002B6BFC /* ZFBrightnessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFBrightnessView.h; sourceTree = "<group>"; };
+		182944E71FDFCAA0002B6BFC /* ZFBrightnessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFBrightnessView.m; sourceTree = "<group>"; };
+		182944E81FDFCAA0002B6BFC /* ZFPlayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZFPlayer.bundle; sourceTree = "<group>"; };
+		182944E91FDFCAA0002B6BFC /* ZFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayer.h; sourceTree = "<group>"; };
+		182944EA1FDFCAA0002B6BFC /* ZFPlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerControlView.h; sourceTree = "<group>"; };
+		182944EB1FDFCAA0002B6BFC /* ZFPlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerControlView.m; sourceTree = "<group>"; };
+		182944EC1FDFCAA0002B6BFC /* ZFPlayerControlViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerControlViewDelegate.h; sourceTree = "<group>"; };
+		182944ED1FDFCAA0002B6BFC /* ZFPlayerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerModel.h; sourceTree = "<group>"; };
+		182944EE1FDFCAA0002B6BFC /* ZFPlayerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerModel.m; sourceTree = "<group>"; };
+		182944EF1FDFCAA0002B6BFC /* ZFPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerView.h; sourceTree = "<group>"; };
+		182944F01FDFCAA0002B6BFC /* ZFPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerView.m; sourceTree = "<group>"; };
 		182AA2D91F5D3CCD00FA9811 /* LaunchIntroductionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchIntroductionView.h; sourceTree = "<group>"; };
 		182AA2DA1F5D3CCD00FA9811 /* LaunchIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchIntroductionView.m; sourceTree = "<group>"; };
 		1841F5831F35B82300185803 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -576,30 +645,6 @@
 		18A5F2FF1F34281E00F635AE /* RCDLiveChatRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDLiveChatRoomViewController.m; sourceTree = "<group>"; };
 		18A5F30A1F344F9200F635AE /* RCDLiveKitUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDLiveKitUtility.h; sourceTree = "<group>"; };
 		18A5F30B1F344F9200F635AE /* RCDLiveKitUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDLiveKitUtility.m; sourceTree = "<group>"; };
-		18A5F4C11F3453E600F635AE /* RCDDanmaku.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCDDanmaku.h; path = RongChatRoomDemo/RCIM/Danmaku/RCDDanmaku.h; sourceTree = SOURCE_ROOT; };
-		18A5F4C21F3453E600F635AE /* RCDDanmaku.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCDDanmaku.m; path = RongChatRoomDemo/RCIM/Danmaku/RCDDanmaku.m; sourceTree = SOURCE_ROOT; };
-		18A5F4C31F3453E600F635AE /* RCDDanmakuInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCDDanmakuInfo.h; path = RongChatRoomDemo/RCIM/Danmaku/RCDDanmakuInfo.h; sourceTree = SOURCE_ROOT; };
-		18A5F4C41F3453E600F635AE /* RCDDanmakuInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCDDanmakuInfo.m; path = RongChatRoomDemo/RCIM/Danmaku/RCDDanmakuInfo.m; sourceTree = SOURCE_ROOT; };
-		18A5F4C51F3453E600F635AE /* RCDDanmakuManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCDDanmakuManager.h; path = RongChatRoomDemo/RCIM/Danmaku/RCDDanmakuManager.h; sourceTree = SOURCE_ROOT; };
-		18A5F4C61F3453E600F635AE /* RCDDanmakuManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCDDanmakuManager.m; path = RongChatRoomDemo/RCIM/Danmaku/RCDDanmakuManager.m; sourceTree = SOURCE_ROOT; };
-		18A5F4C71F3453E600F635AE /* UIView+RCDDanmaku.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+RCDDanmaku.h"; path = "RongChatRoomDemo/RCIM/Danmaku/UIView+RCDDanmaku.h"; sourceTree = SOURCE_ROOT; };
-		18A5F4C81F3453E600F635AE /* UIView+RCDDanmaku.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+RCDDanmaku.m"; path = "RongChatRoomDemo/RCIM/Danmaku/UIView+RCDDanmaku.m"; sourceTree = SOURCE_ROOT; };
-		18A5F4CD1F3456A900F635AE /* RCDLiveEmojiBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCDLiveEmojiBoardView.h; path = RongChatRoomDemo/RCIM/CustomViews/EmojiView/RCDLiveEmojiBoardView.h; sourceTree = SOURCE_ROOT; };
-		18A5F4CE1F3456A900F635AE /* RCDLiveEmojiBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCDLiveEmojiBoardView.m; path = RongChatRoomDemo/RCIM/CustomViews/EmojiView/RCDLiveEmojiBoardView.m; sourceTree = SOURCE_ROOT; };
-		18A5F4CF1F3456A900F635AE /* RCDLiveEmojiPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCDLiveEmojiPageControl.h; path = RongChatRoomDemo/RCIM/CustomViews/EmojiView/RCDLiveEmojiPageControl.h; sourceTree = SOURCE_ROOT; };
-		18A5F4D01F3456A900F635AE /* RCDLiveEmojiPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCDLiveEmojiPageControl.m; path = RongChatRoomDemo/RCIM/CustomViews/EmojiView/RCDLiveEmojiPageControl.m; sourceTree = SOURCE_ROOT; };
-		18A5F4D31F3456B300F635AE /* RCDLiveInputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCDLiveInputBar.h; path = RongChatRoomDemo/RCIM/CustomViews/InputBar/RCDLiveInputBar.h; sourceTree = SOURCE_ROOT; };
-		18A5F4D41F3456B300F635AE /* RCDLiveInputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCDLiveInputBar.m; path = RongChatRoomDemo/RCIM/CustomViews/InputBar/RCDLiveInputBar.m; sourceTree = SOURCE_ROOT; };
-		18A5F4D51F3456B300F635AE /* RCDLiveInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCDLiveInputView.h; path = RongChatRoomDemo/RCIM/CustomViews/InputBar/RCDLiveInputView.h; sourceTree = SOURCE_ROOT; };
-		18A5F4D61F3456B300F635AE /* RCDLiveInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCDLiveInputView.m; path = RongChatRoomDemo/RCIM/CustomViews/InputBar/RCDLiveInputView.m; sourceTree = SOURCE_ROOT; };
-		18A5F4F11F34572200F635AE /* RCDLiveAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCDLiveAttributedLabel.h; path = RongChatRoomDemo/RCIM/CustomViews/RCDLiveAttributedLabel.h; sourceTree = SOURCE_ROOT; };
-		18A5F4F21F34572200F635AE /* RCDLiveAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCDLiveAttributedLabel.m; path = RongChatRoomDemo/RCIM/CustomViews/RCDLiveAttributedLabel.m; sourceTree = SOURCE_ROOT; };
-		18A5F4F31F34572200F635AE /* RCDLiveCollectionViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCDLiveCollectionViewHeader.h; path = RongChatRoomDemo/RCIM/CustomViews/RCDLiveCollectionViewHeader.h; sourceTree = SOURCE_ROOT; };
-		18A5F4F41F34572200F635AE /* RCDLiveCollectionViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCDLiveCollectionViewHeader.m; path = RongChatRoomDemo/RCIM/CustomViews/RCDLiveCollectionViewHeader.m; sourceTree = SOURCE_ROOT; };
-		18A5F4F51F34572200F635AE /* RCDLiveContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCDLiveContentView.h; path = RongChatRoomDemo/RCIM/CustomViews/RCDLiveContentView.h; sourceTree = SOURCE_ROOT; };
-		18A5F4F61F34572200F635AE /* RCDLiveContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCDLiveContentView.m; path = RongChatRoomDemo/RCIM/CustomViews/RCDLiveContentView.m; sourceTree = SOURCE_ROOT; };
-		18A5F4F71F34572200F635AE /* RCDLiveTipLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCDLiveTipLabel.h; path = RongChatRoomDemo/RCIM/CustomViews/RCDLiveTipLabel.h; sourceTree = SOURCE_ROOT; };
-		18A5F4F81F34572200F635AE /* RCDLiveTipLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCDLiveTipLabel.m; path = RongChatRoomDemo/RCIM/CustomViews/RCDLiveTipLabel.m; sourceTree = SOURCE_ROOT; };
 		18A5F4FE1F34588900F635AE /* RCDLiveKitCommonDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDLiveKitCommonDefine.h; sourceTree = "<group>"; };
 		18A5F51B1F345A2A00F635AE /* RCDLiveGiftMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCDLiveGiftMessage.h; path = RCIM/ChatroomVC/Model/RCDLiveGiftMessage.h; sourceTree = "<group>"; };
 		18A5F51C1F345A2A00F635AE /* RCDLiveGiftMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCDLiveGiftMessage.m; path = RCIM/ChatroomVC/Model/RCDLiveGiftMessage.m; sourceTree = "<group>"; };
@@ -1428,6 +1473,106 @@
 			path = MytabbarController;
 			sourceTree = "<group>";
 		};
+		182944A81FDFBC29002B6BFC /* Danmaku */ = {
+			isa = PBXGroup;
+			children = (
+				182944A91FDFBC29002B6BFC /* RCDDanmaku.h */,
+				182944AA1FDFBC29002B6BFC /* RCDDanmaku.m */,
+				182944AB1FDFBC29002B6BFC /* RCDDanmakuInfo.h */,
+				182944AC1FDFBC29002B6BFC /* RCDDanmakuInfo.m */,
+				182944AD1FDFBC29002B6BFC /* RCDDanmakuManager.h */,
+				182944AE1FDFBC29002B6BFC /* RCDDanmakuManager.m */,
+				182944AF1FDFBC29002B6BFC /* UIView+RCDDanmaku.h */,
+				182944B01FDFBC29002B6BFC /* UIView+RCDDanmaku.m */,
+			);
+			path = Danmaku;
+			sourceTree = "<group>";
+		};
+		182944B11FDFBC29002B6BFC /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				182944B21FDFBC29002B6BFC /* EmojiView */,
+				182944B71FDFBC29002B6BFC /* InputBar */,
+				182944BC1FDFBC29002B6BFC /* RCDLiveAttributedLabel.h */,
+				182944BD1FDFBC29002B6BFC /* RCDLiveAttributedLabel.m */,
+				182944BE1FDFBC29002B6BFC /* RCDLiveCollectionViewHeader.h */,
+				182944BF1FDFBC29002B6BFC /* RCDLiveCollectionViewHeader.m */,
+				182944C01FDFBC29002B6BFC /* RCDLiveContentView.h */,
+				182944C11FDFBC29002B6BFC /* RCDLiveContentView.m */,
+				182944C21FDFBC29002B6BFC /* RCDLiveTipLabel.h */,
+				182944C31FDFBC29002B6BFC /* RCDLiveTipLabel.m */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		182944B21FDFBC29002B6BFC /* EmojiView */ = {
+			isa = PBXGroup;
+			children = (
+				182944B31FDFBC29002B6BFC /* RCDLiveEmojiBoardView.h */,
+				182944B41FDFBC29002B6BFC /* RCDLiveEmojiBoardView.m */,
+				182944B51FDFBC29002B6BFC /* RCDLiveEmojiPageControl.h */,
+				182944B61FDFBC29002B6BFC /* RCDLiveEmojiPageControl.m */,
+			);
+			path = EmojiView;
+			sourceTree = "<group>";
+		};
+		182944B71FDFBC29002B6BFC /* InputBar */ = {
+			isa = PBXGroup;
+			children = (
+				182944B81FDFBC29002B6BFC /* RCDLiveInputBar.h */,
+				182944B91FDFBC29002B6BFC /* RCDLiveInputBar.m */,
+				182944BA1FDFBC29002B6BFC /* RCDLiveInputView.h */,
+				182944BB1FDFBC29002B6BFC /* RCDLiveInputView.m */,
+			);
+			path = InputBar;
+			sourceTree = "<group>";
+		};
+		182944D01FDFCAA0002B6BFC /* ZFPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				182944D11FDFCAA0002B6BFC /* ASValuePopUpView.h */,
+				182944D21FDFCAA0002B6BFC /* ASValuePopUpView.m */,
+				182944D31FDFCAA0002B6BFC /* ASValueTrackingSlider.h */,
+				182944D41FDFCAA0002B6BFC /* ASValueTrackingSlider.m */,
+				182944D51FDFCAA0002B6BFC /* Category */,
+				182944E41FDFCAA0002B6BFC /* MMMaterialDesignSpinner.h */,
+				182944E51FDFCAA0002B6BFC /* MMMaterialDesignSpinner.m */,
+				182944E61FDFCAA0002B6BFC /* ZFBrightnessView.h */,
+				182944E71FDFCAA0002B6BFC /* ZFBrightnessView.m */,
+				182944E81FDFCAA0002B6BFC /* ZFPlayer.bundle */,
+				182944E91FDFCAA0002B6BFC /* ZFPlayer.h */,
+				182944EA1FDFCAA0002B6BFC /* ZFPlayerControlView.h */,
+				182944EB1FDFCAA0002B6BFC /* ZFPlayerControlView.m */,
+				182944EC1FDFCAA0002B6BFC /* ZFPlayerControlViewDelegate.h */,
+				182944ED1FDFCAA0002B6BFC /* ZFPlayerModel.h */,
+				182944EE1FDFCAA0002B6BFC /* ZFPlayerModel.m */,
+				182944EF1FDFCAA0002B6BFC /* ZFPlayerView.h */,
+				182944F01FDFCAA0002B6BFC /* ZFPlayerView.m */,
+			);
+			path = ZFPlayer;
+			sourceTree = "<group>";
+		};
+		182944D51FDFCAA0002B6BFC /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				182944D61FDFCAA0002B6BFC /* UIAlertController+ZFPlayerRotation.h */,
+				182944D71FDFCAA0002B6BFC /* UIAlertController+ZFPlayerRotation.m */,
+				182944D81FDFCAA0002B6BFC /* UIImageView+ZFCache.h */,
+				182944D91FDFCAA0002B6BFC /* UIImageView+ZFCache.m */,
+				182944DA1FDFCAA0002B6BFC /* UINavigationController+ZFPlayerRotation.h */,
+				182944DB1FDFCAA0002B6BFC /* UINavigationController+ZFPlayerRotation.m */,
+				182944DC1FDFCAA0002B6BFC /* UITabBarController+ZFPlayerRotation.h */,
+				182944DD1FDFCAA0002B6BFC /* UITabBarController+ZFPlayerRotation.m */,
+				182944DE1FDFCAA0002B6BFC /* UIView+CustomControlView.h */,
+				182944DF1FDFCAA0002B6BFC /* UIView+CustomControlView.m */,
+				182944E01FDFCAA0002B6BFC /* UIViewController+ZFPlayerRotation.h */,
+				182944E11FDFCAA0002B6BFC /* UIViewController+ZFPlayerRotation.m */,
+				182944E21FDFCAA0002B6BFC /* UIWindow+CurrentViewController.h */,
+				182944E31FDFCAA0002B6BFC /* UIWindow+CurrentViewController.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		182AA2D81F5D3CCD00FA9811 /* LaunchIntroduction */ = {
 			isa = PBXGroup;
 			children = (
@@ -1584,6 +1729,7 @@
 		1880546F1F346192009E77F4 /* 三方库文件 */ = {
 			isa = PBXGroup;
 			children = (
+				182944D01FDFCAA0002B6BFC /* ZFPlayer */,
 				18B557891F9F48D100A43BA4 /* IQKeyboardManager */,
 				18AF91F01F90A15500FDE955 /* 日历Tool */,
 				1852D19F1F6130B0000E1844 /* MJRefresh */,
@@ -1710,29 +1856,13 @@
 			path = "要闻";
 			sourceTree = "<group>";
 		};
-		18A5F2ED1F3426F500F635AE /* Danmaku */ = {
-			isa = PBXGroup;
-			children = (
-				18A5F4C11F3453E600F635AE /* RCDDanmaku.h */,
-				18A5F4C21F3453E600F635AE /* RCDDanmaku.m */,
-				18A5F4C31F3453E600F635AE /* RCDDanmakuInfo.h */,
-				18A5F4C41F3453E600F635AE /* RCDDanmakuInfo.m */,
-				18A5F4C51F3453E600F635AE /* RCDDanmakuManager.h */,
-				18A5F4C61F3453E600F635AE /* RCDDanmakuManager.m */,
-				18A5F4C71F3453E600F635AE /* UIView+RCDDanmaku.h */,
-				18A5F4C81F3453E600F635AE /* UIView+RCDDanmaku.m */,
-			);
-			name = Danmaku;
-			path = ../Danmaku;
-			sourceTree = "<group>";
-		};
 		18A5F2FA1F3427DA00F635AE /* RCIM */ = {
 			isa = PBXGroup;
 			children = (
 				18A5F4FD1F34588900F635AE /* Common */,
 				468176C21CB4E7A600331D64 /* ChatroomVC */,
-				468177301CB4F72C00331D64 /* CustomViews */,
-				18A5F2ED1F3426F500F635AE /* Danmaku */,
+				182944B11FDFBC29002B6BFC /* CustomViews */,
+				182944A81FDFBC29002B6BFC /* Danmaku */,
 				18A5F30A1F344F9200F635AE /* RCDLiveKitUtility.h */,
 				18A5F30B1F344F9200F635AE /* RCDLiveKitUtility.m */,
 				18A5F2FE1F34281E00F635AE /* RCDLiveChatRoomViewController.h */,
@@ -1905,28 +2035,6 @@
 			path = SMSSDK;
 			sourceTree = "<group>";
 		};
-		4671A7B91D52EC180036D19B /* InputBar */ = {
-			isa = PBXGroup;
-			children = (
-				18A5F4D31F3456B300F635AE /* RCDLiveInputBar.h */,
-				18A5F4D41F3456B300F635AE /* RCDLiveInputBar.m */,
-				18A5F4D51F3456B300F635AE /* RCDLiveInputView.h */,
-				18A5F4D61F3456B300F635AE /* RCDLiveInputView.m */,
-			);
-			path = InputBar;
-			sourceTree = "<group>";
-		};
-		4671A7C31D52EFA90036D19B /* EmojiView */ = {
-			isa = PBXGroup;
-			children = (
-				18A5F4CD1F3456A900F635AE /* RCDLiveEmojiBoardView.h */,
-				18A5F4CE1F3456A900F635AE /* RCDLiveEmojiBoardView.m */,
-				18A5F4CF1F3456A900F635AE /* RCDLiveEmojiPageControl.h */,
-				18A5F4D01F3456A900F635AE /* RCDLiveEmojiPageControl.m */,
-			);
-			path = EmojiView;
-			sourceTree = "<group>";
-		};
 		468176751CB4E29000331D64 = {
 			isa = PBXGroup;
 			children = (
@@ -2082,29 +2190,10 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		468177301CB4F72C00331D64 /* CustomViews */ = {
-			isa = PBXGroup;
-			children = (
-				18A5F4F11F34572200F635AE /* RCDLiveAttributedLabel.h */,
-				18A5F4F21F34572200F635AE /* RCDLiveAttributedLabel.m */,
-				18A5F4F31F34572200F635AE /* RCDLiveCollectionViewHeader.h */,
-				18A5F4F41F34572200F635AE /* RCDLiveCollectionViewHeader.m */,
-				18A5F4F51F34572200F635AE /* RCDLiveContentView.h */,
-				18A5F4F61F34572200F635AE /* RCDLiveContentView.m */,
-				18A5F4F71F34572200F635AE /* RCDLiveTipLabel.h */,
-				18A5F4F81F34572200F635AE /* RCDLiveTipLabel.m */,
-				4671A7C31D52EFA90036D19B /* EmojiView */,
-				4671A7B91D52EC180036D19B /* InputBar */,
-			);
-			name = CustomViews;
-			path = ../CustomViews;
-			sourceTree = "<group>";
-		};
 		76BA090E525DB67A92BC7FDD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				1852D17D1F5EAB14000E1844 /* libJSONModel.a */,
-				1811933E1F5A8CAB00B960F4 /* IJKMediaFramework.framework */,
 				1841F5851F35B83D00185803 /* QuartzCore.framework */,
 				1841F5831F35B82300185803 /* MobileCoreServices.framework */,
 				6585C05C79687506C06811DE /* libPods-RongChatRoomDemo.a */,
@@ -2280,6 +2369,7 @@
 				180B25AE1F98A8E600DEA5A8 /* XieYiViewController.xib in Resources */,
 				1852D1E01F6130B0000E1844 /* MJRefresh.bundle in Resources */,
 				181192F11F55456300B960F4 /* MineTableViewCell.xib in Resources */,
+				182944FC1FDFCAA1002B6BFC /* ZFPlayer.bundle in Resources */,
 				181192EC1F53FDEE00B960F4 /* ProductTableViewCell.xib in Resources */,
 				1852D1D11F6130B0000E1844 /* LICENSE in Resources */,
 				4681768E1CB4E29000331D64 /* Assets.xcassets in Resources */,
@@ -2460,6 +2550,7 @@
 				180B30AB1F3C0FAE00B4A792 /* NSData+ImageContentType.m in Sources */,
 				1852D1761F5E540C000E1844 /* HttpRequest.m in Sources */,
 				1852D1921F60EE57000E1844 /* basemodel.m in Sources */,
+				182944FF1FDFCAA1002B6BFC /* ZFPlayerView.m in Sources */,
 				18AF92001F90A15600FDE955 /* DAYNavigationBar.m in Sources */,
 				1852D1E11F6130B0000E1844 /* MJRefreshConst.m in Sources */,
 				1852D17C1F5EA176000E1844 /* userModel.m in Sources */,
@@ -2468,14 +2559,18 @@
 				180B30AD1F3C0FAE00B4A792 /* SDImageCacheConfig.m in Sources */,
 				180B30AE1F3C0FAE00B4A792 /* SDWebImageCompat.m in Sources */,
 				180B30AF1F3C0FAE00B4A792 /* SDWebImageDecoder.m in Sources */,
+				182944F31FDFCAA1002B6BFC /* UIAlertController+ZFPlayerRotation.m in Sources */,
 				1852D1E31F6130B0000E1844 /* UIScrollView+MJExtension.m in Sources */,
+				182944CE1FDFBC29002B6BFC /* RCDLiveContentView.m in Sources */,
 				180B30B01F3C0FAE00B4A792 /* SDWebImageDownloaderOperation.m in Sources */,
 				180B30E71F42A7F600B4A792 /* News1ViewController.m in Sources */,
 				180B30B11F3C0FAE00B4A792 /* SDWebImagePrefetcher.m in Sources */,
 				180B30B21F3C0FAE00B4A792 /* UIButton+WebCache.m in Sources */,
 				180B30CC1F3D982000B4A792 /* HomeTableViewCell.m in Sources */,
 				180B30B31F3C0FAE00B4A792 /* UIImage+GIF.m in Sources */,
+				182944C71FDFBC29002B6BFC /* UIView+RCDDanmaku.m in Sources */,
 				180B30B41F3C0FAE00B4A792 /* UIImage+MultiFormat.m in Sources */,
+				182944FA1FDFCAA1002B6BFC /* MMMaterialDesignSpinner.m in Sources */,
 				1852D1E41F6130B0000E1844 /* UIScrollView+MJRefresh.m in Sources */,
 				180B30B51F3C0FAE00B4A792 /* UIImageView+HighlightedWebCache.m in Sources */,
 				180B30C31F3C64C800B4A792 /* CellHeaderView.m in Sources */,
@@ -2485,6 +2580,7 @@
 				180B30B81F3C0FAE00B4A792 /* UIView+WebCacheOperation.m in Sources */,
 				1852D1D21F6130B0000E1844 /* MJRefreshAutoFooter.m in Sources */,
 				18AF91EC1F8F16F300FDE955 /* CalendarViewController.m in Sources */,
+				182944F21FDFCAA1002B6BFC /* ASValueTrackingSlider.m in Sources */,
 				180B309B1F3C0F5200B4A792 /* SDImageCache.m in Sources */,
 				180B309C1F3C0F5200B4A792 /* SDWebImageDownloader.m in Sources */,
 				180B30981F3C0F2700B4A792 /* SDWebImageManager.m in Sources */,
@@ -2497,9 +2593,8 @@
 				180B30C01F3C3A3E00B4A792 /* buttonView.m in Sources */,
 				1852D19C1F60F248000E1844 /* NSSet+HYBUnicodeReadable.m in Sources */,
 				188054B01F346192009E77F4 /* UIRefreshControl+AFNetworking.m in Sources */,
-				18A5F4D71F3456B300F635AE /* RCDLiveInputBar.m in Sources */,
-				18A5F4F91F34572200F635AE /* RCDLiveAttributedLabel.m in Sources */,
 				1823554E1FD7E7460027470A /* DWTabBar.m in Sources */,
+				182944C41FDFBC29002B6BFC /* RCDDanmaku.m in Sources */,
 				1852D1DC1F6130B0000E1844 /* MJRefreshBackStateFooter.m in Sources */,
 				18B557C01FA030A400A43BA4 /* StringToData.m in Sources */,
 				18AF91FE1F90A15600FDE955 /* DAYComponentView.m in Sources */,
@@ -2509,23 +2604,22 @@
 				18B557B71F9F48D100A43BA4 /* IQBarButtonItem.m in Sources */,
 				1811930E1F56575E00B960F4 /* OwnerViewController.m in Sources */,
 				181192F71F55627400B960F4 /* IBAlertView.m in Sources */,
+				182944CB1FDFBC29002B6BFC /* RCDLiveInputView.m in Sources */,
 				1852D1D81F6130B0000E1844 /* MJRefreshAutoNormalFooter.m in Sources */,
 				18B557B61F9F48D100A43BA4 /* IQTextView.m in Sources */,
-				18A5F4FC1F34572200F635AE /* RCDLiveTipLabel.m in Sources */,
 				181193131F56615C00B960F4 /* SubnameViewController.m in Sources */,
 				1811936C1F5A978100B960F4 /* TBVideoRequestTask.m in Sources */,
 				188054AC1F346192009E77F4 /* UIAlertView+AFNetworking.m in Sources */,
 				188054AE1F346192009E77F4 /* UIImageView+AFNetworking.m in Sources */,
 				180B2FF51F3AAA6C00B4A792 /* TabBar.m in Sources */,
+				182944FE1FDFCAA1002B6BFC /* ZFPlayerModel.m in Sources */,
+				182944CC1FDFBC29002B6BFC /* RCDLiveAttributedLabel.m in Sources */,
 				18A5F5221F345A2A00F635AE /* RCDLiveGiftMessage.m in Sources */,
 				188054A01F346192009E77F4 /* AFHTTPRequestOperationManager.m in Sources */,
-				18A5F4D11F3456A900F635AE /* RCDLiveEmojiBoardView.m in Sources */,
 				1852D19B1F60F248000E1844 /* NSDictionary+HYBUnicodeReadable.m in Sources */,
 				18B557B91F9F48D100A43BA4 /* IQTitleBarButtonItem.m in Sources */,
 				1811930A1F5653B300B960F4 /* README.md in Sources */,
-				18A5F4FB1F34572200F635AE /* RCDLiveContentView.m in Sources */,
 				18B557B81F9F48D100A43BA4 /* IQPreviousNextView.m in Sources */,
-				18A5F4CC1F3453E600F635AE /* UIView+RCDDanmaku.m in Sources */,
 				181193711F5A97D400B960F4 /* AVplayerViewController.m in Sources */,
 				1886D86B1F4D68AA0014FF82 /* VideoCollectionViewCell.m in Sources */,
 				1889E59E1F67ED84007E2EEE /* CollectionViewController.m in Sources */,
@@ -2546,6 +2640,7 @@
 				1852D1D31F6130B0000E1844 /* MJRefreshBackFooter.m in Sources */,
 				181193161F566A9800B960F4 /* SubpassViewController.m in Sources */,
 				180B2FF71F3AAA6C00B4A792 /* TabBarItem.m in Sources */,
+				182944FB1FDFCAA1002B6BFC /* ZFBrightnessView.m in Sources */,
 				188054AD1F346192009E77F4 /* UIButton+AFNetworking.m in Sources */,
 				181193381F59106A00B960F4 /* LoginInViewController.m in Sources */,
 				180B30EA1F42A80A00B4A792 /* News2ViewController.m in Sources */,
@@ -2559,6 +2654,7 @@
 				1852D1E61F6130B0000E1844 /* README.md in Sources */,
 				1852D1DF1F6130B0000E1844 /* MJRefreshStateHeader.m in Sources */,
 				18B557B51F9F48D100A43BA4 /* IQKeyboardReturnKeyHandler.m in Sources */,
+				182944C61FDFBC29002B6BFC /* RCDDanmakuManager.m in Sources */,
 				18A5F5331F345A3B00F635AE /* RCDLiveMessageBaseCell.m in Sources */,
 				1811936B1F5A978100B960F4 /* TBloaderURLConnection.m in Sources */,
 				180B30521F3C06A400B4A792 /* SDCycleScrollView.m in Sources */,
@@ -2572,25 +2668,25 @@
 				180B30501F3C06A400B4A792 /* TAPageControl.m in Sources */,
 				F8AC6F9A1CD9A00B00C59570 /* KSYLivePlaying.m in Sources */,
 				180B304F1F3C06A400B4A792 /* TADotView.m in Sources */,
-				18A5F4FA1F34572200F635AE /* RCDLiveCollectionViewHeader.m in Sources */,
+				182944CA1FDFBC29002B6BFC /* RCDLiveInputBar.m in Sources */,
+				182944C81FDFBC29002B6BFC /* RCDLiveEmojiBoardView.m in Sources */,
 				188054A11F346192009E77F4 /* AFHTTPSessionManager.m in Sources */,
 				180B2FFC1F3AAA6C00B4A792 /* RxWebViewNavigationViewController.m in Sources */,
-				18A5F4D81F3456B300F635AE /* RCDLiveInputView.m in Sources */,
 				1889E5A11F692688007E2EEE /* productmodel.m in Sources */,
 				188054A21F346192009E77F4 /* AFNetworkReachabilityManager.m in Sources */,
 				181D801B1F33066100420564 /* OpenUDID.m in Sources */,
 				181192EB1F53FDEE00B960F4 /* ProductTableViewCell.m in Sources */,
 				1852D1DD1F6130B0000E1844 /* MJRefreshGifHeader.m in Sources */,
+				182944F71FDFCAA1002B6BFC /* UIView+CustomControlView.m in Sources */,
 				181192F81F55627400B960F4 /* IBConfigration.m in Sources */,
 				181193081F5653B300B960F4 /* MBProgressHUD.m in Sources */,
 				1886D8621F4BCE510014FF82 /* CompareViewController.m in Sources */,
 				188054A41F346192009E77F4 /* AFURLConnectionOperation.m in Sources */,
 				180B30F91F4580D600B4A792 /* News2HeaderView.m in Sources */,
 				18105A2E1FD6673900E9B07E /* DetailViewController.m in Sources */,
-				18A5F4CB1F3453E600F635AE /* RCDDanmakuManager.m in Sources */,
+				182944CF1FDFBC29002B6BFC /* RCDLiveTipLabel.m in Sources */,
 				18B557BB1F9F48D100A43BA4 /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				18A5F5231F345A2A00F635AE /* RCDLiveMessageCellNotificationModel.m in Sources */,
-				18A5F4C91F3453E600F635AE /* RCDDanmaku.m in Sources */,
 				18B557B11F9F48D100A43BA4 /* IQUIView+Hierarchy.m in Sources */,
 				18B557AE1F9F48D100A43BA4 /* IQNSArray+Sort.m in Sources */,
 				180B30F51F45490700B4A792 /* News2TableViewCell.m in Sources */,
@@ -2605,12 +2701,12 @@
 				18A5F5351F345A3B00F635AE /* RCDLivePortraitViewCell.m in Sources */,
 				180B30BD1F3C39D100B4A792 /* CenterView.m in Sources */,
 				1852D1DA1F6130B0000E1844 /* MJRefreshBackGifFooter.m in Sources */,
+				182944C51FDFBC29002B6BFC /* RCDDanmakuInfo.m in Sources */,
 				180B304D1F3C06A400B4A792 /* TAAbstractDotView.m in Sources */,
 				1811932E1F56C9EB00B960F4 /* UIImage+Cache.m in Sources */,
 				180B2FF81F3AAA6C00B4A792 /* NJKWebViewProgress.m in Sources */,
 				180B2FF21F3AAA6C00B4A792 /* RootNavigationController.m in Sources */,
 				1856BDBA1F3961C500AF531D /* ZXTextField.m in Sources */,
-				18A5F4CA1F3453E600F635AE /* RCDDanmakuInfo.m in Sources */,
 				1852D1D71F6130B0000E1844 /* MJRefreshAutoGifFooter.m in Sources */,
 				18A5F5341F345A3B00F635AE /* RCDLiveMessageCell.m in Sources */,
 				180B2FF61F3AAA6C00B4A792 /* TabBarBadge.m in Sources */,
@@ -2623,31 +2719,39 @@
 				1856BDB41F395A3500AF531D /* HeaderView.m in Sources */,
 				1811936A1F5A978100B960F4 /* XJGestureButton.m in Sources */,
 				1823554F1FD7E7460027470A /* DWTabBarController.m in Sources */,
+				182944F91FDFCAA1002B6BFC /* UIWindow+CurrentViewController.m in Sources */,
 				181193321F59081E00B960F4 /* AdPageView.m in Sources */,
 				188054B11F346192009E77F4 /* UIWebView+AFNetworking.m in Sources */,
 				180B2FFA1F3AAA6C00B4A792 /* RootWebViewController.m in Sources */,
 				188054AB1F346192009E77F4 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				182944FD1FDFCAA1002B6BFC /* ZFPlayerControlView.m in Sources */,
 				188054A61F346192009E77F4 /* AFURLResponseSerialization.m in Sources */,
+				182944F61FDFCAA1002B6BFC /* UITabBarController+ZFPlayerRotation.m in Sources */,
 				188054A51F346192009E77F4 /* AFURLRequestSerialization.m in Sources */,
 				180B30361F3AFEC500B4A792 /* VideoViewController.m in Sources */,
+				182944C91FDFBC29002B6BFC /* RCDLiveEmojiPageControl.m in Sources */,
+				182944F11FDFCAA1002B6BFC /* ASValuePopUpView.m in Sources */,
+				182944F51FDFCAA1002B6BFC /* UINavigationController+ZFPlayerRotation.m in Sources */,
 				180B30E31F4149AD00B4A792 /* LLSearchView.m in Sources */,
 				180B2FEF1F3AAA6C00B4A792 /* AppDelegate+AppService.m in Sources */,
 				18A5F5321F345A3B00F635AE /* RCDLiveGiftMessageCell.m in Sources */,
 				181192FC1F55678900B960F4 /* suggestViewController.m in Sources */,
 				180B2FFB1F3AAA6C00B4A792 /* RxWebViewController.m in Sources */,
 				180B30511F3C06A400B4A792 /* SDCollectionViewCell.m in Sources */,
+				182944F81FDFCAA1002B6BFC /* UIViewController+ZFPlayerRotation.m in Sources */,
 				180B303C1F3AFF0300B4A792 /* MineViewController.m in Sources */,
 				468176831CB4E29000331D64 /* main.m in Sources */,
 				18DF05301F5D5EF10038067A /* UIButton+Countdown.m in Sources */,
 				18A5F2FD1F34280B00F635AE /* RCDLive.m in Sources */,
+				182944CD1FDFBC29002B6BFC /* RCDLiveCollectionViewHeader.m in Sources */,
 				181193241F56A07200B960F4 /* LDImagePicker.m in Sources */,
 				1852D1D61F6130B0000E1844 /* MJRefreshHeader.m in Sources */,
 				181192E71F53FD3C00B960F4 /* ProductViewController.m in Sources */,
 				188054A91F346192009E77F4 /* README.md in Sources */,
 				180B2FF41F3AAA6C00B4A792 /* MainTabBarController.m in Sources */,
-				18A5F4D21F3456A900F635AE /* RCDLiveEmojiPageControl.m in Sources */,
 				18AF91E91F887AAD00FDE955 /* VideoCollectViewController.m in Sources */,
 				18B557AF1F9F48D100A43BA4 /* IQUIScrollView+Additions.m in Sources */,
+				182944F41FDFCAA1002B6BFC /* UIImageView+ZFCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2817,7 +2921,7 @@
 					"$(PROJECT_DIR)/RongChatRoomDemo/Live/QINIU/Engine/lib",
 					"$(PROJECT_DIR)/RongChatRoomDemo/Live/UCLOUD",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-l\"Masonry\"",
@@ -2861,7 +2965,7 @@
 					"$(PROJECT_DIR)/RongChatRoomDemo/Live/QINIU/Engine/lib",
 					"$(PROJECT_DIR)/RongChatRoomDemo/Live/UCLOUD",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-l\"Masonry\"",
