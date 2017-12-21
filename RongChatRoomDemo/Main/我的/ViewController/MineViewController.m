@@ -309,10 +309,11 @@
         }
         
     }else if (indexPath.section==1&&indexPath.row==0){
+        
         IBConfigration *configration = [[IBConfigration alloc] init];
         configration.title = @"提示";
         configration.message = @"要打开推送通知，请在【设置-通知-允许通知】进行操作";
-//        configration.cancelTitle = @"确定";
+
         configration.confirmTitle=@"确定";
     
         configration.messageAlignment = NSTextAlignmentCenter;
