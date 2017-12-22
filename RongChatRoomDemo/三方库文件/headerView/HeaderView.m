@@ -80,20 +80,17 @@
     if (_mymodel.title.length>0) {
         
         titleLable.text = _mymodel.title;
-        NSInteger num =[_mymodel.content integerValue];
-        if (num<100) {
-            num = [self getRandomNumber:100 to:200];
-        }
-        leaderLB.text = [NSString stringWithFormat:@"主讲人：%li",num];
+        
+        leaderLB.text = [NSString stringWithFormat:@"主讲人：%@",_mymodel.content];
         view.text = [NSString stringWithFormat:@"%@人观看",_mymodel.count];
         
         dataLB.text = _mymodel.date;
     }
     
     UIButton *selcetBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    selcetBtn.frame = CGRectMake(KScreenW-50, 44, 44, 44);
-//    [selcetBtn setImage:IMAGE_NAMED(@"icon_collection_selected") forState:UIControlStateNormal];
+    selcetBtn.frame = CGRectMake(KScreenW-50, 40, 44, 44);
     [selcetBtn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
+    
     _selectBtn = selcetBtn;
     if (_select) {
     
