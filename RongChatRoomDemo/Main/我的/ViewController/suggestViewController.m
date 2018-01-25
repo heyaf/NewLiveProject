@@ -26,7 +26,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = RGB(242, 242, 242);
    
-    self.navigationItem.title = @"用户反馈";
+    self.navigationItem.title = @"意见反馈";
     
     // Do any additional setup after loading the view from its nib.
     [self creatUI];

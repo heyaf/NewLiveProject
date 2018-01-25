@@ -106,8 +106,6 @@
 		181193711F5A97D400B960F4 /* AVplayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181193701F5A97D400B960F4 /* AVplayerViewController.m */; };
 		181A9F931F70FA8100C3A03D /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 181A9F921F70FA8100C3A03D /* VideoModel.m */; };
 		181D801B1F33066100420564 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 181D801A1F33066100420564 /* OpenUDID.m */; };
-		1823554E1FD7E7460027470A /* DWTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823554B1FD7E7460027470A /* DWTabBar.m */; };
-		1823554F1FD7E7460027470A /* DWTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823554D1FD7E7460027470A /* DWTabBarController.m */; };
 		182944C41FDFBC29002B6BFC /* RCDDanmaku.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944AA1FDFBC29002B6BFC /* RCDDanmaku.m */; };
 		182944C51FDFBC29002B6BFC /* RCDDanmakuInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944AC1FDFBC29002B6BFC /* RCDDanmakuInfo.m */; };
 		182944C61FDFBC29002B6BFC /* RCDDanmakuManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 182944AE1FDFBC29002B6BFC /* RCDDanmakuManager.m */; };
@@ -170,6 +168,8 @@
 		1852D1E61F6130B0000E1844 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 1852D1D01F6130B0000E1844 /* README.md */; };
 		1856BDB41F395A3500AF531D /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1856BDB31F395A3500AF531D /* HeaderView.m */; };
 		1856BDBA1F3961C500AF531D /* ZXTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1856BDB81F3961C500AF531D /* ZXTextField.m */; };
+		187ECEA61FF6414700C449B4 /* DWTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 187ECEA31FF6414700C449B4 /* DWTabBar.m */; };
+		187ECEA71FF6414700C449B4 /* DWTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187ECEA51FF6414700C449B4 /* DWTabBarController.m */; };
 		1880546D1F345E0F009E77F4 /* Emoji.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1880546C1F345E0F009E77F4 /* Emoji.plist */; };
 		1880549F1F346192009E77F4 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 188054731F346192009E77F4 /* AFHTTPRequestOperation.m */; };
 		188054A01F346192009E77F4 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 188054751F346192009E77F4 /* AFHTTPRequestOperationManager.m */; };
@@ -463,10 +463,6 @@
 		181A9F921F70FA8100C3A03D /* VideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoModel.m; sourceTree = "<group>"; };
 		181D80191F33066100420564 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
 		181D801A1F33066100420564 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
-		1823554A1FD7E7460027470A /* DWTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWTabBar.h; sourceTree = "<group>"; };
-		1823554B1FD7E7460027470A /* DWTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWTabBar.m; sourceTree = "<group>"; };
-		1823554C1FD7E7460027470A /* DWTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWTabBarController.h; sourceTree = "<group>"; };
-		1823554D1FD7E7460027470A /* DWTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWTabBarController.m; sourceTree = "<group>"; };
 		182944A91FDFBC29002B6BFC /* RCDDanmaku.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDDanmaku.h; sourceTree = "<group>"; };
 		182944AA1FDFBC29002B6BFC /* RCDDanmaku.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDDanmaku.m; sourceTree = "<group>"; };
 		182944AB1FDFBC29002B6BFC /* RCDDanmakuInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDDanmakuInfo.h; sourceTree = "<group>"; };
@@ -587,6 +583,10 @@
 		1856BDB31F395A3500AF531D /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
 		1856BDB71F3961C500AF531D /* ZXTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXTextField.h; sourceTree = "<group>"; };
 		1856BDB81F3961C500AF531D /* ZXTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXTextField.m; sourceTree = "<group>"; };
+		187ECEA21FF6414700C449B4 /* DWTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWTabBar.h; sourceTree = "<group>"; };
+		187ECEA31FF6414700C449B4 /* DWTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWTabBar.m; sourceTree = "<group>"; };
+		187ECEA41FF6414700C449B4 /* DWTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWTabBarController.h; sourceTree = "<group>"; };
+		187ECEA51FF6414700C449B4 /* DWTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWTabBarController.m; sourceTree = "<group>"; };
 		1880546C1F345E0F009E77F4 /* Emoji.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Emoji.plist; sourceTree = "<group>"; };
 		188054721F346192009E77F4 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		188054731F346192009E77F4 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
@@ -846,7 +846,7 @@
 				181193331F59085900B960F4 /* AppManager.h */,
 				181193341F59085900B960F4 /* AppManager.m */,
 				180B2FD41F3AAA6C00B4A792 /* NavigationController */,
-				182355491FD7E7460027470A /* MytabbarController */,
+				187ECEA11FF6414700C449B4 /* MytabbarController */,
 				180B2FD71F3AAA6C00B4A792 /* RootViewController */,
 				180B2FDA1F3AAA6C00B4A792 /* TabbarController */,
 				180B2FE31F3AAA6C00B4A792 /* WebViewController */,
@@ -1462,17 +1462,6 @@
 			path = OpenUDID;
 			sourceTree = "<group>";
 		};
-		182355491FD7E7460027470A /* MytabbarController */ = {
-			isa = PBXGroup;
-			children = (
-				1823554A1FD7E7460027470A /* DWTabBar.h */,
-				1823554B1FD7E7460027470A /* DWTabBar.m */,
-				1823554C1FD7E7460027470A /* DWTabBarController.h */,
-				1823554D1FD7E7460027470A /* DWTabBarController.m */,
-			);
-			path = MytabbarController;
-			sourceTree = "<group>";
-		};
 		182944A81FDFBC29002B6BFC /* Danmaku */ = {
 			isa = PBXGroup;
 			children = (
@@ -1716,6 +1705,17 @@
 				1856BDB81F3961C500AF531D /* ZXTextField.m */,
 			);
 			path = ZXTextField;
+			sourceTree = "<group>";
+		};
+		187ECEA11FF6414700C449B4 /* MytabbarController */ = {
+			isa = PBXGroup;
+			children = (
+				187ECEA21FF6414700C449B4 /* DWTabBar.h */,
+				187ECEA31FF6414700C449B4 /* DWTabBar.m */,
+				187ECEA41FF6414700C449B4 /* DWTabBarController.h */,
+				187ECEA51FF6414700C449B4 /* DWTabBarController.m */,
+			);
+			path = MytabbarController;
 			sourceTree = "<group>";
 		};
 		188054651F345D03009E77F4 /* Others */ = {
@@ -2593,7 +2593,6 @@
 				180B30C01F3C3A3E00B4A792 /* buttonView.m in Sources */,
 				1852D19C1F60F248000E1844 /* NSSet+HYBUnicodeReadable.m in Sources */,
 				188054B01F346192009E77F4 /* UIRefreshControl+AFNetworking.m in Sources */,
-				1823554E1FD7E7460027470A /* DWTabBar.m in Sources */,
 				182944C41FDFBC29002B6BFC /* RCDDanmaku.m in Sources */,
 				1852D1DC1F6130B0000E1844 /* MJRefreshBackStateFooter.m in Sources */,
 				18B557C01FA030A400A43BA4 /* StringToData.m in Sources */,
@@ -2626,6 +2625,7 @@
 				1852D1791F5E55C3000E1844 /* UploadParam.m in Sources */,
 				180B2FF91F3AAA6C00B4A792 /* NJKWebViewProgressView.m in Sources */,
 				18AF91FD1F90A15600FDE955 /* DAYCalendarView.m in Sources */,
+				187ECEA61FF6414700C449B4 /* DWTabBar.m in Sources */,
 				18B557881F9F44A100A43BA4 /* XXTextView.m in Sources */,
 				180B30E21F4149AD00B4A792 /* LLSearchSuggestionVC.m in Sources */,
 				18B557B21F9F48D100A43BA4 /* IQUIViewController+Additions.m in Sources */,
@@ -2690,6 +2690,7 @@
 				18B557B11F9F48D100A43BA4 /* IQUIView+Hierarchy.m in Sources */,
 				18B557AE1F9F48D100A43BA4 /* IQNSArray+Sort.m in Sources */,
 				180B30F51F45490700B4A792 /* News2TableViewCell.m in Sources */,
+				187ECEA71FF6414700C449B4 /* DWTabBarController.m in Sources */,
 				1880549F1F346192009E77F4 /* AFHTTPRequestOperation.m in Sources */,
 				188054A71F346192009E77F4 /* AFURLSessionManager.m in Sources */,
 				180B30E41F4149AD00B4A792 /* LLSearchViewController.m in Sources */,
@@ -2718,7 +2719,6 @@
 				181A9F931F70FA8100C3A03D /* VideoModel.m in Sources */,
 				1856BDB41F395A3500AF531D /* HeaderView.m in Sources */,
 				1811936A1F5A978100B960F4 /* XJGestureButton.m in Sources */,
-				1823554F1FD7E7460027470A /* DWTabBarController.m in Sources */,
 				182944F91FDFCAA1002B6BFC /* UIWindow+CurrentViewController.m in Sources */,
 				181193321F59081E00B960F4 /* AdPageView.m in Sources */,
 				188054B11F346192009E77F4 /* UIWebView+AFNetworking.m in Sources */,

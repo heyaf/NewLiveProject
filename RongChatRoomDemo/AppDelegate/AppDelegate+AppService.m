@@ -92,17 +92,17 @@
 
     
 
-        [[HttpRequest sharedInstance] getWithURLString:iOSCheckUrl parameters:nil success:^(id responseObject) {
-        
-        NSString *dict = [[ NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        if ([dict isEqualToString:@"1"]) {
+//        [[HttpRequest sharedInstance] getWithURLString:iOSCheckUrl parameters:nil success:^(id responseObject) {
+//        
+//        NSString *dict = [[ NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+//        if ([dict isEqualToString:@"1"]) {
 //            kApp.isCheck =YES;
-        }
-        
-    } failure:^(NSError *error) {
-        
-    }];
-    
+//        }
+//        
+//    } failure:^(NSError *error) {
+//        
+//    }];
+//    
     
 }
 

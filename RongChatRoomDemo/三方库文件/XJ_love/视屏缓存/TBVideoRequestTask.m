@@ -165,7 +165,6 @@
         }else{
 //            NSLog(@"rename fail");
         }
-        NSLog(@"缓存成功----%@",movePath);
     }
     
     if ([self.delegate respondsToSelector:@selector(didFinishLoadingWithTask:)]) {

@@ -78,7 +78,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"homecell"];
     [self creatLunboData];
     [self creatHotData];
-    [self setcenterView];
+    [self isChecking];
     [self creatRightbutton];
     
     
@@ -128,9 +128,7 @@
 
     RootWebViewController *rootwebVC = [[RootWebViewController alloc] init];
     rootwebVC.url = [NSString stringWithFormat:DetailnewsHTML,_lunboUrlArr[index]];
-    //    NSLog(@"*******%@",basemodel);
     rootwebVC.messageID = _lunboUrlArr[index];
-    
     
     rootwebVC.saveMessage = YES;
     [self.navigationController pushViewController:rootwebVC animated:YES];
@@ -143,8 +141,9 @@
     
     
     [[HttpRequest sharedInstance] getWithURLString:iOSCheckUrl parameters:nil success:^(id responseObject) {
-        
+
         NSString *dict = [[ NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+
 
         if ([dict isEqualToString:@"1"]) {
             kApp.isCheck =YES;
@@ -201,7 +200,7 @@
         [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
         [MBProgressHUD hideHUD];
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-        ASLog(@"轮播图......%@",dict);
+        NSLog(@"轮播图......%@",dict);
         if ([dict[@"state"] isEqualToString:@"0"]) {
             [MBProgressHUD showError:dict[@"msg"]];
         }else{
